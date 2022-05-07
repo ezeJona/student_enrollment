@@ -1,7 +1,7 @@
 <?php
     include "conexion.model.php";
 
-    class EstudentModel{
+    class UltimasMatriculasModel{
             private $conexion;
             private $db; // Guardamos el objeto Conexion
 
@@ -12,7 +12,7 @@
         }
 
         public function read(){
-            $stmt = $this->conexion->prepare("SELECT * FROM vista_informacion_estudiantes");
+            $stmt = $this->conexion->prepare("SELECT * FROM vista_ultimas_matriculas");
             $stmt->execute();
             return $stmt->get_result(); // Devuelve todos los datos
         }

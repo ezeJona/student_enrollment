@@ -34,6 +34,13 @@
 <link rel="stylesheet" href="./assets/css/theme.css">
 
   <title>nombre del colegio</title>
+  	<?php 
+    include "../src/models/ultimas_matriculas.model.php";
+    
+    $ObjetoUltimasMatriculas = new UltimasMatriculasModel();
+    $NewMatricula = $ObjetoUltimasMatriculas->read();
+    
+  ?>
 </head>
 
 <body>
@@ -583,6 +590,7 @@
 											<table class="table text-nowrap mb-0 table-centered table-hover">
 												<thead class="table-light">
 													<tr>
+														<th class=" pe-0 ">ID</th>
 														<th>Estudiante</th>
 														<th>Codigo Estudiantil</th>
 														<th>Grado</th>
@@ -591,148 +599,27 @@
 													</tr>
 												</thead>
 												<tbody>
+													<?php
+                                        				while($matricula = mysqli_fetch_assoc($NewMatricula)){
+                                        			?>
 													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div>
-																	<div>
-																		<span class="avatar avatar-sm">
-																	    <img alt="avatar bootstrap 5" src="./assets/images/avatar/Jonathan.jpg" class="rounded-circle" />
-																    </span>
-																	</div>
-																</div>
-																<div class="ms-3 lh-1">
-																	<h5 class="mb-1"><a href="#!" class="text-inherit">Jonathan Martinez Lopez</a></h5>
-																</div>
+														<td> <a href="#!"><?=$matricula['matricula_id']?></a></td>
+														                                            <td class="ps-1">
+														<div class="d-flex align-items-center">
+															<!-- <a href="#!"><img src="../assets/images/avatar/avatar-11.jpg" alt="Image" class="avatar avatar-sm rounded-circle"></a> -->
+															<div class="ms-2">
+															<h5 class="mb-0"><a href="#!" class="text-inherit"></a><?= $matricula['nombre_completo']?></h5>
 															</div>
+														</div>
 														</td>
-														<td>937-330-1634</td>
-														<td>8vo</td>
-														<td>Matutino</td>
-														<td><span class="badge badge-danger-soft">Pendiente</span></td>
+														<td><?= $matricula['codigo_estudiantil']?></td>
+														<td><?= $matricula['grado']?></td>
+														<td><?= $matricula['turno']?></td>
+														<td><span class="badge badge-danger-soft"><?= $matricula['estado_matricula']?></span></td>
 													</tr>
-																										<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div>
-																	<div>
-																		<span class="avatar avatar-sm">
-																	    <img alt="avatar bootstrap 5" src="./assets/images/avatar/avatar-1.jpg" class="rounded-circle" />
-																    </span>
-																	</div>
-																</div>
-																<div class="ms-3 lh-1">
-																	<h5 class="mb-1"><a href="#!" class="text-inherit">Jonathan Martinez Lopez</a></h5>
-																</div>
-															</div>
-														</td>
-														<td>937-330-1634</td>
-														<td>8vo</td>
-														<td>Matutino</td>
-														<td><span class="badge badge-danger-soft">Pendiente</span></td>
-													</tr>
-                          <tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div>
-																	<div>
-																		<span class="avatar avatar-sm">
-																	    <img alt="avatar bootstrap 5" src="./assets/images/avatar/avatar-10.jpg" class="rounded-circle" />
-																    </span>
-																	</div>
-																</div>
-																<div class="ms-3 lh-1">
-																	<h5 class="mb-1"><a href="#!" class="text-inherit">Jonathan Martinez Lopez</a></h5>
-																</div>
-															</div>
-														</td>
-														<td>937-330-1634</td>
-														<td>8vo</td>
-														<td>Matutino</td>
-														<td><span class="badge badge-danger-soft">Pendiente</span></td>
-													</tr>
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div>
-																	<div>
-																		<span class="avatar avatar-sm">
-																	    <img alt="avatar bootstrap 5" src="./assets/images/avatar/avatar-9.jpg" class="rounded-circle" />
-																    </span>
-																	</div>
-																</div>
-																<div class="ms-3 lh-1">
-																	<h5 class="mb-1"><a href="#!" class="text-inherit">Jonathan Martinez Lopez</a></h5>
-																</div>
-															</div>
-														</td>
-														<td>937-330-1634</td>
-														<td>8vo</td>
-														<td>Matutino</td>
-														<td><span class="badge badge-info-soft">Activo</span></td>
-													</tr>
-                          </tr>
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div>
-																	<div>
-																		<span class="avatar avatar-sm">
-																	    <img alt="avatar bootstrap 5" src="./assets/images/avatar/avatar-13.jpg" class="rounded-circle" />
-																    </span>
-																	</div>
-																</div>
-																<div class="ms-3 lh-1">
-																	<h5 class="mb-1"><a href="#!" class="text-inherit">Jonathan Martinez Lopez</a></h5>
-																</div>
-															</div>
-														</td>
-														<td>937-330-1634</td>
-														<td>8vo</td>
-														<td>Matutino</td>
-														<td><span class="badge badge-warning-soft">En revision</span></td>
-													</tr>
-                          																										<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div>
-																	<div>
-																		<span class="avatar avatar-sm">
-																	    <img alt="avatar bootstrap 5" src="./assets/images/avatar/avatar-9.jpg" class="rounded-circle" />
-																    </span>
-																	</div>
-																</div>
-																<div class="ms-3 lh-1">
-																	<h5 class="mb-1"><a href="#!" class="text-inherit">Jonathan Martinez Lopez</a></h5>
-																</div>
-															</div>
-														</td>
-														<td>937-330-1634</td>
-														<td>8vo</td>
-														<td>Matutino</td>
-														<td><span class="badge badge-info-soft">Activo</span></td>
-													</tr>
-                          </tr>
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<div>
-																	<div>
-																		<span class="avatar avatar-sm">
-																	    <img alt="avatar bootstrap 5" src="./assets/images/avatar/avatar-13.jpg" class="rounded-circle" />
-																    </span>
-																	</div>
-																</div>
-																<div class="ms-3 lh-1">
-																	<h5 class="mb-1"><a href="#!" class="text-inherit">Jonathan Martinez Lopez</a></h5>
-																</div>
-															</div>
-														</td>
-														<td>937-330-1634</td>
-														<td>8vo</td>
-														<td>Matutino</td>
-														<td><span class="badge badge-warning-soft">En revision</span></td>
-													</tr>
+													<?php
+                                                		}                    
+                                            		?>
 												</tbody>
 											</table>
 										</div>

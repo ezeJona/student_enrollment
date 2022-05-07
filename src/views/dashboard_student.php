@@ -103,11 +103,11 @@
                                         <tr>
                                             <td> <a href="#!"><?=$estudiante['estudiante_id']?></a></td>
                                             <td class="ps-1">
-                                                <div class="d-flex align-items-center">
+                                              <div class="d-flex align-items-center">
                                                 <!-- <a href="#!"><img src="../assets/images/avatar/avatar-11.jpg" alt="Image" class="avatar avatar-sm rounded-circle"></a> -->
                                                 <div class="ms-2">
                                                 <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?= $estudiante['nombre']?></h5>
-                                            </div>
+                                                </div>
                                             </div>
                                             </td>
                                             <td><?= $estudiante['maestro_guia'] ?></td>
