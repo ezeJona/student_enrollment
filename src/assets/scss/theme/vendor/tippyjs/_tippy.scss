@@ -1,0 +1,71 @@
+// Tippy scss
+// animation
+
+.tippy-box {
+  position: relative;
+  color: var(--#{$prefix}white);
+  // box-shadow: 0 0 20px 4px rgba(154, 161, 177, 0.15), 0 4px 80px -8px rgba(36, 40, 47, 0.25),
+  //   0 4px 4px -2px rgba(91, 94, 105, 0.15);
+  background-color: var(--#{$prefix}dark);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: normal;
+  outline: 0;
+  transition-property: transform, visibility, opacity;
+}
+.tippy-box[data-animation="scale"] {
+  &[data-placement^="top"] {
+    transform-origin: bottom;
+  }
+  &[data-placement^="bottom"] {
+    transform-origin: top;
+  }
+  &[data-placement^="left"] {
+    transform-origin: right;
+  }
+  &[data-placement^="right"] {
+    transform-origin: left;
+  }
+  &[data-state="hidden"] {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+// light theme
+.tippy-box[data-theme~="light"] {
+  color: var(--#{$prefix}white);
+  box-shadow: 0 0 20px 4px rgba(154, 161, 177, 0.15), 0 4px 80px -8px rgba(36, 40, 47, 0.25),
+    0 4px 4px -2px rgba(91, 94, 105, 0.15);
+  background-color: var(--#{$prefix}dark);
+  &[data-placement^="top"] > .tippy-arrow:before {
+    border-top-color: var(--#{$prefix}dark);
+  }
+  &[data-placement^="bottom"] > .tippy-arrow:before {
+    border-bottom-color: var(--#{$prefix}dark);
+  }
+  &[data-placement^="left"] > .tippy-arrow:before {
+    border-left-color: var(--#{$prefix}dark);
+  }
+  &[data-placement^="right"] > .tippy-arrow:before {
+    border-right-color: var(--#{$prefix}dark);
+  }
+  > {
+    .tippy-backdrop {
+      background-color: var(--#{$prefix}dark);
+    }
+    .tippy-svg-arrow {
+      fill: var(--#{$prefix}dark);
+    }
+  }
+}
+
+.tippy-box[data-theme~="lightPurple"] {
+  background-color: var(--#{$prefix}primary);
+  color: var(--#{$prefix}primary);
+}
+.tippy-box[data-theme~="lightPurple"][data-placement^="right"] > .tippy-arrow::before {
+  border-right-color: var(--#{$prefix}primary);
+}

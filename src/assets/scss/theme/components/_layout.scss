@@ -1,0 +1,175 @@
+// Layouts
+
+// content area
+.app-content-area {
+  padding: 80px 10px 20px;
+}
+[data-layout="horizontal"] {
+  #main-wrapper {
+    overflow-x: auto;
+    display: block;
+  }
+
+  #app-content {
+    margin-left: 0px;
+  }
+  .container-fluid {
+    max-width: 80%;
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+  .app-content-area {
+    padding: 32px 0px;
+  }
+  .header {
+    background-color: $white;
+    border-bottom: 1px solid var(--#{$prefix}border-color);
+    position: relative;
+    z-index: 1;
+    .navbar {
+      position: relative;
+      left: 0;
+
+      // max-width: 80%;
+      margin: 0 auto;
+      box-shadow: none;
+      @media (max-width: 768px) {
+        // max-width: 100%;
+        margin: 0 auto;
+      }
+    }
+    #nav-toggle {
+      display: none;
+    }
+    .navbar-brand {
+      display: block !important;
+      // @media (max-width: 768px) {
+
+      //   margin-left: 45px;
+      // }
+    }
+  }
+}
+// Header
+.header {
+  .navbar {
+    position: fixed;
+    left: 260px;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0.625rem 1.5rem;
+    #nav-toggle {
+      font-size: 20px;
+      color: var(--#{$prefix}headings-color);
+      line-height: 0.5;
+    }
+    .navbar-nav {
+      @media (max-width: 576px) {
+        flex-direction: row;
+      }
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        flex-direction: row;
+      }
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+// Layouts
+
+// Dashboard wrapper
+
+#main-wrapper {
+  overflow-x: hidden;
+  display: flex;
+}
+
+// Dashboard page content
+#app-content {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin-left: 16.25rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+// Dashboard navbar vertical toggled
+#main-wrapper.toggled .navbar-vertical {
+  margin-left: 0;
+}
+
+// Dashboard page content toggled
+#main-wrapper.toggled #app-content {
+  margin-left: 0;
+}
+#main-wrapper.toggled #app-content .inner-wrapper-sticky {
+  left: 20px !important;
+}
+#main-wrapper.toggled #app-content .inner-wrapper-sticky .setting-nav {
+  width: 354px;
+
+  @media (max-width: 1024px) {
+    width: 204px;
+  }
+}
+#main-wrapper.toggled {
+  .header {
+    .navbar {
+      left: 0;
+    }
+  }
+}
+
+// Media query for layout
+@media (max-width: 576px) {
+  #app-content {
+    margin-left: 0rem;
+  }
+  #main-wrapper.toggled {
+    #app-content {
+      margin-left: 15.6875rem;
+    }
+  }
+  .header {
+    .navbar {
+      left: 0;
+    }
+  }
+}
+@media (max-width:990px) {
+.header {
+  .navbar {
+   z-index: 999;
+  }
+}
+}
+@media (min-width: 768px) {
+
+  .navbar-vertical {
+    margin-left: 0rem;
+  }
+  #app-content {
+    min-width: 0rem;
+    width: 100%;
+  }
+  #main-wrapper.toggled .navbar-vertical {
+    margin-left: -17rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #app-content {
+    margin-left: 0rem;
+  }
+  #main-wrapper.toggled {
+    #app-content {
+      margin-left: 15.6875rem;
+    }
+  }
+}

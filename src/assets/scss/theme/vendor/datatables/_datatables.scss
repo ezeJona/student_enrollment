@@ -1,0 +1,36 @@
+// Datatbles 
+
+
+.dataTables_length {
+    padding: 16px 24px;
+}
+
+.dataTables_filter {
+    padding: 16px 24px;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding: 18px 25px !important;
+ 
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+    padding: 18px 25px !important;
+    
+}
+div.table-responsive > div.dataTables_wrapper > div.row {
+    margin: 0;
+    border-top: 1px solid var(--#{$prefix}gray-300);
+    --bs-gutter-x: 0 !important;
+    align-items: center;
+}
+
+#example_wrapper{
+table.dataTable{
+    margin-top: 0px !important;
+}
+
+}

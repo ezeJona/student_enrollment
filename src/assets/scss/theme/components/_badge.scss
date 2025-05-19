@@ -1,0 +1,33 @@
+//
+// Extended from bootstrap
+//
+
+
+// Badge dot
+
+.badge-dot{
+    font-size: 0;
+    vertical-align: middle;
+    padding: 0;
+    border-radius: 50%;
+    line-height: 1;
+    height: .5rem;
+    min-height: .5rem;
+    width: .5rem;
+    min-width: .5rem;
+    display: inline-block !important;
+
+}
+
+
+// badge soft
+@mixin bg-soft-variant($color, $soft-background: rgba($color, 0.1)) {
+    color: $color;
+    background-color: $soft-background;
+  }
+  @each $color, $value in $theme-colors {
+    .badge-#{$color}-soft {
+      @include bg-soft-variant($value);
+    }
+  }
+  

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		@@include("../partials/head.html")
+		<title>Calender | Dash UI - Bootstrap 5 Admin Dashboard Template</title>
+	</head>
+
+	<body>
+		<main id="main-wrapper" class="main-wrapper">
+			@@include("../partials/header.html")
+			<!-- navbar vertical -->
+
+			@@include('../partials/navbar-vertical.html', { "page": "calendar" })
+			<!-- page content -->
+			<div id="app-content">
+				<!-- Container fluid -->
+				<div class="app-content-area">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-12">
+								<!-- Page header -->
+								<div class="mb-5">
+									<h3 class="mb-0">Calendar App</h3>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-12">
+								<!-- Card -->
+								<div class="card">
+									<div class="row g-0">
+										<div class="col-lg-2 border-end">
+											<div class="p-5">
+												<div class="d-grid mb-4">
+													<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-edit-event-modal" id="create-new-event-btn">+ Create New Events</a>
+												</div>
+												<h5 class="mb-0">Events</h5>
+												<p>Drag and drop your event or click in the calendar</p>
+												<div id="external-events">
+													<div class="external-event fc-event text-primary bg-primary-soft" data-class="bg-primary-soft ">
+														<div>Design</div>
+													</div>
+													<div class="external-event fc-event text-success bg-success-soft" data-class="bg-success-soft">
+														<div>Development</div>
+													</div>
+													<div class="external-event fc-event text-danger bg-danger-soft" data-class="bg-danger-soft">
+														<div>Testing</div>
+													</div>
+													<div class="external-event fc-event text-warning bg-warning-soft" data-class="bg-warning-soft">
+														<div>Responsive</div>
+													</div>
+													<p>
+														<input type="checkbox" id="drop-remove" />
+														<label for="drop-remove">remove after drop</label>
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-10">
+											<div id="calendar"></div>
+										</div>
+									</div>
+									<!-- Calendar -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Add or Edit Event Modal -->
+		<div class="modal fade" id="add-edit-event-modal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="add-edit-event-modal-title">Add Event</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form name="add-event-form" id="add-event-form">
+							<div class="mb-3">
+								<label class="form-label">Event Title</label>
+								<input type="text" placeholder="Event Title" name="event-title" id="event-title" required class="form-control" value="Testing title" />
+							</div>
+							<div class="mb-4">
+								<label class="form-label">Select Category</label>
+								<select class="form-select" name="event-category" id="event-category">
+									<option selected value="bg-primary">Primary</option>
+									<option value="bg-danger">Danger</option>
+									<option value="bg-success">Success</option>
+									<option value="bg-info">Info</option>
+									<option value="bg-dark">Dark</option>
+									<option value="bg-warning">Warning</option>
+								</select>
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Event Start At</label>
+								<div class="input-group">
+									<input class="form-control" id="eventStart" placeholder="Select Dates" data-enabletime="true" />
+									<span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+								</div>
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Event End At</label>
+								<div class="input-group">
+									<input class="form-control" id="eventEnd" placeholder="Select Dates" data-enabletime="true" />
+									<span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+								</div>
+							</div>
+
+							<div class="mb-3">
+								<label class="form-label">Event Location</label>
+								<input class="form-control" id="event-location" placeholder="Event Location" value="Ahmebadad" />
+							</div>
+
+							<div class="mb-3">
+								<label class="form-label">Description</label>
+								<textarea class="form-control" id="event-description" placeholder="Enter event description" rows="3" spellcheck="false">testing....description</textarea>
+							</div>
+
+							<div class="">
+								<button type="submit" class="btn btn-primary" id="add-new-event-btn">Add Event</button>
+								<button type="submit" class="btn btn-primary" id="update-event-btn">Update Event</button>
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+								<input type="hidden" id="event-id" name="eventid" value="" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- View Event Modal -->
+		<div class="modal fade" id="view-event-modal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="view-event-modal-title">Event Title</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="event-details">
+							<div class="mt-0">
+								<h5 class="mb-0 text-800">
+									<i class="bi bi-info-square me-2"></i>
+									Description
+								</h5>
+								<p class="mb-1 mt-2" id="view-event-description"></p>
+							</div>
+
+							<div class="mt-4">
+								<h5 class="mb-0 text-800">
+									<i class="bi bi-calendar3 me-2"></i>
+									Date and Time
+								</h5>
+								<p class="mb-1 mt-2" id="view-event-dates"></p>
+							</div>
+							<div class="my-4">
+								<h5 class="mb-0 text-800">
+									<i class="bi bi-geo-alt me-2"></i>
+									Location
+								</h5>
+								<p class="mb-1 mt-2" id="view-event-location"></p>
+							</div>
+						</div>
+						<div>
+							<button type="button" class="btn btn-outline-danger" id="btn-delete-event">
+								<i class="bi bi-x"></i>
+								Delete
+							</button>
+							<button type="submit" class="btn btn-outline-secondary" id="btn-edit-event">
+								<i class="bi bi-pencil"></i>
+								Edit Event
+							</button>
+							<input type="hidden" id="selected-event-id" name="selectedeventid" value="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		@@include("../partials/scripts.html")
+
+		<script src="@@webRoot/node_modules/fullcalendar/index.global.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js"></script>
+		<script src="@@webRoot/node_modules/flatpickr/dist/flatpickr.min.js"></script>
+		<script src="@@webRoot/assets/js/vendors/calendar.init.js"></script>
+	</body>
+</html>

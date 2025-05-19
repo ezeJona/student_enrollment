@@ -1,0 +1,93 @@
+// Paginations
+
+.page-item:first-child .page-link {
+  margin-right: $pagination-margin-x-first-last;
+}
+
+.page-item {
+  &:not(:first-child) .page-link {
+    margin-left: $pagination-margin-start;
+    margin-right: $pagination-margin-x-first-last;
+  }
+
+  @if $pagination-margin-start==(calc($pagination-border-width * -1)) {
+    &:first-child {
+      .page-link {
+        @include border-start-radius(var(--#{$prefix}pagination-border-radius));
+      }
+    }
+
+    &:last-child {
+      .page-link {
+        @include border-end-radius(var(--#{$prefix}pagination-border-radius));
+      }
+    }
+  }
+
+  @else {
+
+    // Add border-radius to all pageLinks in case they have left margin
+    .page-link {
+      @include border-radius(var(--#{$prefix}pagination-border-radius));
+    }
+  }
+}
+
+// listjs pagination
+.pagination-wrap {
+  .page-item {
+    margin-right: .25rem;
+    position: relative;
+    display: block;
+    padding: .375rem .75rem;
+    background-color: var(--#{$prefix}white);
+    border: 1px solid var(--#{$prefix}gray-300);
+    color: var(--#{$prefix}gray-600);
+    font-size: 0.875rem;
+    border-radius: .375rem;
+    &:hover {
+      background-color: var(--#{$prefix}gray-300);
+
+    }
+    &.active {
+      background-color: var(--#{$prefix}primary);
+
+    }
+  }
+  .listjs-pagination {
+    li {
+      position: relative;
+      background-color: var(--#{$prefix}white);
+      border: 1px solid var(--#{$prefix}gray-300);
+      color: var(--#{$prefix}gray-600);
+      font-size: 0.875rem;
+      border-radius: .375rem;
+      margin-right: .25rem;
+      &:hover {
+        background-color: var(--#{$prefix}gray-300);
+
+      }
+      &.active {
+        background-color: var(--#{$prefix}primary);
+        border: 1px solid var(--#{$prefix}primary);
+        color: var(--#{$prefix}white) !important;
+        .page {
+          color: var(--#{$prefix}white) !important;
+        }
+      }
+    }
+    .page {
+      color: var(--#{$prefix}gray-600);
+      padding: .375rem .75rem;
+      display: block;
+    }
+
+  }
+}
+
+// List JS Pagination CSS
+.pagination-wrap a.disabled {
+  color: var(--dashui-pagination-disabled-color);
+  pointer-events: none;
+  background-color: var(--dashui-gray-300);    
+}

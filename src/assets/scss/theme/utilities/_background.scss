@@ -1,0 +1,31 @@
+//
+// Extended from bootstrap
+//
+
+// Background
+
+// filter invert in to dark
+.filter-invert-white {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
+.filter-invert-dark {
+    -webkit-filter: brightness(0) invert(0);
+    filter: brightness(0) invert(0);
+}
+
+.hero-img {
+    position: relative;
+    &:before {
+        content: "";
+        background-image: url(../images/demo-img/hero-gradient-1.svg);
+        position: absolute;
+        top: 0;
+        height: 100%;
+        right: 0;
+        width: 100%;
+        left: 48%;
+        z-index: -1;
+    }
+}

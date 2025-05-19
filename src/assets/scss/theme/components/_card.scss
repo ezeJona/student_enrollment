@@ -1,0 +1,46 @@
+//
+// Extended from bootstrap
+//
+
+// card
+.card{
+    box-shadow: $smooth-shadow-sm;
+    border: 0px;
+    border-radius: $border-radius-lg;
+}
+
+
+
+// card bordered
+.card-bordered {
+    border: 1px solid var(--#{$prefix}gray-300);
+    box-shadow: none;
+}
+
+
+// card selected
+.card-selected input[type="radio"]:checked + .card {
+    background-color: var(--#{$prefix}dark);
+    small{
+      color: var(--#{$prefix}gray-500);
+    }
+    .text-color-change {
+      color: var(--#{$prefix}white);
+    }
+  }
+  
+
+
+// card lift
+  .card-lift {
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    border-radius: .5rem;
+  &:hover {
+    -webkit-transform: translateY(calc(-1.5rem / 5));
+    transform: translateY(calc(-1.5rem / 5));
+    -webkit-box-shadow: 0 5px 10px rgb(30 32 37 / 12%);
+    box-shadow: 0 5px 10px rgb(30 32 37 / 12%);
+  }
+  
+  }

@@ -1,0 +1,113 @@
+[
+	{
+		"id": "1",
+		"company_name": "Bajaj Finance Ltd",
+		"owner": "Dan Shutts",
+		"category": "Financials",
+		"rating": "4.9",
+		"location": "Barcelona, Spain",
+		"email_id" : "dan.s@bajajfinance.com",
+		"logo_img": "../assets/images/svg/brand-logo-4.svg",
+		"about_company": "Take a look at these creative company profile examples to inspire you as you create a company profile that will attract and engage the right audience."
+	},   
+	{
+		"id": "2",
+		"company_name": "Larsen & Toubro Infotech Ltd",
+		"owner": "Douglas Guzman",
+		"category": "Information Technology",
+		"rating": "2.8",
+		"location": "Los Angeles, California",
+		"email_id" : "douglas@landtinfotech.com",
+		"logo_img": "../assets/images/svg/brand-logo-2.svg",
+		"about_company": "Pellentesque venenatis tincidunt quam, ac interdum leo. Donec non orci euismod, fermentum urna sit amet, interdum est. Aenean aliquam porta augue, in hendrerit felis semper ut."
+	},
+	{
+		"id": "3",
+		"company_name": "Adani Wilmar Ltd",
+		"owner": "George Torres",
+		"category": "Consumer Staples",
+		"rating": "3.9",
+		"location": "London, England",
+		"email_id" : "george@adaniwilmarltd",
+		"logo_img": "../assets/images/svg/brand-logo-1.svg",
+		"about_company": "Donec nisi sem, laoreet eget risus ut, condimentum vehicula arcu. Donec iaculis, tellus id semper efficitur, arcu erat varius urna, quis luctus lorem risus ut velit. Donec ac leo faucibus, mollis elit et"
+	},
+	{
+		"id": "4",
+		"company_name": "Asian Paints Ltd",
+		"owner": "Lisa Morrison",
+		"category": "Materials",
+		"rating": "2.5 ",
+		"location": "Tengah, Singapore",
+		"email_id" : "lisa@ssianpaintsltd",
+		"logo_img": "../assets/images/svg/brand-logo-6.svg",
+		"about_company": "Mauris quis dui non eros vehicula ultricies nec eu enim. Nullam tortor nunc, cursus sit amet facilisis ac, tristique fringilla turpis. Mauris est odio, pharetra at blandit at, tempus tempor nisi."
+	},
+	{
+		"id": "5",
+		"company_name": "The Pink Pig Tavern",
+		"owner": "Jan Harmon",
+		"category": "Materials",
+		"rating": "4.8",
+		"location": "USA",
+		"email_id" : "jan.harmon@pinkpig.us",
+		"logo_img": "../assets/images/svg/brand-logo-4.svg",
+		"about_company": "Take a look at these creative company profile examples to inspire you as you create a company profile that will attract and engage the right audience."
+	},
+	{
+		"id": "6",
+		"company_name": "Infosys Ltd",
+		"owner": "Crystal Tucker",
+		"category": "Information Technology",
+		"rating": "5.0",
+		"location": "Tokyo, Japan",
+		"email_id" : "In Progress",
+		"logo_img": "../assets/images/svg/brand-logo-5.svg",
+		"about_company": "Pellentesque venenatis tincidunt quam, ac interdum leo. Donec non orci euismod, fermentum urna sit amet, interdum est. Aenean aliquam porta augue, in hendrerit felis semper ut."
+	},
+	{
+		"id": "7",
+		"company_name": "Divi's Laboratories Ltd",
+		"owner": "Mayra Giorgi",
+		"category": "Health Care",
+		"rating": "4.8",
+		"location": "Dubai, United Arab Emirates",
+		"email_id" : "mayra@divilabltd.com",
+		"logo_img": "../assets/images/svg/brand-logo-4.svg",
+		"about_company": "Donec nisi sem, laoreet eget risus ut, condimentum vehicula arcu. Donec iaculis, tellus id semper efficitur, arcu erat varius urna, quis luctus lorem risus ut velit. Donec ac leo faucibus, mollis elit et"
+	},
+	{
+		"id": "8",
+		"company_name": "HDFC Bank Ltd",
+		"owner": "Florence Fossett",
+		"category": "Financials",
+		"rating": "3.5",
+		"location": "Moscow, Russia",
+		"email_id" : "florence.f@hdfcbank.com",
+		"logo_img": "../assets/images/svg/brand-logo-3.svg",
+		"about_company": "Mauris quis dui non eros vehicula ultricies nec eu enim. Nullam tortor nunc, cursus sit amet facilisis ac, tristique fringilla turpis. Mauris est odio, pharetra at blandit at, tempus tempor nisi."
+	},
+	{		
+		"id": "9",
+		"company_name": "Hindustan Unilever Ltd",
+		"owner": "Terry Enciso",
+		"category": "Consumer Staples",
+		"rating": "4.9",
+		"location" : "Paris, France",
+		"email_id" : "terry@hindustanunilever.com",
+		"logo_img": "../assets/images/svg/brand-logo-2.svg",
+		"about_company": "Pellentesque venenatis tincidunt quam, ac interdum leo. Donec non orci euismod, fermentum urna sit amet, interdum est. Aenean aliquam porta augue, in hendrerit felis semper ut."
+	},
+	{
+		"id": "10",
+		"company_name": "Godrej Properties Ltd",
+		"owner": "Mohit Malhotra",
+		"category": "Real Estate",
+		"rating": "3.9",
+		"location": "Ahmedabad, India",
+		"email_id" : "damohit@godrejproperties.us",
+		"logo_img": "../assets/images/svg/brand-logo-1.svg",
+		"about_company": "Take a look at these creative company profile examples to inspire you as you create a company profile that will attract and engage the right audience."
+	}
+]
+

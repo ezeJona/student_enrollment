@@ -1,0 +1,21 @@
+// text
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+	letter-spacing: -0.02rem;
+}
+
+// text inherit
+.text-inherit {
+	color: var(--#{$prefix}text-gray-600);
+
+	&:hover {
+		color: var(--#{$prefix}primary);
+	}
+}

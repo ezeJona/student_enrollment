@@ -1,0 +1,173 @@
+// Navbar Vertcial
+
+.navbar-vertical {
+  margin-left: -17rem;
+  display: block;
+  position: fixed;
+  border-right: 1px solid var(--#{$prefix}gray-200);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 260px;
+  padding: 0rem;
+  background-color: var(--#{$prefix}navbar-vertical-bg);
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+  .slimScrollDiv {
+    height: 100% !important;
+    overflow-y: auto;
+  }
+  .nav-scroller {
+    height: 100% !important;
+    overflow-y: auto;
+  }
+  .navbar-brand {
+    padding: 1rem 1.5rem 1.5rem;
+    margin-right: 0px;
+    display: block;
+    img {
+      height: 1.875rem;
+    }
+  }
+  .navbar-heading {
+    color: var(--#{$prefix}gray-400);
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 700;
+  }
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        padding: 0.5rem 1.5rem; // padding: 0.5rem 1.5rem;
+        display: flex;
+        align-items: center;
+        color: var(--#{$prefix}gray-600);
+        font-weight: 500;
+        line-height: 1.8;
+        -webkit-transition: all 0.5s;
+        white-space: nowrap;
+        transition: all 0.5s;
+
+        &:hover {
+          color: var(--#{$prefix}primary);
+        }
+
+        &:hover .nav-icon {
+          color: var(--#{$prefix}primary);
+          opacity: 1;
+        }
+
+        &.active {
+          color: var(--#{$prefix}primary);
+        }
+
+        &.active .nav-icon {
+          color: var(--#{$prefix}primary);
+          opacity: 1;
+        }
+      }
+      .nav-link[data-bs-toggle="collapse"] {
+        position: relative;
+        &:after {
+          display: block;
+          content: "\F282";
+          
+          font-family: "bootstrap-icons";
+          margin-left: auto;
+          transition: 0.5s ease;
+          position: absolute;
+          right: 1.5rem;
+          font-size: 12px;
+        
+
+          color: var(--#{$prefix}gray-500);
+        }
+      }
+      [aria-expanded="true"].nav-link[data-bs-toggle="collapse"]:after {
+        transform: rotate(180deg);
+        -webkit-transition: all 0.3s ease-in;
+        -o-transition: all 0.3s ease-in;
+        transition: all 0.3s ease-in;
+      }
+    }
+    .nav-icon {
+      opacity: 0.6;
+      font-size: 0.875rem;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+    .sub-nav-icon {
+      font-size: 0.35rem;
+      margin-right: 0.5rem;
+    }
+    .nav {
+      .nav-item {
+        .nav-link {
+          color: var(--#{$prefix}gray-600);
+          padding: 0.25rem 3rem;
+          position: relative;
+          &:before {
+            content: "";
+            width: 4px;
+            height: 4px;
+            background-color: var(--#{$prefix}gray-600);
+            position: absolute;
+            left: 32px;
+            top: 16.5px;
+            transition: all 0.4s ease-in-out;
+            opacity: 0.5;
+            border-radius: 10px;
+          }
+          &:hover {
+            color: var(--#{$prefix}primary);
+            &:before {
+              background-color: var(--#{$prefix}primary);
+            }
+          }
+
+          &.active {
+            color: var(--#{$prefix}primary);
+          }
+        }
+        .nav {
+          .nav-item {
+            .nav-link {
+              color: var(--#{$prefix}gray-600);
+              padding: 0.25rem 3.5rem;
+
+              &:hover {
+                color: var(--#{$prefix}primary);
+              }
+              &.active {
+                color: var(--#{$prefix}primary);
+              }
+            }
+            .nav {
+              .nav-item {
+                .nav-link {
+                  color: var(--#{$prefix}gray-600);
+                  padding: 0.25rem 4.2rem;
+                  &:hover {
+                    color: var(--#{$prefix}primary);
+                  }
+                  &.active {
+                    color: var(--#{$prefix}primary);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.collapse.in {
+  display: block;
+}
+

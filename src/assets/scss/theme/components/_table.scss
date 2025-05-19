@@ -1,0 +1,24 @@
+//
+// Extend from bootstrap
+//
+
+// Table
+
+.table th {
+  color: var(--#{$prefix}gray-700);
+}
+
+.table-centered {
+  td,
+  th {
+    vertical-align: middle !important;
+  }
+}
+
+.table-card {
+  margin: -1.25rem;
+}
+
+table tr:last-child td {
+  border-bottom-width: 0px;
+}

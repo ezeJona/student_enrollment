@@ -1,0 +1,47 @@
+:root {
+  // body bg
+
+  --#{$prefix}body-bg: #{map-get($grays, "100")};
+  --#{$prefix}body-color: #{$body-color};
+  --#{$prefix}headings-color: #{map-get($grays, "800")};
+  --#{$prefix}navbar-vertical-bg: #{$white};
+
+  // card
+  --#{$prefix}card-background: #{$white};
+
+  // form
+  --#{$prefix}input-bg: #{$white};
+  --#{$prefix}input-disabled-bg: #{$gray-200};
+  --#{$prefix}input-focus-border: #{tint-color($component-active-bg, 50%)};
+  --#{$prefix}input-border: #{$gray-300};
+  --#{$prefix}input-placeholder-color: #{$gray-500};
+
+  //check
+  --#{$prefix}input-check-border: var(--#{$prefix}input-border);
+
+  // input-group-addon
+  --#{$prefix}input-group-addon-bg: #{$gray-200};
+  --#{$prefix}form-text-color: #{$gray-400};
+  --#{$prefix}form-label-color: #{$gray-700};
+
+  // border
+  --#{$prefix}border-color: #{$gray-200};
+
+  // dropdown
+  --#{$prefix}dropdown-background: #{$white};
+  --#{$prefix}dropdown-link-color: #{$gray-900};
+  --#{$prefix}dropdown-link-hover-color: #{shade-color($gray-900, 10%)};
+  --#{$prefix}dropdown-link-hover-bg: #{$gray-100};
+  --#{$prefix}dropdown-border-width: 0px;
+
+  // modal
+  --#{$prefix}modal-bg: #{$gray-100};
+
+  // progress
+  --#{$prefix}progress-bg: #{$white};
+
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+    background: $gray-800 !important; // 200
+  }
+}

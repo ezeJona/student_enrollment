@@ -1,0 +1,141 @@
+//
+// Extended from bootstrap
+//
+
+
+
+// btn outline white
+.btn-outline-white {
+  --dashui-btn-font-weight: 600;
+  --dashui-btn-color: var(--#{$prefix}gray-700);
+  --dashui-btn-bg: transparent;
+  --dashui-btn-border-color: var(--#{$prefix}gray-300);
+  --dashui-btn-border-radius: 0.375rem;
+  --dashui-btn-hover-color: var(--#{$prefix}gray-700);
+  --dashui-btn-hover-bg: var(--#{$prefix}gray-300);
+  --dashui-btn-hover-border-color: var(--#{$prefix}gray-300);
+  --dashui-btn-focus-shadow-rgb: var(--#{$prefix}gray-300);
+  --dashui-btn-active-color: var(--#{$prefix}btn-hover-color);
+  --dashui-btn-active-bg: var(--#{$prefix}gray-300);
+  --dashui-btn-active-border-color: var(--#{$prefix}gray-300);
+}
+
+
+
+// btn icon
+.btn.btn-icon {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 0.92969rem;
+  font-weight: 400;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.btn-icon.btn-xs {
+  width: 1rem;
+  height: 1rem;
+}
+
+.btn-icon.btn-sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+.btn-icon.btn-lg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+
+
+// btn-dashed
+.btn-dashed {
+  border-style: dashed !important;
+  &:hover {
+    border-color: $primary !important;
+    color: $primary !important;
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+
+
+// btn ghost
+
+.btn-ghost {
+  --dashui-btn-font-weight: 600;
+  --dashui-btn-color: var(--#{$prefix}gray-400);
+  --dashui-btn-bg: transparent;
+  --dashui-btn-border-color: transparent;
+  --dashui-btn-border-radius: 0.5rem;
+  --dashui-btn-hover-color: var(--#{$prefix}gray-600);
+  --dashui-btn-hover-bg: var(--#{$prefix}gray-300);
+  --dashui-btn-hover-border-color: var(--#{$prefix}gray-300);
+  --dashui-btn-focus-shadow-rgb: var(--bd-gray-300-rgb);
+  --dashui-btn-active-color: var(--#{$prefix}btn-hover-color);
+  --dashui-btn-active-bg: var(--#{$prefix}gray-300);
+  --dashui-btn-active-border-color: var(--#{$prefix}gray-300);
+}
+
+
+
+// checkbox icon button for ecommerce
+
+.icon-checked {
+  opacity: 0;
+}
+.btn-check:checked + .btn,
+.btn-check:active + .btn,
+.btn:active,
+.btn.active,
+.btn.show {
+  .icon-checked {
+    opacity: 1;
+  }
+}
+
+
+.btn-focus-none {
+  &:focus {
+      box-shadow: none;
+  }
+  &:active {
+      box-shadow: none;
+      border: 0px !important;
+  }
+}
+
+// Soft Button
+
+@mixin button-soft-variant($color, $soft-background: rgba($color, 0.1)) {
+  color: $color;
+  background-color: $soft-background;
+  &:hover {
+    color: color-contrast($color) !important;
+    background-color: rgba($color, 0.9) !important;
+    border-color: rgba($color, 0.9) !important;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color}-soft {
+    @include button-soft-variant($value);
+  }
+}
+
+
+// Sizing
+.btn-xs {
+  @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $btn-font-size-xs, $btn-border-radius-sm);
+}

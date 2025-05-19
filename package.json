@@ -1,0 +1,73 @@
+{
+	"name": "dashui-pro",
+	"version": "1.2.0",
+	"description": "<a href=\"https://codescandy.com/dashui/index.html\">\r  <img src=\"https://github.com/codescandy/Dash-UI/blob/main/src/assets/images/marketing/hero-img.jpg\" alt=\"Dash UI Bootstrap 5 Theme\"/>\r </a>\r  <br />\r   <br />",
+	"main": "gulpfile.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build-css": "sass src/scss:public/css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/anitaparmar26/dashui-pro.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/anitaparmar26/dashui-pro/issues"
+	},
+	"homepage": "https://github.com/anitaparmar26/dashui-pro#readme",
+	"devDependencies": {
+		"autoprefixer": "^10.4.16",
+		"browser-sync": "^2.29.3",
+		"cssnano": "^6.0.1",
+		"del": "^6.1.1",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-cached": "^1.1.1",
+		"gulp-file-include": "^2.3.0",
+		"gulp-if": "^3.0.0",
+		"gulp-npm-dist": "^1.0.4",
+		"gulp-postcss": "^9.0.1",
+		"gulp-replace": "^1.1.4",
+		"gulp-sass": "^5.1.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-terser": "^2.1.0",
+		"gulp-uglify": "^3.0.2",
+		"gulp-useref": "^5.0.0",
+		"postcss": "^8.4.32",
+		"sass": "^1.87.0"
+	},
+	"dependencies": {
+		"@mdi/font": "^7.3.67",
+		"@popperjs/core": "^2.11.8",
+		"@yaireo/tagify": "^4.17.9",
+		"apexcharts": "^3.44.2",
+		"bootstrap": "^5.3.3",
+		"bootstrap-icons": "^1.11.2",
+		"bs-stepper": "^1.7.0",
+		"choices.js": "^10.2.0",
+		"datatables": "^1.10.18",
+		"datatables.net-bs5": "^1.13.8",
+		"datatables.net-responsive": "^2.5.0",
+		"dragula": "^3.7.3",
+		"dropzone": "^5.9.3",
+		"feather-icons": "^4.29.1",
+		"flatpickr": "^4.6.13",
+		"fullcalendar": "^6.1.10",
+		"inputmask": "^5.0.8",
+		"jquery": "^3.7.1",
+		"jQuery.print": "^1.5.1",
+		"jsvectormap": "^1.5.3",
+		"list.js": "^2.3.1",
+		"list.pagination.js": "^0.1.1",
+		"prismjs": "^1.29.0",
+		"quill": "^1.3.7",
+		"simplebar": "^6.2.5",
+		"tiny-slider": "^2.9.4",
+		"tippy.js": "^6.3.7"
+	},
+	"resolutions": {
+		"glob-parent": "^6.0.1"
+	}
+}

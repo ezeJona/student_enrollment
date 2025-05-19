@@ -1,0 +1,60 @@
+// Tiny slider
+
+// Ecommerce product tools
+
+.product-tools {
+  position: relative;
+  .thumbnails {
+    margin: 10px 0;
+    text-align: center;
+  }
+  img {
+    border-radius: 6px;
+    max-width: 100%;
+  }
+}
+.product {
+  .tns-item {
+    img {
+      border-radius: 6px;
+      width: 100%;
+    }
+  }
+}
+
+.thumbnails {
+  li {
+    img {
+      height: auto;
+    }
+  }
+  .tns-nav-active {
+    .thumbnails-img {
+      background: none;
+      border: 2px solid var(--#{$prefix}primary);
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+
+// tns nav
+.tns-nav-custom {
+  .tns-nav {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    margin-left: 34px;
+    margin-bottom: 20px;
+    & [aria-controls] {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      margin: 0 5px;
+      border-radius: 50%;
+      background: var(--#{$prefix}light);
+      border: 0;
+    }
+  }
+}
+

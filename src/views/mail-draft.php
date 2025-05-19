@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  @@include("../partials/head.html")
+  <title>Mail Draft | Dash UI - Bootstrap 5 Admin Dashboard Template</title>
+</head>
+
+<body>
+  <main id="main-wrapper" class="main-wrapper">
+    @@include("../partials/header.html")
+
+    <!-- navbar vertical -->
+    @@include('../partials/navbar-vertical.html', {
+    "page": "inboxDraft",
+    "page_group": "email"
+    })
+
+    <!-- page content -->
+
+
+
+      <div id="app-content">
+      <div class="app-content-area">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+              <!-- Page header -->
+              <div class="mb-5">
+                <h3 class="mb-0 ">Draft</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+              <!-- Card -->
+              <div>
+                <!-- Card body -->
+                <div class="row">
+                  <div class="col-xxl-2 col-xl-3 mb-4 mb-lg-0">
+                    <div class="card">
+                      <div class="card-body">
+                        <nav class="navbar-mail">
+                          <ul class="navbar-nav flex-column w-100">
+
+                            <li class="d-grid mb-4"><a href="#!" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#composeMailModal">
+                                Compose New Email
+                              </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                              <small class="text-uppercase h6">Mailbox</small>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="mail.html">
+                                <span class="d-flex align-items-center justify-content-between">
+                                  <span class="d-flex align-items-center"><i class=" me-2 icon-xs"
+                                      data-feather="inbox"></i>Inbox
+                                  </span>
+                                  <span>3</span>
+                                </span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center justify-content-between">
+                                  <span class="d-flex align-items-center"><i class=" me-2 icon-xs"
+                                      data-feather="send"></i>Sent
+                                  </span>
+                                  <span>5</span>
+                                </span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="mail-draft.html">
+                                <span class="d-flex align-items-center"><i class="me-2 icon-xs"
+                                    data-feather="mail"></i>Drafts
+                                </span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center justify-content-between">
+                                  <span class="d-flex align-items-center"><i class="me-2 icon-xs"
+                                      data-feather="alert-circle"></i>Spam
+                                  </span>
+                                  <span>1</span>
+                                </span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+
+                                <span class="d-flex align-items-center"><i class="me-2 icon-xs"
+                                    data-feather="trash-2"></i>Trash
+                                </span>
+
+
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center"><i class="me-2 icon-xs"
+                                    data-feather="archive"></i>Archive
+                                </span>
+                              </a>
+                            </li>
+                            <li class="nav-item mb-2 mt-6">
+                              <small class="text-uppercase h6">Filter</small>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center"><i class="me-2 icon-xs" data-feather="star"></i>Starred
+                                </span>
+
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center"><i
+                                    class="mdi mdi-label-variant me-2"></i>Important</span>
+                              </a>
+                            </li>
+                            <li class="nav-item mb-2 mt-6">
+                              <small class="text-uppercase h6">Labels</small>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center"><i
+                                    class="mdi mdi-label me-2 text-success"></i>Personal</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center"><i
+                                    class="mdi mdi-label me-2 text-danger"></i>Work</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center"><i
+                                    class="mdi mdi-label me-2 text-warning"></i>Payments</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center"><i
+                                    class="mdi mdi-label me-2 text-info"></i>Invoices</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#!">
+                                <span class="d-flex align-items-center"><i
+                                    class="mdi mdi-label me-2 text-primary"></i>Bank</span>
+                              </a>
+                            </li>
+                            <li class="d-grid  border-top pt-1 mt-4"><a href="#!" class="nav-link">
+                                <i data-feather="settings" class="icon-xs me-1"></i> Setting
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xxl-10 col-xl-9 col-12">
+                    <div class="card ">
+                      <div class="card-header pb-3 border-bottom">
+
+                        <div class=" d-md-flex justify-content-between align-items-center">
+
+                          <div class="d-flex flex-wrap gap-2 mb-2 mb-md-0">
+
+                            <div class="d-flex align-items-center border px-3 py-2 rounded-2">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkAll">
+                              </div>
+                              <div class="dropdown">
+                                <a href="#!" class="dropdown-toggle text-inherit" id="dropdownMenuButton1"
+                                  data-bs-toggle="dropdown" aria-expanded="false">
+
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-xs" aria-labelledby="dropdownMenuButton1">
+                                  <li><a class="dropdown-item d-flex align-items-center" href="#!">All</a></li>
+                                  <li><a class="dropdown-item d-flex align-items-center" href="#!">Read</a></li>
+                                  <li><a class="dropdown-item d-flex align-items-center" href="#!">Unread</a></li>
+                                  <li><a class="dropdown-item d-flex align-items-center" href="#!">Starred</a></li>
+                                  <li><a class="dropdown-item d-flex align-items-center" href="#!">Unstarred</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <a href="#!" class="btn btn-outline-white btn-icon">
+                              <i class=" align-middle icon-xs " data-feather="rotate-cw"></i>
+                            </a>
+                            <div class="dropdown">
+                              <a href="#!" class="btn btn-outline-white btn-icon" id="dropdownMenuButton2"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="align-middle icon-xs" data-feather="more-vertical"> </i>
+                              </a>
+                              <ul class="dropdown-menu dropdown-menu-xs" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item d-flex align-items-center" href="#!">Action</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#!">Another action</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#!">Something else here</a>
+                                </li>
+                              </ul>
+                            </div>
+
+
+
+                          </div>
+                          <div>
+                            <form>
+                              <input type="search" class="form-control " placeholder="Search Email">
+                            </form>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class=" card-body py-16 text-center">
+                        <img src="../assets/images/svg/draft.svg" alt="Image" class="img-fluid mb-3 ">
+                        <p class="text-dark fs-3 ">There is no conversation</p>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade compose-mail" id="composeMailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <form>
+
+            <div class="border-bottom">
+              <input class="form-control border-0 shadow-none" type="email" placeholder="To">
+            </div>
+            <div class="border-bottom">
+              <input class="form-control border-0 shadow-none" type="email" placeholder="Subject">
+            </div>
+            <div>
+              <div id="editor" class="rounded-0">
+
+                <p> Type something here
+                </p>
+                <br>
+
+
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <div>
+
+            <a href="#!" class="btn btn-primary btn-sm">Send</a>
+
+            <span class="ms-4 text-muted compose-img-upload cursor-pointer">
+              <label for="file-input">
+                <i data-feather="paperclip" class="icon-xs"></i>
+              </label>
+
+              <input id="file-input" type="file">
+
+            </span>
+            <span class="ms-3 text-muted compose-img-upload cursor-pointer">
+              <label for="file-input-second">
+                <i data-feather="image" class="icon-xs"></i>
+              </label>
+
+              <input id="file-input-second" type="file">
+
+
+
+            </span>
+            <a href="#!" class="ms-3 text-muted">
+
+              <i data-feather="link" class="icon-xs"></i>
+
+
+
+            </a>
+          </div>
+          <div>
+            <a href="#!" class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip" data-template="actionOne"><i
+                data-feather="more-vertical" class="icon-xs"></i>
+              <div id="actionOne" class="d-none">
+                <span>More Actions</span>
+              </div>
+            </a>
+            <a href="#!" class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip" data-template="deleteOne"> <i
+                data-feather="trash-2" class="icon-xs"></i>
+              <div id="deleteOne" class="d-none">
+                <span>Delete</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Script -->
+  <!-- quill js -->
+  <script src="@@webRoot/node_modules/quill/dist/quill.min.js"></script>
+
+  @@include("../partials/scripts.html")
+   <!-- popper js -->
+   <script src="@@webRoot/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+   <!-- tippy js -->
+   <script src="@@webRoot/node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+ <script src="@@webRoot/assets/js/vendors/tooltip.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+// dark mode
+
+[data-bs-theme="dark"] {
+  // Color system - Dark Mode only
+
+  $gray-100: #0f172a;
+  $gray-200: #1e293b;
+  $gray-300: #334155;
+  $gray-400: #475569;
+  $gray-500: #64748b;
+  $gray-600: #94a3b8;
+  $gray-700: #cbd5e1;
+  $gray-800: #e2e8f0;
+  $gray-900: #f1f5f9;
+
+  $grays: (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  );
+
+  $theme-colors: () !default;
+  $theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $gray-300,
+    "dark": $white,
+    "white": $dark
+  );
+
+  // Button
+  @each $color, $value in $theme-colors {
+    .btn-#{$color} {
+      @include button-variant($value, $value);
+    }
+  }
+
+  // Prefix for :root CSS variables
+  @each $color, $value in $grays {
+    --#{$prefix}gray-#{$color}: #{$value};
+  }
+
+  // Color
+  @each $color, $value in $theme-colors {
+    --#{$prefix}#{$color}: #{$value};
+  }
+
+  // Color
+  @each $color, $value in $theme-colors {
+    .bg-#{$color} {
+      background-color: $value !important;
+    }
+    .text-#{$color} {
+      color: $value !important;
+    }
+  }
+
+  @each $color, $value in $grays {
+    .bg-gray-#{$color} {
+      background-color: $value !important;
+    }
+    .text-gray-#{$color} {
+      color: $value !important;
+    }
+  }
+
+  // selections
+  ::selection {
+    background-color: $warning;
+  }
+
+  // body
+  --#{$prefix}body: #{$gray-100};
+  --#{$prefix}body-bg: #{$gray-100};
+  --#{$prefix}body-color: #{$gray-500};
+  --#{$prefix}headings-color: #{$gray-700};
+  --#{$prefix}border-color: #{$gray-400};
+  --#{$prefix}navbar-vertical-bg: #{$gray-200};
+
+  // card
+  --#{$prefix}card-background: #{$gray-200};
+
+  // input
+  --#{$prefix}input-bg: #{$gray-100};
+  --#{$prefix}input-disabled-bg: #{$gray-200};
+  --#{$prefix}input-focus-border: #{lighten($gray-300, 4%)};
+  --#{$prefix}input-placeholder-color: #{$gray-500};
+  --#{$prefix}input-border: #{$gray-200};
+  --#{$prefix}form-text-color: #{$gray-500};
+  --#{$prefix}form-label-color: #{$gray-500};
+
+  // check
+  --#{$prefix}input-check-border: var(--#{$prefix}input-border);
+
+  // border
+  --#{$prefix}border-color: #{$gray-300};
+
+  // dropdown
+  --#{$prefix}dropdown-background: #{$gray-200};
+  --#{$prefix}dropdown-link-color: #{$gray-500};
+  --#{$prefix}dropdown-link-hover-color: #{shade-color($gray-700, 10%)};
+  --#{$prefix}dropdown-link-hover-bg: #{lighten($gray-300, 2%)};
+  --#{$prefix}dropdown-border-width: 1px;
+
+  // modal
+  --#{$prefix}modal-bg: #{$gray-300};
+
+  // progress bar
+  --#{$prefix}progress-bg: #{$gray-100};
+
+  // table
+  .table-light {
+    background-color: #{$gray-300};
+    color: var(--#{$prefix}body-color);
+    th,
+    td {
+      background-color: #{$gray-300};
+      border-color: #{$gray-300};
+    }
+  }
+
+  .navbar-brand {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+  }
+  // input
+  .input-group-text {
+    background-color: $gray-100;
+  }
+
+  // popover
+  .popover {
+    background-color: $gray-100;
+    border-color: $gray-300;
+  }
+  .bs-popover-bottom > .popover-arrow::after,
+  .bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::after,
+  .bs-popover-bottom > .popover-arrow::before,
+  .bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::before {
+    border-bottom-color: $gray-300;
+  }
+  .bs-popover-top > .popover-arrow::after,
+  .bs-popover-auto[data-popper-placement^="top"] > .popover-arrow::after,
+  .bs-popover-top > .popover-arrow::before,
+  .bs-popover-auto[data-popper-placement^="top"] > .popover-arrow::before {
+    border-top-color: $gray-300;
+  }
+  .bs-popover-start > .popover-arrow::after,
+  .bs-popover-auto[data-popper-placement^="start"] > .popover-arrow::after,
+  .bs-popover-start > .popover-arrow::before,
+  .bs-popover-auto[data-popper-placement^="start"] > .popover-arrow::before {
+    border-left-color: $gray-300;
+  }
+  .bs-popover-end > .popover-arrow::after,
+  .bs-popover-auto[data-popper-placement^="end"] > .popover-arrow::after,
+  .bs-popover-end > .popover-arrow::before,
+  .bs-popover-auto[data-popper-placement^="end"] > .popover-arrow::before {
+    border-right-color: $gray-300;
+  }
+  .popover-header {
+    background-color: $gray-100;
+    border-bottom-color: $gray-300;
+  }
+  .text-inverse {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+  }
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+    background: $gray-100 !important; // 200
+  }
+}
