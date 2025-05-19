@@ -177,7 +177,7 @@ function cleanDist(callback) {
 
 function browsersyncServe(callback){
   browsersync.init({
-    proxy: "http://localhost/matricula_prueba_copia/src", // Ajusta a tu ruta local real
+    proxy: "http://localhost/student_enrollment/src", // Ajusta a tu ruta local real
     port: 3000,
     open: true,
     notify: false

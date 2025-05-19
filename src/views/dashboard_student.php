@@ -3,7 +3,7 @@
 
 <head>
 	<?php include "../partials/head.php" ?>
-  <title>Colegio Bello Horizonte</title>
+  <title>Estudiante </title>
 </head>
 
 <body>

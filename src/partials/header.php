@@ -3,7 +3,7 @@
 	<div class="navbar-custom navbar navbar-expand-lg">
 		<div class="container-fluid px-0">
 			<a class="navbar-brand d-block d-md-none" href="index.html">
-				<img src="../assets/images/brand/logo/logo-2.svg" alt="Image" />
+				<img src="../assets/images/png/unan3.png" alt="Image" />
 			</a>
 
 			<a id="nav-toggle" href="#!" class="ms-auto ms-md-0 me-0 me-lg-3">
@@ -47,19 +47,19 @@
 					<div class="dropdown">
 						<button class="btn btn-ghost btn-icon rounded-circle" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
 							<i class="bi theme-icon-active"></i>
-							<span class="visually-hidden bs-theme-text">Toggle theme</span>
+							<span class="visually-hidden bs-theme-text">Temas</span>
 						</button>
 						<ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
 							<li>
 								<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
 									<i class="bi theme-icon bi-sun-fill"></i>
-									<span class="ms-2">Light</span>
+									<span class="ms-2">Normal</span>
 								</button>
 							</li>
 							<li>
 								<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
 									<i class="bi theme-icon bi-moon-stars-fill"></i>
-									<span class="ms-2">Dark</span>
+									<span class="ms-2">Oscuro</span>
 								</button>
 							</li>
 							<li>
@@ -125,18 +125,18 @@
 						</div>
 					</div>
 				</li>
-				<!-- List -->
+								<!-- List -->
 				<li class="dropdown ms-2">
 					<a class="rounded-circle" href="#!" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<div class="avatar avatar-md avatar-indicators avatar-online">
-							<img alt="avatar" src="../assets/images/avatar/avatar-11.jpg" class="rounded-circle" />
+							<img alt="avatar" src="./assets/images/avatar/Jonathan.jpg" class="rounded-circle" />
 						</div>
 					</a>
 					<div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
 						<div class="px-4 pb-0 pt-2">
 							<div class="lh-1">
-								<h5 class="mb-1">John E. Grainger</h5>
-								<a href="#!" class="text-inherit fs-6">View my profile</a>
+								<h5 class="mb-1">Caleb Barahona</h5>
+								<a href="#!" class="text-inherit fs-6">Ver mi perfil</a>
 							</div>
 							<div class="dropdown-divider mt-3 mb-2"></div>
 						</div>
@@ -145,26 +145,26 @@
 							<li>
 								<a class="dropdown-item d-flex align-items-center" href="#!">
 									<i class="me-2 icon-xxs dropdown-item-icon" data-feather="user"></i>
-									Edit Profile
+									Editar Perfil
 								</a>
 							</li>
 							<li>
 								<a class="dropdown-item" href="#!">
 									<i class="me-2 icon-xxs dropdown-item-icon" data-feather="activity"></i>
-									Activity Log
+									Actividad
 								</a>
 							</li>
 
 							<li>
 								<a class="dropdown-item d-flex align-items-center" href="#!">
 									<i class="me-2 icon-xxs dropdown-item-icon" data-feather="settings"></i>
-									Settings
+									Configuración
 								</a>
 							</li>
 							<li>
-								<a class="dropdown-item" href="index.html">
+								<a class="dropdown-item" href="./index.php">
 									<i class="me-2 icon-xxs dropdown-item-icon" data-feather="power"></i>
-									Sign Out
+									Salir
 								</a>
 							</li>
 						</ul>
