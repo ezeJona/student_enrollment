@@ -20,7 +20,7 @@
 </script>
 
 <!-- Favicon icon-->
-<link rel="shortcut icon" type="image/x-icon" href="./assets/images/png/unan3.png" />
+<link rel="shortcut icon" type="image/x-icon" href="./assets/images/svg/brand-logo-1.svg" />
 
 <!-- Color modes -->
 <script src="./assets/js/vendors/color-modes.js"></script>
@@ -43,7 +43,7 @@
 	<div class="navbar-custom navbar navbar-expand-lg">
 		<div class="container-fluid px-0">
 			<a class="navbar-brand d-block d-md-none" href="./index.php">
-				<img src="assets/images/png/unan3.png" alt="Image" />
+				<img src="assets/images/svg/brand-logo-6.svg" alt="Image" />
 			</a>
 
 			<a id="nav-toggle" href="#!" class="ms-auto ms-md-0 me-0 me-lg-3">
@@ -223,7 +223,7 @@
 	<div class="h-100" data-simplebar>
 		<!-- Brand logo -->
 		<a class="navbar-brand" href="./views/dashboard-home.php">
-			<img src="./assets/images/png/unan3.png" alt="dash ui - bootstrap 5 admin dashboard template" />
+			<img src="./assets/images/svg/brand-logo-6.svg" alt="dash ui - bootstrap 5 admin dashboard template" />
 		</a>
 				<!-- Navbar nav -->
 		<ul class="navbar-nav flex-column" id="sideNavbar">

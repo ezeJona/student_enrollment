@@ -10,7 +10,7 @@
 </script>
 
 <!-- Favicon icon-->
-<link rel="shortcut icon" type="image/x-icon" href="../assets/images/png/unan3.png" />
+<link rel="shortcut icon" type="image/x-icon" href="../assets/" />
 
 <!-- Color modes -->
 <script src="../assets/js/vendors/color-modes.js"></script>

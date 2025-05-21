@@ -7,7 +7,7 @@
 	<div class="h-100" data-simplebar>
 		<!-- Brand logo -->
 		<a class="navbar-brand" href="../index.php">
-			<img src="../assets/images/png/unan3.png" alt="dash ui - bootstrap 5 admin dashboard template" />
+			<img src="../assets/images/" alt="dash ui - bootstrap 5 admin dashboard template" />
 		</a>
 		<!-- Navbar nav -->
 		<ul class="navbar-nav flex-column" id="sideNavbar">
