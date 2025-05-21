@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		@@include("../partials/head.html")
-		<title>Sign In | Dash UI - Bootstrap 5 Admin Dashboard Template</title>
-	</head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="author" content="Jonathan Ezequiel Martinez Lopez" />
 
+	<!-- Google tag (gtag.js) -->
+	<script async src="https:/www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments)
+		}
+		gtag('js', new Date());F
+
+		gtag('config', 'G-M8S4MT3EYG');
+	</script>
+
+	<!-- Favicon icon-->
+	<link rel="shortcut icon" type="image/x-icon" href="./assets/images/svg/brand-logo-1.svg" />
+
+	<!-- Color modes -->
+	<script src="./assets/js/vendors/color-modes.js"></script>
+
+	<!-- Libs CSS -->
+	<link href="./assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+	<link href="./assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+	<link href="./assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="./assets/css/theme.css">
+
+	<title>nombre del colegio</title>
+	</head>
 	<body>
 		<!-- container -->
 		<main class="container d-flex flex-column">
@@ -47,11 +76,11 @@
 								<p class="mb-6">Please enter your user information.</p>
 							</div>
 							<!-- Form -->
-							<form>
+							<form id="loginForm" method="post">
 								<!-- Username -->
 								<div class="mb-3">
 									<label for="email" class="form-label">Username or email</label>
-									<input type="email" id="email" class="form-control" name="email" placeholder="Email address here" required="" />
+									<input type="text" id="username" class="form-control" name="Username" placeholder="Email address here" required="" />
 								</div>
 								<!-- Password -->
 								<div class="mb-3">
@@ -87,6 +116,17 @@
 			</div>
 		</main>
 		<!-- Scripts -->
-		@@include("../partials/scripts.html")
+		<!-- Libs JS -->
+		<script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="assets/libs/feather-icons/dist/feather.min.js"></script>
+		<script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+
+		<!-- Theme JS -->
+		<script src="assets/js/main.js"></script>
+		<!-- jsvectormap -->
+		<script src="assets/libs/jsvectormap/dist/jsvectormap.min.js"></script>
+		<script src="assets/libs/jsvectormap/dist/maps/world.js"></script>
+		<script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+		<script src="assets/js/vendors/chart.js"></script>
 	</body>
 </html>

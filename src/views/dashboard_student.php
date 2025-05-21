@@ -2,7 +2,15 @@
 <html lang="en">
 
 <head>
-	<?php include "../partials/head.php" ?>
+	<?php 
+    include "../partials/head.php";
+    include "../models/student.model.php";
+    
+    $objetoEstudent = new EstudentModel();
+    $allEstudent = $objetoEstudent->read();
+    
+  ?>
+
   <title>Estudiante </title>
 </head>
 
@@ -89,23 +97,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      <?php
+                                        while($estudiante = mysqli_fetch_assoc($allEstudent)){
+                                      ?>
                                         <tr>
-                                            <td>
-                                              <a href="#!">#001</a>
-                                            </td>
+                                            <td> <a href="#!"><?=$estudiante['estudiante_id']?></a></td>
                                             <td class="ps-1">
                                                 <div class="d-flex align-items-center">
                                                 <!-- <a href="#!"><img src="../assets/images/avatar/avatar-11.jpg" alt="Image" class="avatar avatar-sm rounded-circle"></a> -->
                                                 <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Sharon Lucia Rizo Escobar</a></h5>
+                                                <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?= $estudiante['primer_nombre']?></h5>
                                             </div>
                                             </div>
                                             </td>
-                                            <td>937-330-1634 </td>
-                                            <td>harold1985@einrot.com</td>
-                                            <td>Florida, United States</td>
-                                            <td>03/24/2023</td>
-                                            <td><span class="badge badge-success-soft text-success">Active</span></td>
+                                            <td><?= $estudiante['docente_id'] ?></td>
+                                            <td> <?= $estudiante['codigo_estudiantil'] ?> </td>
+                                            <td><?= $estudiante['telefono'] ?></td>
+                                            <td><?= $estudiante['grado_id'] ?></td>
+                                            <td><span class="badge badge-success-soft text-success">Active</span><?= $estudiante['matricula_id'] ?></td>
                                             <td>
                                               <a
                                                   href="#!"
@@ -148,488 +157,13 @@
                                                 </a>
 
                                             </td>
+                                              <?php
+                                                }                    
+                                              ?>
                                         </tr>
-                                                                                <tr>
-                                            <td>
-                                              <a href="#!">#002</a>
-                                            </td>
-                                            <td class="ps-1">
-                                                <div class="d-flex align-items-center">
-                                                <!-- <a href="#!"><img src="../assets/images/avatar/avatar-11.jpg" alt="Image" class="avatar avatar-sm rounded-circle"></a> -->
-                                                <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Ludin Antonio Martinez Lopez</a></h5>
-                                            </div>
-                                            </div>
-                                            </td>
-                                            <td>937-330-1634 </td>
-                                            <td>harold1985@einrot.com</td>
-                                            <td>Florida, United States</td>
-                                            <td>03/24/2023</td>
-                                            <td><span class="badge badge-success-soft text-success">Active</span></td>
-                                            <td>
-                                              <a
-                                                  href="#!"
-                                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                  data-template="editOne"
-                                                >
-                                                  <i
-                                                    data-feather="eye"
-                                                    class="icon-xs"
-                                                  ></i>
-                                                  <div id="editOne" class="d-none">
-                                                    <span>Ver</span>
-                                                  </div>
-                                                </a>
-                                                <a
-                                                  href="#!"
-                                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                  data-template="editOne"
-                                                >
-                                                  <i
-                                                    data-feather="edit"
-                                                    class="icon-xs"
-                                                  ></i>
-                                                  <div id="editOne" class="d-none">
-                                                    <span>Editar</span>
-                                                  </div>
-                                                </a>
-                                                <a
-                                                  href="#!"
-                                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                  data-template="trashOne"
-                                                >
-                                                  <i
-                                                    data-feather="trash-2"
-                                                    class="icon-xs"
-                                                  ></i>
-                                                  <div id="trashOne" class="d-none">
-                                                    <span>Eliminar</span>
-                                                  </div>
-                                                </a>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                              <a href="#!">#003</a>
-                                            </td>
-                                            <td class="ps-1">
-                                                <div class="d-flex align-items-center">
-                                                <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Gary Faulkner</a></h5>
-                                            </div>
-                                            </div>
-                                            </td>
-                                            <td>215-302-3376 </td>
-                                            <td>haryfaulkner45@cuvox.de</td>
-                                            <td>Willmering, Germany</td>
-                                            <td>03/24/2023</td>
-                                            <td><span class="badge badge-success-soft text-success">Active</span></td>
-                                            <td>
-
-                                          <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="editThree"
-                                >
-                                  <i
-                                    data-feather="edit"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="editThree" class="d-none">
-                                    <span>Edit</span>
-                                  </div>
-                                </a>
-                                <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="trashThree"
-                                >
-                                  <i
-                                    data-feather="trash-2"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="trashThree" class="d-none">
-                                    <span>Delete</span>
-                                  </div>
-                                </a>
-
-                              </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                              <a href="#!">#005</a>
-                                            </td>
-                                            <td class="ps-1">
-                                                <div class="d-flex align-items-center">
-
-                                                <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Steve Nelson</a></h5>
-                                            </div>
-                                            </div>
-                                            </td>
-                                            <td>937-330-1634 </td>
-                                            <td>stevenelson@cuvox.de</td>
-                                            <td>Rotorua, New Zealand</td>
-                                            <td>05/06/2023</td>
-                                            <td><span class="badge badge-success-soft text-success">Active</span></td>
-                                            <td>
-
-                                        <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="editFour"
-                                >
-                                  <i
-                                    data-feather="edit"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="editFour" class="d-none">
-                                    <span>Edit</span>
-                                  </div>
-                                </a>
-                                                <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="trashFour"
-                                >
-                                  <i
-                                    data-feather="trash-2"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="trashFour" class="d-none">
-                                    <span>Delete</span>
-                                  </div>
-                                </a>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                              <a href="#!">#006</a>
-                                            </td>
-                                            <td class="ps-1">
-                                                <div class="d-flex align-items-center">
-
-                                                <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Kimberly Sullivan</a></h5>
-                                            </div>
-                                            </div>
-                                            </td>
-                                            <td>(02) 75 150 655 </td>
-                                            <td>sprid1932@armyspy.com</td>
-                                            <td>Gundamulda, Australia</td>
-                                            <td>06/19/2023</td>
-                                            <td><span class="badge badge-success-soft text-success">Active</span></td>
-                                            <td>
-
-                                                 <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="editFive"
-                                >
-                                  <i
-                                    data-feather="edit"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="editFive" class="d-none">
-                                    <span>Edit</span>
-                                  </div>
-                                </a>
-                                                <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="trashFive"
-                                >
-                                  <i
-                                    data-feather="trash-2"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="trashFive" class="d-none">
-                                    <span>Delete</span>
-                                  </div>
-                                </a>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class=" pe-0">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="contactCheckbox7">
-                                                    <label class="form-check-label" for="contactCheckbox7">
-
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td class="ps-1">
-                                                <div class="d-flex align-items-center">
-
-                                                <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Susan Pugh</a></h5>
-                                            </div>
-                                            </div>
-                                            </td>
-                                            <td>937-330-1634 </td>
-                                            <td>tolde1984@einrot.com</td>
-                                            <td>Gradignan, France</td>
-                                            <td>06/30/2023</td>
-                                            <td><span class="badge badge-success-soft text-success">Active</span></td>
-                                            <td>
-
-                                                 <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="editSix"
-                                >
-                                  <i
-                                    data-feather="edit"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="editSix" class="d-none">
-                                    <span>Edit</span>
-                                  </div>
-                                </a>
-                                                <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="trashSix"
-                                >
-                                  <i
-                                    data-feather="trash-2"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="trashSix" class="d-none">
-                                    <span>Delete</span>
-                                  </div>
-                                </a>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class=" pe-0">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="contactCheckbox8">
-                                                    <label class="form-check-label" for="contactCheckbox8">
-
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td class="ps-1">
-                                                <div class="d-flex align-items-center">
-
-                                                <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Elliott Potts</a></h5>
-                                            </div>
-                                            </div>
-                                            </td>
-                                            <td>(+15) 73 483 758</td>
-                                            <td>fulta1976@rhyta.com</td>
-                                            <td>Regina, Canada</td>
-                                            <td>07/07/2023</td>
-                                            <td><span class="badge badge-danger-soft text-danger">Blocked</span></td>
-                                            <td>
-
-                                                 <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="editSeven"
-                                >
-                                  <i
-                                    data-feather="edit"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="editSeven" class="d-none">
-                                    <span>Edit</span>
-                                  </div>
-                                </a>
-                                                <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="trashSeven"
-                                >
-                                  <i
-                                    data-feather="trash-2"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="trashSeven" class="d-none">
-                                    <span>Delete</span>
-                                  </div>
-                                </a>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class=" pe-0">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="contactCheckbox9">
-                                                    <label class="form-check-label" for="contactCheckbox9">
-
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td class="ps-1">
-                                                <div class="d-flex align-items-center">
-
-                                                <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Richard Beaudry</a></h5>
-                                            </div>
-                                            </div>
-                                            </td>
-                                            <td>937-330-1634</td>
-                                            <td>wourry57@cuvox.de</td>
-                                            <td>Toronto, Canada</td>
-                                            <td>07/15/2023</td>
-                                            <td><span class="badge badge-danger-soft text-danger">Blocked</span></td>
-                                            <td>
-
-                                                 <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="editEight"
-                                >
-                                  <i
-                                    data-feather="edit"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="editEight" class="d-none">
-                                    <span>Edit</span>
-                                  </div>
-                                </a>
-                                                <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="trashEight"
-                                >
-                                  <i
-                                    data-feather="trash-2"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="trashEight" class="d-none">
-                                    <span>Delete</span>
-                                  </div>
-                                </a>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class=" pe-0">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="contactCheckbox10">
-                                                    <label class="form-check-label" for="contactCheckbox10">
-
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td class="ps-1">
-                                                <div class="d-flex align-items-center">
-
-                                                <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Henry Saxton</a></h5>
-                                            </div>
-                                            </div>
-                                            </td>
-                                            <td>078 6013 3854</td>
-                                            <td>wourry57@cuvox.de</td>
-                                            <td>Vancouver, Canada</td>
-                                            <td>08/02/2023</td>
-                                            <td><span class="badge badge-success-soft text-success">Active</span></td>
-                                            <td>
-
-                                                 <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="editNine"
-                                >
-                                  <i
-                                    data-feather="edit"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="editNine" class="d-none">
-                                    <span>Edit</span>
-                                  </div>
-                                </a>
-                                                <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="trashTen"
-                                >
-                                  <i
-                                    data-feather="trash-2"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="trashTen" class="d-none">
-                                    <span>Delete</span>
-                                  </div>
-                                </a>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class=" pe-0">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="contactCheckbox11">
-                                                    <label class="form-check-label" for="contactCheckbox11">
-
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td class="ps-1">
-                                                <div class="d-flex align-items-center">
-                                                <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit">Juanita Diener</a></h5>
-                                            </div>
-                                            </div>
-                                            </td>
-                                            <td>(216) 76 298 896</td>
-                                            <td>comed1931@einrot.com</td>
-                                            <td>Idaho, United States</td>
-                                            <td>08/23/2023</td>
-                                            <td><span class="badge badge-success-soft text-success">Active</span></td>
-                                            <td>
-
-                                                 <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="editTen"
-                                >
-                                  <i
-                                    data-feather="edit"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="editTen" class="d-none">
-                                    <span>Edit</span>
-                                  </div>
-                                </a>
-                                                <a
-                                  href="#!"
-                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                  data-template="trashEleven"
-                                >
-                                  <i
-                                    data-feather="trash-2"
-                                    class="icon-xs"
-                                  ></i>
-                                  <div id="trashEleven" class="d-none">
-                                    <span>Delete</span>
-                                  </div>
-                                </a>
-
-                                            </td>
-                                        </tr>
-
-
-
-
-
-
-
-
-                                    </tbody>
+                                             
+                                        
+                           </tbody>
                                 </table>
                             </div>
                            </div>
