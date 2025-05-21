@@ -14,7 +14,7 @@ class Usuario
 
     public function autenticar($correo, $contrasena)
     {
-        $stmt = $this->conexion->prepare("SELECT * FROM usuario WHERE usernanme = ? AND password = ?");
+        $stmt = $this->conexion->prepare("SELECT * FROM usuario WHERE username = ? AND password = ?");
         $stmt->bind_param("ss", $correo, $contrasena);
         $stmt->execute();
         return $stmt->get_result(); // No cierres la conexión aquí

@@ -80,12 +80,12 @@
 								<!-- Username -->
 								<div class="mb-3">
 									<label for="email" class="form-label">Username or email</label>
-									<input type="text" id="username" class="form-control" name="Username" placeholder="Email address here" required="" />
+									<input type="text" id="username" class="form-control" name="correo" placeholder="Email address here" required="" />
 								</div>
 								<!-- Password -->
 								<div class="mb-3">
 									<label for="password" class="form-label">Password</label>
-									<input type="password" id="password" class="form-control" name="password" placeholder="**************" required="" />
+									<input type="password" id="password" class="form-control" name="contraseña" placeholder="**************" required="" />
 								</div>
 								<!-- Checkbox -->
 								<div class="d-lg-flex justify-content-between align-items-center mb-4">

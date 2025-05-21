@@ -2,8 +2,12 @@
 <html lang="en">
 
 <head>
-	  <?php include "../partials/head.php" ?>
-
+	  <?php 
+      include "../partials/head.php";
+      include "../models/matricula.model.php";
+      $objetoMatricula = new MatriculaModel();
+      $allMatricula = $objetoMatricula->read();
+    ?>
     <title>Matricula</title>
   </head>
 
@@ -203,6 +207,9 @@
                             </tr>
                           </thead>
                           <tbody>
+                          <?php
+                              while($matricula = mysqli_fetch_assoc($allMatricula)){
+                            ?>
                             <tr>
                               <td class="pe-0">
                                 <div class="form-check">
@@ -220,24 +227,24 @@
                                 </div>
                               </td>
                               <td class="ps-0">
-                                <a href="#!">#086</a>
+                                <a href="#!"><?=$matricula['ID_Matricula']?></a>
                               </td>
                               <td>
                                 <span class="badge badge-warning-soft text-warning"
-                                  >Pendiente</span
+                                  ><?= $matricula['Estado_Matricula'] ?></span
                                 >
                               </td>
                               <td class="ps-1">
                                 <div class="d-flex align-items-center">
                                   <div class="ms-2">
-                                    <h5 class="mb-0"> <a href="#!" class="text-inherit">Adolfo Justo Urbina tipitapa</a></h5>
+                                    <h5 class="mb-0"> <a href="#!" class="text-inherit"><?= $matricula['Nombre_Completo_Estudiante']?></a></h5>
                                   </div>
                                 </div>
                               </td>
-                              <td>11°</td>
+                              <td><?= $matricula['Grado'] ?></td>
 
-                              <td>adolfe@gmail.com</td>
-                              <td>002 - 568941 - 000J</td>
+                              <td><?= $matricula['Email'] ?></td>
+                              <td><?= $matricula['Codigo_Estudiantil'] ?></td>
                               <td>
                                 <div>
                                   <div class="dropdown">
@@ -301,319 +308,11 @@
                                   </div>
                                 </div>
                               </td>
+                              <?php
+                                }                    
+                              ?>
                             </tr>
-                            <tr>
-                              <td class="pe-0">
-                                <div class="form-check">
-                                  <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="contactCheckbox12"
-                                 >
-                                  <label
-                                    class="form-check-label"
-                                    for="contactCheckbox12"
-                                  >
-                                  </label>
-                                </div>
-                              </td>
-                              <td class="ps-0">
-                                <a href="#!">#88118</a>
-                              </td>
-                              <td>
-                                <span class="badge badge-success-soft text-success"
-                                  >Paid</span
-                                >
-                              </td>
-                              <td class="ps-1">
-                                <div class="d-flex align-items-center">
-                                  <a href="#!"><img
-                                    src="../assets/images/avatar/avatar-3.jpg"
-                                    alt="Image"
-                                    class="avatar avatar-sm rounded-circle"
-                                 ></a>
-                                  <div class="ms-2">
-                                    <h5 class="mb-0"> <a href="#!" class="text-inherit">Agnes Addison</a></h5>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>16 Apr 2023</td>
 
-                              <td>agnesaddison@gmail.com</td>
-                              <td>$235.99</td>
-                              <td>
-                                <div>
-                                  <div class="dropdown">
-                                    <a
-                                      class="btn btn-ghost btn-icon btn-sm rounded-circle"
-                                      href="#!"
-                                      role="button"
-                                      data-bs-toggle="dropdown"
-                                      aria-expanded="false"
-                                    >
-                                      <i
-                                        data-feather="more-vertical"
-                                        class="icon-xs"
-                                      ></i>
-                                    </a>
-
-                                    <div class="dropdown-menu">
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="eye"
-
-                                          ></i
-                                          >View
-                                        </a>
-
-
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="edit"
-
-                                          ></i
-                                          >Edit
-                                        </a>
-
-
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="download"
-
-                                          ></i
-                                          >Download
-                                        </a>
-
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="trash-2"
-
-                                          ></i
-                                          >Delete
-                                        </a>
-
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="pe-0">
-                                <div class="form-check">
-                                  <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="contactCheckbox4"
-                                 >
-                                  <label
-                                    class="form-check-label"
-                                    for="contactCheckbox4"
-                                  >
-                                  </label>
-                                </div>
-                              </td>
-                              <td class="ps-0">
-                                <a href="#!">#88117</a>
-                              </td>
-                              <td>
-                                <span class="badge badge-success-soft text-success"
-                                  >Paid</span
-                                >
-                              </td>
-                              <td class="ps-1">
-                                <div class="d-flex align-items-center">
-                                  <a href="#!"><img
-                                    src="../assets/images/avatar/avatar-4.jpg"
-                                    alt="Image"
-                                    class="avatar avatar-sm rounded-circle"
-                                 ></a>
-                                  <div class="ms-2">
-                                    <h5 class="mb-0"> <a href="#!" class="text-inherit">Justin Holtz</a></h5>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>16 Apr 2023</td>
-
-                              <td>justinholtz@gmail.com</td>
-                              <td>$235.23</td>
-                              <td>
-                                <div>
-                                  <div class="dropdown">
-                                    <a
-                                      class="btn btn-ghost btn-icon btn-sm rounded-circle"
-                                      href="#!"
-                                      role="button"
-                                      data-bs-toggle="dropdown"
-                                      aria-expanded="false"
-                                    >
-                                      <i
-                                        data-feather="more-vertical"
-                                        class="icon-xs"
-                                      ></i>
-                                    </a>
-
-                                    <div class="dropdown-menu">
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="eye"
-
-                                          ></i
-                                          >View
-                                        </a>
-
-
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="edit"
-
-                                          ></i
-                                          >Edit
-                                        </a>
-
-
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="download"
-
-                                          ></i
-                                          >Download
-                                        </a>
-
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="trash-2"
-
-                                          ></i
-                                          >Delete
-                                        </a>
-
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="pe-0">
-                                <div class="form-check">
-                                  <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="contactCheckbox5"
-                                 >
-                                  <label
-                                    class="form-check-label"
-                                    for="contactCheckbox5"
-                                  >
-                                  </label>
-                                </div>
-                              </td>
-                              <td class="ps-0">
-                                <a href="#!">#88116</a>
-                              </td>
-                              <td>
-                                <span class="badge badge-success-soft text-success"
-                                  >Paid</span
-                                >
-                              </td>
-                              <td class="ps-1">
-                                <div class="d-flex align-items-center">
-                                  <a href="#!"><img
-                                    src="../assets/images/avatar/avatar-5.jpg"
-                                    alt="Image"
-                                    class="avatar avatar-sm rounded-circle"
-                                 ></a>
-                                  <div class="ms-2">
-                                    <h5 class="mb-0"> <a href="#!" class="text-inherit">Lamont Laurel</a></h5>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>15 Apr 2023</td>
-
-                              <td>lamontlaurel@gmail.com</td>
-                              <td>$789.18</td>
-                              <td>
-                                <div>
-                                  <div class="dropdown">
-                                    <a
-                                      class="btn btn-ghost btn-icon btn-sm rounded-circle"
-                                      href="#!"
-                                      role="button"
-                                      data-bs-toggle="dropdown"
-                                      aria-expanded="false"
-                                    >
-                                      <i
-                                        data-feather="more-vertical"
-                                        class="icon-xs"
-                                      ></i>
-                                    </a>
-
-                                    <div class="dropdown-menu">
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="eye"
-
-                                          ></i
-                                          >View
-                                        </a>
-
-
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="edit"
-
-                                          ></i
-                                          >Edit
-                                        </a>
-
-
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="download"
-
-                                          ></i
-                                          >Download
-                                        </a>
-
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
-                                          <i
-                                            class="me-2 icon-xs"
-                                            data-feather="trash-2"
-
-                                          ></i
-                                          >Delete
-                                        </a>
-
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
                           </tbody>
                         </table>
                       </div>

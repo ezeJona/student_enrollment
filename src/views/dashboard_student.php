@@ -106,15 +106,15 @@
                                                 <div class="d-flex align-items-center">
                                                 <!-- <a href="#!"><img src="../assets/images/avatar/avatar-11.jpg" alt="Image" class="avatar avatar-sm rounded-circle"></a> -->
                                                 <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?= $estudiante['primer_nombre']?></h5>
+                                                <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?= $estudiante['nombre']?></h5>
                                             </div>
                                             </div>
                                             </td>
-                                            <td><?= $estudiante['docente_id'] ?></td>
+                                            <td><?= $estudiante['maestro_guia'] ?></td>
                                             <td> <?= $estudiante['codigo_estudiantil'] ?> </td>
                                             <td><?= $estudiante['telefono'] ?></td>
-                                            <td><?= $estudiante['grado_id'] ?></td>
-                                            <td><span class="badge badge-success-soft text-success">Active</span><?= $estudiante['matricula_id'] ?></td>
+                                            <td><?= $estudiante['grado'] ?></td>
+                                            <td><span class="badge badge-success-soft text-success"><?= $estudiante['estado'] ?></span></td>
                                             <td>
                                               <a
                                                   href="#!"

@@ -70,7 +70,9 @@
 							<div class="col-12">
 								<div class="task-kanban-container pb-8">
 									<!-- Aca !!-->
-									<div class=" bg-gray-300 shadow-none border-top rounded-3 p-3 border-opacity-25 task-card border-top border-secondary me-4 pb-0"   >
+									
+
+                  					<div class="bg-gray-300 shadow-none border-top rounded-3 p-3 border-opacity-25 task-card border-top border-secondary me-4 pb-0" >
 										<div class="d-flex flex-column gap-2 mb-4">
 											<div class="d-flex flex-row justify-content-between">
 												<div>
@@ -110,221 +112,64 @@
 										</div>
 										<div class="task-kanban">
 											<div class="card">
-												<div class="card-body d-flex flex-column">
-													<div class="d-flex flex-column gap-3">
-														<div class="d-flex flex-column gap-1">
-															<h4 class="mb-0">
-																<a href="#!">Project Alpha Launch</a>
-															</h4>
-															<span class="text-gray-400">Alpha Enterprises</span>
-														</div>
-
-														<div class="d-flex flex-row justify-content-between">
-															<span>Amount:</span>
-															<span>$100,000</span>
-														</div>
-													</div>
-													<hr class="my-4" />
-													<div class="d-flex flex-row justify-content-between align-items-center">
-														<div>
-															<img src="../assets/images/avatar/avatar-1.jpg" alt="avatar" class="rounded-circle avatar-xs" />
-														</div>
-														<div>
-															<a data-bs-toggle="collapse" class="text-reset" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
-																<i data-feather="chevron-right" class="icon-xs chevron-down"></i>
-															</a>
-														</div>
-													</div>
-													<div class="collapse" id="collapseExample1">
-														<div class="mt-4 d-flex flex-column gap-2">
-															<h4 class="mb-0">Deal info</h4>
-															<div class="">
-																<table class="table table-borderless mb-0 text-nowrap table-sm">
-																	<tbody>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="dollar-sign" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Value:</span>
-																			</td>
-
-																			<td class="px-0">$100,000</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="home" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Company:</span>
-																			</td>
-
-																			<td class="px-0">Alpha Enterprises</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="flag" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Close Date:</span>
-																			</td>
-
-																			<td class="px-0">June 30, 2025</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="user" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Deal Owner:</span>
-																			</td>
-
-																			<td class="px-0">John Smith</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="headphones" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Deal Type:</span>
-																			</td>
-
-																			<td class="px-0">New Business</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="info" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Priority:</span>
-																			</td>
-
-																			<td class="px-0"><span class="badge badge-info-soft border border-info rounded-pill">Medium</span></td>
-																		</tr>
-																	</tbody>
-																</table>
-															</div>
-														</div>
-													</div>
+											<div class="card-body d-flex flex-column">
+												<div class="d-flex flex-column gap-3">
+												<div class="d-flex flex-column gap-1">
+													<h4 class="mb-0">
+													<a href="#!">Sección A - 1° Grado</a>
+													</h4>
+													<span class="text-gray-400">Turno Matutino</span>
 												</div>
-											</div>
+												<div class="d-flex flex-row justify-content-between">
+													<span>Estudiantes:</span>
+													<span>25</span>
+												</div>
+												</div>
 
-										</div>
-									</div>
+												<hr class="my-4" />
 
-                  <div class="bg-gray-300 shadow-none border-top rounded-3 p-3 border-opacity-25 task-card border-top border-secondary me-4 pb-0" >
-										<div class="d-flex flex-column gap-2 mb-4">
-											<div class="d-flex flex-row justify-content-between">
+												<div class="d-flex flex-row justify-content-between align-items-center">
 												<div>
-													<h4 class="mb-0 fs-5">Prospecting</h4>
-												</div>
-												<div class="d-flex flex-row gap-2">
-													<div>
-														<a href="#!" class="text-reset" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-															<i data-feather="plus" class="icon-xxs"></i>
-														</a>
-														<!-- Modal -->
-													</div>
-
-													<div>
-														<div class="dropdown dropstart">
-															<a href="#!" class="text-reset" data-bs-toggle="dropdown" aria-expanded="false">
-																<i data-feather="more-horizontal" class="icon-xxs"></i>
-															</a>
-															<ul class="dropdown-menu">
-																<li><a class="dropdown-item" href="#">Action</a></li>
-																<li><a class="dropdown-item" href="#">Another action</a></li>
-																<li><a class="dropdown-item" href="#">Something else here</a></li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="d-flex flex-row justify-content-between">
-												<div class="text-dark">
-													<span>Total:</span>
-													<span class="fw-semi-bold">$380,000.00</span>
+													<img src="../assets/images/avatar/avatar-1.jpg" alt="avatar" class="rounded-circle avatar-xs" />
 												</div>
 												<div>
-													<span class="badge rounded-circle badge-secondary-soft">4</span>
+													<a data-bs-toggle="collapse" class="text-reset" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+													<i data-feather="chevron-right" class="icon-xs chevron-down"></i>
+													</a>
 												</div>
+												</div>
+
+												<div class="collapse" id="collapseExample1">
+												<div class="mt-4 d-flex flex-column gap-2">
+													<h4 class="mb-0">Información de la sección</h4>
+													<table class="table table-borderless mb-0 text-nowrap table-sm">
+													<tbody>
+														<tr>
+														<td class="px-0"><i data-feather="users" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Estudiantes:</span></td>
+														<td class="px-0">25</td>
+														</tr>
+														<tr>
+														<td class="px-0"><i data-feather="clock" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Turno:</span></td>
+														<td class="px-0">Matutino</td>
+														</tr>
+														<tr>
+														<td class="px-0"><i data-feather="user" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Docente Encargado:</span></td>
+														<td class="px-0">María López</td>
+														</tr>
+														<tr>
+														<td class="px-0"><i data-feather="calendar" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Cupo Máximo:</span></td>
+														<td class="px-0">30</td>
+														</tr>
+														<tr>
+														<td class="px-0"><i data-feather="alert-circle" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Disponibles:</span></td>
+														<td class="px-0"><span class="badge badge-info-soft border border-info rounded-pill">5 cupos</span></td>
+														</tr>
+													</tbody>
+													</table>
+												</div>
+												</div>
+
 											</div>
-										</div>
-										<div class="task-kanban">
-											<div class="card">
-												<div class="card-body d-flex flex-column">
-													<div class="d-flex flex-column gap-3">
-														<div class="d-flex flex-column gap-1">
-															<h4 class="mb-0">
-																<a href="#!">Project Alpha Launch</a>
-															</h4>
-															<span class="text-gray-400">Alpha Enterprises</span>
-														</div>
-
-														<div class="d-flex flex-row justify-content-between">
-															<span>Amount:</span>
-															<span>$100,000</span>
-														</div>
-													</div>
-													<hr class="my-4" />
-													<div class="d-flex flex-row justify-content-between align-items-center">
-														<div>
-															<img src="../assets/images/avatar/avatar-1.jpg" alt="avatar" class="rounded-circle avatar-xs" />
-														</div>
-														<div>
-															<a data-bs-toggle="collapse" class="text-reset" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
-																<i data-feather="chevron-right" class="icon-xs chevron-down"></i>
-															</a>
-														</div>
-													</div>
-													<div class="collapse" id="collapseExample1">
-														<div class="mt-4 d-flex flex-column gap-2">
-															<h4 class="mb-0">Deal info</h4>
-															<div class="">
-																<table class="table table-borderless mb-0 text-nowrap table-sm">
-																	<tbody>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="dollar-sign" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Value:</span>
-																			</td>
-
-																			<td class="px-0">$100,000</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="home" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Company:</span>
-																			</td>
-
-																			<td class="px-0">Alpha Enterprises</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="flag" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Close Date:</span>
-																			</td>
-
-																			<td class="px-0">June 30, 2025</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="user" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Deal Owner:</span>
-																			</td>
-
-																			<td class="px-0">John Smith</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="headphones" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Deal Type:</span>
-																			</td>
-
-																			<td class="px-0">New Business</td>
-																		</tr>
-																		<tr>
-																			<td class="px-0">
-																				<i data-feather="info" class="icon-xxs text-gray-400"></i>
-																				<span class="text-gray-500 ms-1">Priority:</span>
-																			</td>
-
-																			<td class="px-0"><span class="badge badge-info-soft border border-info rounded-pill">Medium</span></td>
-																		</tr>
-																	</tbody>
-																</table>
-															</div>
-														</div>
-													</div>
-												</div>
 											</div>
 
 										</div>
@@ -411,7 +256,7 @@
 
 																			<td class="px-0">$80,000</td>
 																		</tr>
-																		<tr>
+															<tr>
 																			<td class="px-0">
 																				<i data-feather="home" class="icon-xxs text-gray-400"></i>
 																				<span class="text-gray-500 ms-1">Company:</span>
