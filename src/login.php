@@ -28,6 +28,7 @@
 	<link href="./assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
 	<link href="./assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
 	<link href="./assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" href="./assets/css/theme.css">
@@ -79,13 +80,13 @@
 							<form id="loginForm" method="post">
 								<!-- Username -->
 								<div class="mb-3">
-									<label for="email" class="form-label">Username or email</label>
-									<input type="text" id="username" class="form-control" name="correo" placeholder="Email address here" required="" />
+									<label for="username" class="form-label">Username or email</label>
+									<input type="text" id="username" class="form-control" name="username" placeholder="Email address here" required="" />
 								</div>
 								<!-- Password -->
 								<div class="mb-3">
 									<label for="password" class="form-label">Password</label>
-									<input type="password" id="password" class="form-control" name="contraseña" placeholder="**************" required="" />
+									<input type="text" id="password" class="form-control" name="contrasena" placeholder="**************" required="" />
 								</div>
 								<!-- Checkbox -->
 								<div class="d-lg-flex justify-content-between align-items-center mb-4">
@@ -128,5 +129,46 @@
 		<script src="assets/libs/jsvectormap/dist/maps/world.js"></script>
 		<script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 		<script src="assets/js/vendors/chart.js"></script>
+
+		<script>
+			document.getElementById('loginForm').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const form = e.target;
+			const formData = new FormData(form);
+
+			fetch('controllers/auth.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+					// Login exitoso: redirigir directamente
+					window.location.href = 'index.php';
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: data,
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
 	</body>
 </html>

@@ -12,11 +12,12 @@ class Usuario
         $this->conexion = $this->db->getConexion(); // Obtenemos la conexión mysqli
     }
 
-    public function autenticar($correo, $contrasena)
+    public function autenticar($username, $contrasena)
     {
         $stmt = $this->conexion->prepare("SELECT * FROM usuario WHERE username = ? AND password = ?");
-        $stmt->bind_param("ss", $correo, $contrasena);
+        $stmt->bind_param("ss", $username, $contrasena);
         $stmt->execute();
-        return $stmt->get_result(); // No cierres la conexión aquí
+        return $stmt->get_result();
     }
+
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE php>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,7 +35,9 @@
 
   <title>nombre del colegio</title>
   	<?php 
-    include "../src/models/ultimas_matriculas.model.php";
+	include "partials/zona.priv.php";
+    include "models/ultimas_matriculas.model.php";
+
     
     $ObjetoUltimasMatriculas = new UltimasMatriculasModel();
     $NewMatricula = $ObjetoUltimasMatriculas->read();
