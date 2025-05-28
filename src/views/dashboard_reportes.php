@@ -2,19 +2,18 @@
 <html lang="en">
 
 <head>
-  @@include("../partials/head.html")
+  <?php 
+    include "../partials/head.php";
+    ?>
   <title>CRM | Dash UI - Bootstrap 5 Admin Dashboard Template</title>
 </head>
 
 <body>
   <main id="main-wrapper" class="main-wrapper">
-    @@include("../partials/header.html")
+    <?php include "../partials/header.php" ?>
     <!-- navbar vertical -->
 
-    @@include('../partials/navbar-vertical.html', {
-    "page": "crm",
-    "page_group": "pages"
-    })
+    <?php include "../partials/navbar-vertical.php"?>
 
 
     <!-- page content -->
@@ -650,14 +649,13 @@
 
   <!-- Scripts -->
 
-
   <!-- popper js -->
-  <script src="@@webRoot/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="../assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
   <!-- tippy js -->
-  <script src="@@webRoot/node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
-  @@include("../partials/scripts.html")
-  <script src="@@webRoot/node_modules/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="@@webRoot/assets/js/vendors/chart.js"></script>
+  <script src="../assets/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+  <?php include "../partials/scripts.php" ?>
+  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+  <script src="../assets/js/vendors/chart.js"></script>
 
 
 

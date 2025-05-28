@@ -1,7 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<?php include "../partials/head.php" ?>
+		<?php 
+			include "../partials/head.php";
+			include "../models/grados.model.php";
+
+			$objetoGrado = new GradoModel();
+			$allGrado = $objetoGrado->readGradosConSecciones();
+
+			// Convertir resultados en array más manejable
+			$gradosData = [];
+
+			while ($row = mysqli_fetch_assoc($allGrado)) {
+				$gradoId = $row['id_grado'];
+
+				if (!isset($gradosData[$gradoId])) {
+					$gradosData[$gradoId] = [
+						'nombre' => $row['nombre_grado'],
+						'secciones' => []
+					];
+				}
+
+				$gradosData[$gradoId]['secciones'][] = [
+					'nombre' => $row['nombre_seccion'],
+					'turno' => $row['turno'],
+					'estudiantes' => $row['estudiantes_totales'],
+					'docente' => $row['docente_guia'],
+					'cupos_maximos' => $row['cupos_maximos'],
+					'cupos_disponibles' => $row['cupos_disponibles']
+				];
+			}
+
+		?>
 		<title>Colegio Bello Horizonte</title>
 	</head>
 
@@ -38,11 +68,15 @@
 
 									<div class="d-flex flex-column flex-md-row gap-3">
 										<div>
-											<select class="form-select" aria-label="Default select example" id="gradoSelect">
-												<option selected>Grados</option>
-                        <option value="grado1">1° Grado</option>
-                        <option value="grado2">2° Grado</option>
-											</select>
+											
+									<select class="form-select" id="gradoSelect">
+										<option selected>Grados</option>
+										<?php foreach ($gradosData as $id => $info): ?>
+											<option value="<?= $id ?>"><?= $info['nombre'] ?></option>
+										<?php endforeach; ?>
+									</select>
+
+											
 										</div>
 										<div class="d-flex gap-3">
 											<div>
@@ -66,17 +100,17 @@
 							</div>
 						</div>
 
-					<div class="row grado-card" data-grado="grado2" style="display: none;">
+						<?php foreach ($gradosData as $gradoId => $gradoInfo): ?>
+					<div class="row grado-card" data-grado="<?php echo $gradosInfo['id_grado'];?>" style="display: block;">
 							<div class="col-12">
 								<div class="task-kanban-container pb-8">
 									<!-- Aca !!-->
-									
-
+									 <?php foreach ($gradoInfo['secciones'] as $seccion): ?>
                   					<div class="bg-gray-300 shadow-none border-top rounded-3 p-3 border-opacity-25 task-card border-top border-secondary me-4 pb-0" >
 										<div class="d-flex flex-column gap-2 mb-4">
 											<div class="d-flex flex-row justify-content-between">
 												<div>
-													<h4 class="mb-0 fs-5">Prospecting</h4>
+													<h4 class="mb-0 fs-5"><?= $gradoInfo['nombre'] ?></h4>
 												</div>
 												<div class="d-flex flex-row gap-2">
 													<div>
@@ -92,9 +126,8 @@
 																<i data-feather="more-horizontal" class="icon-xxs"></i>
 															</a>
 															<ul class="dropdown-menu">
-																<li><a class="dropdown-item" href="#">Action</a></li>
-																<li><a class="dropdown-item" href="#">Another action</a></li>
-																<li><a class="dropdown-item" href="#">Something else here</a></li>
+																<li><a class="dropdown-item" href="#">Ediar</a></li>
+																<li><a class="dropdown-item" href="#">Exportar</a></li>
 															</ul>
 														</div>
 													</div>
@@ -102,27 +135,31 @@
 											</div>
 											<div class="d-flex flex-row justify-content-between">
 												<div class="text-dark">
-													<span>Total:</span>
-													<span class="fw-semi-bold">$380,000.00</span>
+													<span class="fw-semi-bold"><?= count($gradoInfo['secciones']) ?></span>
+													<span> secciones Activas</span>
+
 												</div>
 												<div>
 													<span class="badge rounded-circle badge-secondary-soft">4</span>
 												</div>
 											</div>
 										</div>
+										
 										<div class="task-kanban">
+											
 											<div class="card">
 											<div class="card-body d-flex flex-column">
 												<div class="d-flex flex-column gap-3">
+							
 												<div class="d-flex flex-column gap-1">
 													<h4 class="mb-0">
-													<a href="#!">Sección A - 1° Grado</a>
+													<a href="#!">Sección <?= $seccion['nombre'] ?></a>
 													</h4>
-													<span class="text-gray-400">Turno Matutino</span>
+													<span class="text-gray-400">Turno <?= $seccion['turno'] ?></span>
 												</div>
 												<div class="d-flex flex-row justify-content-between">
 													<span>Estudiantes:</span>
-													<span>25</span>
+													<span><?= $seccion['estudiantes'] ?></span>
 												</div>
 												</div>
 
@@ -146,7 +183,7 @@
 													<tbody>
 														<tr>
 														<td class="px-0"><i data-feather="users" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Estudiantes:</span></td>
-														<td class="px-0">25</td>
+														<td class="px-0"><?= $seccion['estudiantes'] ?></td>
 														</tr>
 														<tr>
 														<td class="px-0"><i data-feather="clock" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Turno:</span></td>
@@ -154,15 +191,15 @@
 														</tr>
 														<tr>
 														<td class="px-0"><i data-feather="user" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Docente Encargado:</span></td>
-														<td class="px-0">María López</td>
+														<td class="px-0"><?= $seccion['docente'] ?></td>
 														</tr>
 														<tr>
 														<td class="px-0"><i data-feather="calendar" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Cupo Máximo:</span></td>
-														<td class="px-0">30</td>
+														<td class="px-0"><?= $seccion['cupos_maximos'] ?></td>
 														</tr>
 														<tr>
 														<td class="px-0"><i data-feather="alert-circle" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Disponibles:</span></td>
-														<td class="px-0"><span class="badge badge-info-soft border border-info rounded-pill">5 cupos</span></td>
+														<td class="px-0"><span class="badge badge-info-soft border border-info rounded-pill"><?= $seccion['cupos_disponibles'] ?> cupos</span></td>
 														</tr>
 													</tbody>
 													</table>
@@ -171,11 +208,13 @@
 
 											</div>
 											</div>
+											
 
 										</div>
 									</div>
-
-									
+									<?php endforeach; ?>
+									<?php endforeach; ?>
+									<!--
 									<div class="bg-success-subtle shadow-none border-top rounded-3 p-3 task-card border-top border-success me-4 pb-0" >
 										<div class="d-flex flex-column gap-2 mb-4">
 											<div class="d-flex flex-row justify-content-between">
@@ -187,7 +226,7 @@
 														<a href="#!" class="text-reset" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 															<i data-feather="plus" class="icon-xxs"></i>
 														</a>
-														<!-- Modal -->
+														
 													</div>
 
 													<div>
@@ -316,7 +355,7 @@
 														<a href="#!" class="text-reset" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 															<i data-feather="plus" class="icon-xxs"></i>
 														</a>
-														<!-- Modal -->
+														
 													</div>
 
 													<div>
@@ -433,7 +472,7 @@
 												</div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 
 
 								</div>

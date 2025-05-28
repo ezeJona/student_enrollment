@@ -33,7 +33,7 @@
 <!-- Theme CSS -->
 <link rel="stylesheet" href="./assets/css/theme.css">
 
-  <title>nombre del colegio</title>
+<title>nombre del colegio</title>
   	<?php 
 	include "partials/zona.priv.php";
     include "models/ultimas_matriculas.model.php";
@@ -42,7 +42,7 @@
     $ObjetoUltimasMatriculas = new UltimasMatriculasModel();
     $NewMatricula = $ObjetoUltimasMatriculas->read();
     
-  ?>
+  	?>
 </head>
 
 <body>
@@ -309,7 +309,7 @@
 
 						<!-- Nav item -->
 			<li class="nav-item">
-				<a class="nav-link has-arrow " href="">
+				<a class="nav-link has-arrow " href="./views/dashboard_docente.php">
 					<i data-feather="message-square" class="nav-icon me-2 icon-xxs"></i>
 					Docentes
 				</a>
@@ -317,17 +317,17 @@
 
 						<!-- Nav item -->
 			<li class="nav-item">
-				<a class="nav-link has-arrow " href="./index.php">
+				<a class="nav-link has-arrow " href="./views/dashboard_reportes.php">
 					<i data-feather="message-square" class="nav-icon me-2 icon-xxs"></i>
-					Usuarios
+					Reportes
 				</a>
 			</li>
 
 			<!-- Nav item -->
 			<li class="nav-item">
-				<a class="nav-link has-arrow " href="./index.php">
+				<a class="nav-link has-arrow " href="">
 					<i data-feather="message-square" class="nav-icon me-2 icon-xxs"></i>
-					Reportes
+					Usuarios
 				</a>
 			</li>
 		</ul>
@@ -681,26 +681,26 @@
 							</div>
 						</div>
 
-            </div>
-          </div>
+            	</div>
+    		</div>
         </div>
 
-  </main>
+  	</main>
 
 
 
-    <!-- Libs JS -->
-  <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/libs/feather-icons/dist/feather.min.js"></script>
-  <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+		<!-- Libs JS -->
+	<script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/libs/feather-icons/dist/feather.min.js"></script>
+	<script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
 
-  <!-- Theme JS -->
-  <script src="assets/js/main.js"></script>
-  <!-- jsvectormap -->
-  <script src="assets/libs/jsvectormap/dist/jsvectormap.min.js"></script>
-  <script src="assets/libs/jsvectormap/dist/maps/world.js"></script>
-  <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="assets/js/vendors/chart.js"></script>
+	<!-- Theme JS -->
+	<script src="assets/js/main.js"></script>
+	<!-- jsvectormap -->
+	<script src="assets/libs/jsvectormap/dist/jsvectormap.min.js"></script>
+	<script src="assets/libs/jsvectormap/dist/maps/world.js"></script>
+	<script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="assets/js/vendors/chart.js"></script>
 
 </body>
 

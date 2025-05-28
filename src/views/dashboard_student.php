@@ -11,6 +11,10 @@
     
   ?>
 
+  <!-- DataTable.js -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.3.1/css/dataTables.dataTables.css" />
+
+
   <title>Estudiante </title>
 </head>
 
@@ -106,15 +110,15 @@
                                               <div class="d-flex align-items-center">
                                                 <!-- <a href="#!"><img src="../assets/images/avatar/avatar-11.jpg" alt="Image" class="avatar avatar-sm rounded-circle"></a> -->
                                                 <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?= $estudiante['nombre']?></h5>
+                                                <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?= $estudiante['nombre_completo']?></h5>
                                                 </div>
                                             </div>
                                             </td>
                                             <td><?= $estudiante['maestro_guia'] ?></td>
                                             <td> <?= $estudiante['codigo_estudiantil'] ?> </td>
                                             <td><?= $estudiante['telefono'] ?></td>
-                                            <td><?= $estudiante['grado'] ?></td>
-                                            <td><span class="badge badge-success-soft text-success"><?= $estudiante['estado'] ?></span></td>
+                                            <td><?= $estudiante['grado_seccion'] ?></td>
+                                            <td><span class="badge badge-success-soft text-success"><?= $estudiante['estado_matricula'] ?></span></td>
                                             <td>
                                               <a
                                                   href="#!"
@@ -323,6 +327,7 @@
   <script src="../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
 
 	<?php include "../partials/scripts.php" ?>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script>
     function mostrarVistaPrevia(event) {

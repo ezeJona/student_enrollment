@@ -84,7 +84,7 @@
 
 						<!-- Nav item -->
 			<li class="nav-item">
-				<a class="nav-link has-arrow " href="">
+				<a class="nav-link has-arrow " href="../views/dashboard_docente.php">
 					<i data-feather="message-square" class="nav-icon me-2 icon-xxs"></i>
 					Docentes
 				</a>
@@ -92,17 +92,16 @@
 
 						<!-- Nav item -->
 			<li class="nav-item">
-				<a class="nav-link has-arrow " href="../index.php">
+				<a class="nav-link has-arrow " href="../views/dashboard_reportes.php">
 					<i data-feather="message-square" class="nav-icon me-2 icon-xxs"></i>
-					Inicio
+					Reportes
 				</a>
 			</li>
 
-			<!-- Nav item -->
 			<li class="nav-item">
-				<a class="nav-link has-arrow " href="../index.php">
+				<a class="nav-link has-arrow " href="">
 					<i data-feather="message-square" class="nav-icon me-2 icon-xxs"></i>
-					Inicio
+					Usuarios
 				</a>
 			</li>
 		</ul>
