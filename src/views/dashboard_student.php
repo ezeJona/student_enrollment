@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<?php 
@@ -10,11 +10,7 @@
     $allEstudent = $objetoEstudent->read();
     
   ?>
-
-  <!-- DataTable.js -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/2.3.1/css/dataTables.dataTables.css" />
-
-
+    
   <title>Estudiante </title>
 </head>
 
@@ -47,58 +43,34 @@
                     <div class="col-12">
                         <!-- card -->
                         <div class="card mb-4">
-                            <div class="card-header  ">
-
-                                <div class="row justify-content-between" >
-                                    <!-- Agregar Nuevo Estudiante -->
-                                    <div class="col-md-6 mb-3 ">
-
-                                        <a href="#!" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addEstudentModal">+ Nuevo Estudiante</a>
-
-                                    </div>
-                                    <!-- Botones de Exportar-->
-                                    <div class="col-md-6 text-lg-end mb-3">
-                                        <!-- <a href="#!" class="btn btn-light me-1" ><i  data-feather="trash-2" class="icon-xs"></i></a> -->
-                                        <a href="#!" class="btn btn-light me-1" >Exportar Excel</a>
+                          <div class="card-header  ">
+                            <div class="row justify-content-between" >
+                                <!-- Agregar Nuevo Estudiante -->
+                                <div class="col-md-6 mb-3 ">
+                                    <a href="#!" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addEstudentModal">+ Nuevo Estudiante</a>
+                                </div>
+                                <!-- Botones de Exportar-->
+                                <div class="col-md-6 text-lg-end mb-3">
+                                    <!-- <a href="#!" class="btn btn-light me-1" ><i  data-feather="trash-2" class="icon-xs"></i></a> -->
+                                    <a href="#!" class="btn btn-light me-1" >Exportar Excel</a>
                                     <a href="#!" class="btn btn-light " >Exportar PDF</a>
-                                    </div>
-                                    <div class=" col-lg-4 col-md-6">
-                                        <input type="search" class="form-control " placeholder="Buscar Estudiante">
-
-                                    </div>
-
-                                    <!-- Filtro Turno -->
-                                    <div class="col-lg-2 col-md-6  mt-3 mt-md-0">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Turno</option>
-                                        <option value="1">Matutino</option>
-                                        <option value="2">Vespertino</option>
-                                      </select>
-                                    </div>
-                              </div>
+                                </div>
                             </div>
-                           <div class="card-body">
+                        </div>
+                          <div class="card-body">
                             <div class="table-responsive table-card">
-                                <table class="table text-nowrap mb-0 table-centered table-hover">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th class=" pe-0 "> ID
-                                                <!--<div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="checkAll">
-                                                    <label class="form-check-label" for="checkAll">
-
-                                                    </label>
-                                                </div>-->
-                                            </th>
-                                            <th>Nombre</th>
-                                            <th>Maestro Guia</th>
-                                            <th>Codigo de estudiante</th>
-                                            <th>Telefono</th>
-                                            <th>Grado</th>
-                                            <th>Matricula</th>
-                                            <th class="ps-10">Acción</th>
-                                        </tr>
+                                <table id="example" class="table table-striped" style="width:100%">
+                                    <thead>
+                                      <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Maestro Guía</th>
+                                        <th>Código de estudiante</th>
+                                        <th>Teléfono</th>
+                                        <th>Grado</th>
+                                        <th>Matrícula</th>
+                                        <th>Acción</th>
+                                      </tr>
                                     </thead>
                                     <tbody>
                                       <?php
@@ -165,25 +137,12 @@
                                                 }                    
                                               ?>
                                         </tr>
-                                             
                                         
-                           </tbody>
+                          </tbody>
                                 </table>
                             </div>
-                           </div>
-                            <div
-                                class="card-footer d-md-flex justify-content-between align-items-center">
-                                <span>Showing 1 to 8 of 12 entries</span>
-                                <nav class="mt-2 mt-md-0">
-                                    <ul class="pagination mb-0 ">
-                                        <li class="page-item "><a class="page-link" href="#!">Previous</a></li>
-                                        <li class="page-item active"><a class="page-link" href="#!">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#!">Next</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                          </div>
+
 
                         </div>
                     </div>
@@ -320,16 +279,9 @@
   </div>
 </div>
 
+    <!-- Script para mostrar vista previa de la imagen del estudiante -->
+      <script>
 
-
-        <!-- Scripts -->
-        <!-- flatpickr -->
-  <script src="../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
-
-	<?php include "../partials/scripts.php" ?>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <script>
     function mostrarVistaPrevia(event) {
       const input = event.target;
       const vistaPrevia = document.getElementById('vistaPreviaFoto');
@@ -349,13 +301,9 @@
   </script>
 
 
-  <!-- popper js -->
-  <script src="../assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
-  <!-- tippy js -->
-  <script src="../assets/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
-  <script src="../assets/js/vendors/tooltip.js"></script>
+            <!-- Scripts -->
 
-
+	<?php include "../partials/scripts.php" ?>
 
 </body>
 

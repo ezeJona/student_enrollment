@@ -75,24 +75,17 @@
                                 </div>
                             <div class="card-body">
                                 <div class="table-responsive table-card">
-                                    <table class="table text-nowrap mb-0 table-centered table-hover">
-                                        <thead class="table-light">
+                                    <table id="example" class="table table-striped" style="width:100%">
+                                        <thead>
                                             <tr>
-                                                <th class=" pe-0 "> ID
-                                                    <!--<div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            id="checkAll">
-                                                        <label class="form-check-label" for="checkAll">
-
-                                                        </label>
-                                                    </div>-->
+                                                <th> ID
                                                 </th>
                                                 <th>Nombre</th>
                                                 <th>Cedula</th>
                                                 <th>Telefono</th>
                                                 <th>Seccion Guiada</th>
                                                 <th>Turno</th>
-                                                <th class="ps-10">Estado</th>
+                                                <th>Estado</th>
                                                 <th>Acción</th>                                               
                                             </tr>
                                         </thead>
@@ -167,19 +160,6 @@
                                     </table>
                                 </div>
                             </div>
-                                <div
-                                    class="card-footer d-md-flex justify-content-between align-items-center">
-                                    <span>Showing 1 to 8 of 12 entries</span>
-                                    <nav class="mt-2 mt-md-0">
-                                        <ul class="pagination mb-0 ">
-                                            <li class="page-item "><a class="page-link" href="#!">Previous</a></li>
-                                            <li class="page-item active"><a class="page-link" href="#!">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#!">Next</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
 
                             </div>
                         </div>

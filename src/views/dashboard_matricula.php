@@ -41,98 +41,98 @@
             <div>
               <!-- row -->
               <div class="row">
-  <!-- Total de Matrículas Recibidas -->
-  <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
-    <div class="card h-100 card-lift">
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <div>
-            <h4 class="mb-0">Reingreso</h4>
-          </div>
-          <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
-            <i data-feather="file-text" height="20" width="20"></i>
-          </div>
-        </div>
-        <div class="lh-1">
-          <h1 class="mb-1 fw-bold">125</h1>
-          <p class="mb-0">
-            <span class="text-dark me-2">85</span>
-            Matriculas Reservadas
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+                <!-- Total de Matrículas Recibidas -->
+                <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
+                  <div class="card h-100 card-lift">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                          <h4 class="mb-0">Reingreso</h4>
+                        </div>
+                        <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
+                          <i data-feather="file-text" height="20" width="20"></i>
+                        </div>
+                      </div>
+                      <div class="lh-1">
+                        <h1 class="mb-1 fw-bold">125</h1>
+                        <p class="mb-0">
+                          <span class="text-dark me-2">85</span>
+                          Matriculas Reservadas
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-  <!-- Documentos Pendientes -->
-  <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
-    <div class="card h-100 card-lift">
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <div>
-            <h4 class="mb-0">Nuevo Ingreso</h4>
-          </div>
-          <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
-            <i data-feather="alert-circle" height="20" width="20"></i>
-          </div>
-        </div>
-        <div class="lh-1">
-          <h1 class="mb-1 fw-bold">38</h1>
-          <p class="mb-0">
-            <span class="text-dark me-2">10</span>
-            Matriculas pendientes
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+                <!-- Documentos Pendientes -->
+                <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
+                  <div class="card h-100 card-lift">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                          <h4 class="mb-0">Nuevo Ingreso</h4>
+                        </div>
+                        <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
+                          <i data-feather="alert-circle" height="20" width="20"></i>
+                        </div>
+                      </div>
+                      <div class="lh-1">
+                        <h1 class="mb-1 fw-bold">38</h1>
+                        <p class="mb-0">
+                          <span class="text-dark me-2">10</span>
+                          Matriculas pendientes
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-  <!-- Estudiantes Registrados -->
-  <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
-    <div class="card h-100 card-lift">
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <div>
-            <h4 class="mb-0">Matutino</h4>
-          </div>
-          <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
-            <i data-feather="users" height="20" width="20"></i>
-          </div>
-        </div>
-        <div class="lh-1">
-          <h1 class="mb-1 fw-bold">312</h1>
-          <p class="mb-0">
-            <span class="text-dark me-2">156</span>
-            Nuevos ingresos
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+                <!-- Estudiantes Registrados -->
+                <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
+                  <div class="card h-100 card-lift">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                          <h4 class="mb-0">Matutino</h4>
+                        </div>
+                        <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
+                          <i data-feather="users" height="20" width="20"></i>
+                        </div>
+                      </div>
+                      <div class="lh-1">
+                        <h1 class="mb-1 fw-bold">312</h1>
+                        <p class="mb-0">
+                          <span class="text-dark me-2">156</span>
+                          Nuevos ingresos
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-  <!-- Cupos Disponibles -->
-  <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
-    <div class="card h-100 card-lift">
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <div>
-            <h4 class="mb-0">Vespertino</h4>
-          </div>
-          <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
-            <i data-feather="layers" height="20" width="20"></i>
-          </div>
-        </div>
-        <div class="lh-1">
-          <h1 class="mb-1 fw-bold">47</h1>
-          <p class="mb-0">
-            <span class="text-success me-2">Grado 1°:</span>
-            12 cupos
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                <!-- Cupos Disponibles -->
+                <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
+                  <div class="card h-100 card-lift">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                          <h4 class="mb-0">Vespertino</h4>
+                        </div>
+                        <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
+                          <i data-feather="layers" height="20" width="20"></i>
+                        </div>
+                      </div>
+                      <div class="lh-1">
+                        <h1 class="mb-1 fw-bold">47</h1>
+                        <p class="mb-0">
+                          <span class="text-success me-2">Grado 1°:</span>
+                          12 cupos
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div class="row">
                 <div class="col-12">
@@ -179,25 +179,13 @@
                       </div>
                     </div>
                     <div class="card-body">
+                      
+                      <!-- Tabla con Js DataTable -->
                       <div class="table-responsive table-card">
-                        <table class="table text-nowrap mb-0 table-centered">
-                          <thead class="table-light">
+                        <table id="example" class="table table-striped" style="width:100%">
+                          <thead>
                             <tr>
-                              <th class="pe-0">
-                                <div class="form-check" >
-                                  <input
-                                    class="form-check-input" id="checkAll"
-                                    type="checkbox"
-                                    value=""
-                                 >
-                                  <label
-                                    class="form-check-label"
-                                    for="checkAll"
-                                  >
-                                  </label>
-                                </div>
-                              </th>
-                              <th class="ps-0">ID</th>
+                              <th>ID</th>
                               <th>Estado</th>
                               <th>Nombre</th>
                               <th>Grado</th>
@@ -211,22 +199,7 @@
                               while($matricula = mysqli_fetch_assoc($allMatricula)){
                             ?>
                             <tr>
-                              <td class="pe-0">
-                                <div class="form-check">
-                                  <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="contactCheckbox2"
-                                 >
-                                  <label
-                                    class="form-check-label"
-                                    for="contactCheckbox2"
-                                  >
-                                  </label>
-                                </div>
-                              </td>
-                              <td class="ps-0">
+                              <td>
                                 <a href="#!"><?=$matricula['ID_Matricula']?></a>
                               </td>
                               <td>
@@ -316,32 +289,6 @@
                           </tbody>
                         </table>
                       </div>
-                    </div>
-
-                    <div
-                      class="card-footer d-md-flex justify-content-between align-items-center "
-                    >
-                      <span>Showing 1 to 8 of 12 entries</span>
-                      <nav class="mt-2 mt-md-0">
-                        <ul class="pagination mb-0 ">
-                          <li class="page-item">
-                            <a class="page-link" href="#!">Previous</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link active" href="#!">1</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link" href="#!">2</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link" href="#!">3</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link" href="#!">Next</a>
-                          </li>
-                          </ul>
-
-                      </nav>
                     </div>
                   </div>
                 </div>

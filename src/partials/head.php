@@ -22,3 +22,6 @@
 
 <!-- Theme CSS -->
 <link rel="stylesheet" href="../assets/css/theme.css">
+
+<!-- CSS de DataTables -->
+<link href="../assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
