@@ -8,21 +8,13 @@
 			$objetoGrado = new GradoModel();
 			$allGrado = $objetoGrado->readGradosConSecciones();
 
-			// Convertir resultados en array más manejable
-			$gradosData = [];
+			$gradosSecciones = [];
 
 			while ($row = mysqli_fetch_assoc($allGrado)) {
-				$gradoId = $row['id_grado'];
-
-				if (!isset($gradosData[$gradoId])) {
-					$gradosData[$gradoId] = [
-						'nombre' => $row['nombre_grado'],
-						'secciones' => []
-					];
-				}
-
-				$gradosData[$gradoId]['secciones'][] = [
-					'nombre' => $row['nombre_seccion'],
+				$gradosSecciones[] = [
+					'id_grado' => $row['id_grado'],
+					'nombre_grado' => $row['nombre_grado'],
+					'nombre_seccion' => $row['nombre_seccion'],
 					'turno' => $row['turno'],
 					'estudiantes' => $row['estudiantes_totales'],
 					'docente' => $row['docente_guia'],
@@ -30,8 +22,7 @@
 					'cupos_disponibles' => $row['cupos_disponibles']
 				];
 			}
-
-		?>
+			?>
 		<title>Colegio Bello Horizonte</title>
 	</head>
 
@@ -62,8 +53,8 @@
 							<div class="col-12">
 								<div class="d-lg-flex flex-row align-items-center justify-content-between">
 									<div class="mb-3 mb-lg-0">
-										<label for="dealSearchForm" class="form-label visually-hidden">Searchs</label>
-										<input type="search" class="form-control" id="dealSearchForm" name="dealSearchForm" placeholder="Search Deals, client name" />
+										<label for="dealSearchForm" class="form-label visually-hidden">Buscar</label>
+										<input type="search" class="form-control" id="dealSearchForm" name="dealSearchForm" placeholder="Busca Secciones" />
 									</div>
 
 									<div class="d-flex flex-column flex-md-row gap-3">
@@ -81,7 +72,7 @@
 										<div class="d-flex gap-3">
 											<div>
 												<a href="#!" class="btn btn-outline-white">
-													Export
+													Exportar
 
 													<i data-feather="upload" class="icon-xxs ms-2"></i>
 												</a>
@@ -90,7 +81,7 @@
 											<div>
 												<a href="#!" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 													<i data-feather="plus" class="icon-xxs"></i>
-													Create Deal
+													Nueva Sección
 												</a>
 												<!-- Modal -->
 											</div>
@@ -100,17 +91,17 @@
 							</div>
 						</div>
 
-						<?php foreach ($gradosData as $gradoId => $gradoInfo): ?>
-					<div class="row grado-card" data-grado="<?php echo $gradosInfo['id_grado'];?>" style="display: block;">
+
+					<div class="row grado-card" >
 							<div class="col-12">
 								<div class="task-kanban-container pb-8">
 									<!-- Aca !!-->
-									 <?php foreach ($gradoInfo['secciones'] as $seccion): ?>
+									<?php foreach ($gradosSecciones as $seccion): ?>
                   					<div class="bg-gray-300 shadow-none border-top rounded-3 p-3 border-opacity-25 task-card border-top border-secondary me-4 pb-0" >
 										<div class="d-flex flex-column gap-2 mb-4">
 											<div class="d-flex flex-row justify-content-between">
 												<div>
-													<h4 class="mb-0 fs-5"><?= $gradoInfo['nombre'] ?></h4>
+													<h4 class="mb-0 fs-5"><?= $seccion['nombre_grado'] ?></h4>
 												</div>
 												<div class="d-flex flex-row gap-2">
 													<div>
@@ -135,7 +126,7 @@
 											</div>
 											<div class="d-flex flex-row justify-content-between">
 												<div class="text-dark">
-													<span class="fw-semi-bold"><?= count($gradoInfo['secciones']) ?></span>
+													<span class="fw-semi-bold"></span>
 													<span> secciones Activas</span>
 
 												</div>
@@ -153,7 +144,7 @@
 							
 												<div class="d-flex flex-column gap-1">
 													<h4 class="mb-0">
-													<a href="#!">Sección <?= $seccion['nombre'] ?></a>
+													<a href="#!">Sección <?= $seccion['nombre_seccion'] ?></a>
 													</h4>
 													<span class="text-gray-400">Turno <?= $seccion['turno'] ?></span>
 												</div>
@@ -187,7 +178,7 @@
 														</tr>
 														<tr>
 														<td class="px-0"><i data-feather="clock" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Turno:</span></td>
-														<td class="px-0">Matutino</td>
+														<td class="px-0"><?= $seccion['turno'] ?></td>
 														</tr>
 														<tr>
 														<td class="px-0"><i data-feather="user" class="icon-xxs text-gray-400"></i> <span class="text-gray-500 ms-1">Docente Encargado:</span></td>
@@ -212,7 +203,6 @@
 
 										</div>
 									</div>
-									<?php endforeach; ?>
 									<?php endforeach; ?>
 									<!--
 									<div class="bg-success-subtle shadow-none border-top rounded-3 p-3 task-card border-top border-success me-4 pb-0" >
