@@ -166,7 +166,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
       <div class="modal-body">
-        <form id="formAgregarEstudiante" enctype="multipart/form-data">
+        <form id="formAgregarEstudiante" action="../controllers/student.controller.php" method="POST">
+
           <!-- Datos personales del estudiante -->
           <h5 class="mb-3">Datos Personales</h5>
           <div class="row g-3">
@@ -218,58 +219,7 @@
               <label for="municipio" class="form-label">Municipio</label>
               <input type="text" class="form-control" id="municipio" name="municipio" required>
             </div>
-            <div class="col-md-6">
-              <label for="documentoNacimiento" class="form-label">Partida de Nacimiento o Cédula del Estudiante</label>
-              <input type="file" class="form-control" id="documentoNacimiento" name="documentoNacimiento" accept=".pdf,.jpg,.png" required>
-            </div>
-            <div class="col-md-6">
-              <label for="boletinEstudiantil" class="form-label">Boletín Anterior</label>
-              <input type="file" class="form-control" id="boletinEstudiantil" name="boletinEstudiantil" accept=".pdf,.jpg,.png" required>
-            </div>
-          </div>
-            <div class="col-md-6">
-              <label for="fotoPerfil" class="form-label">Foto de Perfil</label>
-              <input type="file" class="form-control" id="fotoPerfil" name="fotoPerfil" accept=".jpg,.jpeg,.png" onchange="mostrarVistaPrevia(event)" required>
-              <div class="mt-3">
-                <img id="vistaPreviaFoto" src="#" alt="Vista previa" class="img-thumbnail" style="display: none; max-height: 150px;">
-              </div>
-            </div>
-
-          <hr class="my-4">
-
-          <!-- Datos del padre, madre o tutor -->
-          <h5 class="mb-3">Datos del Padre/Madre/Tutor</h5>
-          <div class="row g-3">
-            <div class="col-md-4">
-              <label for="tutorPrimerNombre" class="form-label">Primer Nombre</label>
-              <input type="text" class="form-control" id="tutorPrimerNombre" name="tutorPrimerNombre" required>
-            </div>
-            <div class="col-md-4">
-              <label for="tutorSegundoNombre" class="form-label">Segundo Nombre</label>
-              <input type="text" class="form-control" id="tutorSegundoNombre" name="tutorSegundoNombre">
-            </div>
-            <div class="col-md-4">
-              <label for="tutorApellido" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="tutorApellido" name="tutorApellido" required>
-            </div>
-            <div class="col-md-6">
-              <label for="tutorDireccion" class="form-label">Dirección</label>
-              <input type="text" class="form-control" id="tutorDireccion" name="tutorDireccion" required>
-            </div>
-            <div class="col-md-3">
-              <label for="tutorTelefono" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="tutorTelefono" name="tutorTelefono" required>
-            </div>
-            <div class="col-md-3">
-              <label for="tutorCedula" class="form-label">Número de Cédula</label>
-              <input type="text" class="form-control" id="tutorCedula" name="tutorCedula" required>
-            </div>
-            <div class="col-md-6">
-              <label for="cedulaTutor" class="form-label">Copia de Cédula de identidad (PDF, JPG, PNG)</label>
-              <input type="file" class="form-control" id="cedulaTutor" name="cedulaTutor" accept=".pdf,.jpg,.png" required>
-            </div>
-          </div>
-        </form>
+          </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

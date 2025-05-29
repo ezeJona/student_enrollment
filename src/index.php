@@ -628,7 +628,7 @@
 									</div>
 									<!-- card footer  -->
 									<div class="card-footer text-center">
-										<a href="#!" class="btn btn-primary">Ver Todas Las Matriculas</a>
+										<a href="views/dashboard_matricula.php" class="btn btn-primary">Ver Todas Las Matriculas</a>
 									</div>
 								</div>
 							</div>
