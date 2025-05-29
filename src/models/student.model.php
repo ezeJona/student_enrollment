@@ -23,15 +23,15 @@ class EstudentModel {
     $query = "INSERT INTO estudiante (
         primer_nombre, segundo_nombre, primer_apellido, segundo_apellido,
         codigo_estudiantil, fecha_nacimiento, direccion, telefono, correo,
-        turno, estado, municipio, departamento, sexo
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        municipio, departamento, sexo
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $this->conexion->prepare($query);
 
     if (!$stmt) return false;
 
     $stmt->bind_param(
-        "ssssssssssssss",
+        "ssssssssssss",
         $datos['primerNombre'],
         $datos['segundoNombre'],
         $datos['primerApellido'],
@@ -41,8 +41,6 @@ class EstudentModel {
         $datos['direccion'],
         $datos['telefono'],
         $datos['email'],
-        $datos['turno'],
-        $datos['estado'],
         $datos['municipio'],
         $datos['departamento'],
         $datos['sexo']
@@ -50,5 +48,8 @@ class EstudentModel {
 
     return $stmt->execute();
 }
+
+    
+
 }
 

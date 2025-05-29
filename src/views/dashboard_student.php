@@ -91,48 +91,50 @@
                                             <td><?= $estudiante['telefono'] ?></td>
                                             <td><?= $estudiante['grado_seccion'] ?></td>
                                             <td><span class="badge badge-success-soft text-success"><?= $estudiante['estado_matricula'] ?></span></td>
-                                            <td>
-                                              <a
-                                                  href="#!"
-                                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                  data-template="editOne"
-                                                >
-                                                  <i
-                                                    data-feather="eye"
-                                                    class="icon-xs"
-                                                  ></i>
-                                                  <div id="editOne" class="d-none">
-                                                    <span>Ver</span>
-                                                  </div>
-                                                </a>
+                                              <td>
                                                 <a
-                                                  href="#!"
-                                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                  data-template="editOne"
-                                                >
-                                                  <i
-                                                    data-feather="edit"
-                                                    class="icon-xs"
-                                                  ></i>
-                                                  <div id="editOne" class="d-none">
-                                                    <span>Editar</span>
-                                                  </div>
-                                                </a>
-                                                <a
-                                                  href="#!"
-                                                  class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                  data-template="trashOne"
-                                                >
-                                                  <i
-                                                    data-feather="trash-2"
-                                                    class="icon-xs"
-                                                  ></i>
-                                                  <div id="trashOne" class="d-none">
-                                                    <span>Eliminar</span>
-                                                  </div>
-                                                </a>
+                                                    href="#!"
+                                                    class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
+                                                    data-template="editOne"
+                                                    >
+                                                    <i
+                                                        data-feather="eye"
+                                                        class="icon-xs"
+                                                    ></i>
+                                                    <div id="editOne" class="d-none">
+                                                        <span>Ver</span>
+                                                    </div>
+                                                    </a>
+                                                    <a
+                                                    href="#!"
+                                                    class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
+                                                    data-template="editOne"
+                                                    >
+                                                    <i
+                                                        data-feather="edit"
+                                                        class="icon-xs"
+                                                    ></i>
+                                                    <div id="editOne" class="d-none">
+                                                        <span>Editar</span>
+                                                    </div>
+                                                    </a>
+                                                    <a
+                                                    href="#!"
+                                                    class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
+                                                    data-template="trashOne"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#deleteEstudentModal"
+                                                    >
+                                                    <i
+                                                        data-feather="trash-2"
+                                                        class="icon-xs"
+                                                    ></i>
+                                                    <div id="trashOne" class="d-none">
+                                                        <span>Eliminar</span>
+                                                    </div>
+                                                    </a>
 
-                                            </td>
+                                                </td>
                                               <?php
                                                 }                    
                                               ?>
@@ -157,7 +159,7 @@
 
 
 
-  <!-- Modal -->
+  <!-- Modal Nuevo Registro -->
 <div class="modal fade" id="addEstudentModal" tabindex="-1" aria-labelledby="addEstudentModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-scrollable">
     <div class="modal-content">
@@ -166,60 +168,46 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
       <div class="modal-body">
-        <form id="formAgregarEstudiante" action="../controllers/student.controller.php" method="POST">
+        <form action="../controllers/matricula.controller.php" method="POST">
+    <h3>Datos del Estudiante</h3>
+    <input name="primer_nombre" placeholder="Primer Nombre" required>
+    <input name="segundo_nombre" placeholder="Segundo Nombre">
+    <input name="primer_apellido" placeholder="Primer Apellido" required>
+    <input name="segundo_apellido" placeholder="Segundo Apellido">
+    <input name="codigo_estudiantil" placeholder="Código Estudiantil" required>
+    <input type="date" name="fecha_nacimiento" required>
+    <input name="direccion" placeholder="Dirección" required>
+    <input name="telefono" placeholder="Teléfono" required>
+    <input name="correo" type="email" placeholder="Correo" required>
+    <input name="municipio" placeholder="Municipio" required>
+    <input name="departamento" placeholder="Departamento" required>
+    <select name="sexo" required>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+    </select>
+    <input name="username" placeholder="Usuario" required>
+    <input name="password" type="password" placeholder="Contraseña" required>
 
-          <!-- Datos personales del estudiante -->
-          <h5 class="mb-3">Datos Personales</h5>
-          <div class="row g-3">
-            <div class="col-md-4">
-              <label for="codigoEstudiante" class="form-label">Código Estudiantil</label>
-              <input type="text" class="form-control" id="codigoEstudiante" name="codigoEstudiante" required>
-            </div>
-            <div class="col-md-4">
-              <label for="primerNombre" class="form-label">Primer Nombre</label>
-              <input type="text" class="form-control" id="primerNombre" name="primerNombre" required>
-            </div>
-            <div class="col-md-4">
-              <label for="segundoNombre" class="form-label">Segundo Nombre</label>
-              <input type="text" class="form-control" id="segundoNombre" name="segundoNombre">
-            </div>
-            <div class="col-md-4">
-              <label for="primerApellido" class="form-label">Primer Apellido</label>
-              <input type="text" class="form-control" id="primerApellido" name="primerApellido" required>
-            </div>
-            <div class="col-md-4">
-              <label for="segundoApellido" class="form-label">Segundo Apellido</label>
-              <input type="text" class="form-control" id="segundoApellido" name="segundoApellido">
-            </div>
-            <div class="col-md-4">
-              <label for="telefono" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="telefono" name="telefono">
-            </div>
-            <div class="col-md-6">
-              <label for="email" class="form-label">Correo Electrónico</label>
-              <input type="email" class="form-control" id="email" name="email">
-            </div>
-            <div class="col-md-3">
-              <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-              <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
-            </div>
-            <div class="col-md-3">
-              <label for="sexo" class="form-label">Sexo</label>
-              <select class="form-select" id="sexo" name="sexo" required>
-                <option value="" selected disabled>Seleccione</option>
-                <option value="M">Masculino</option>
-                <option value="F">Femenino</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="departamento" class="form-label">Departamento</label>
-              <input type="text" class="form-control" id="departamento" name="departamento" required>
-            </div>
-            <div class="col-md-6">
-              <label for="municipio" class="form-label">Municipio</label>
-              <input type="text" class="form-control" id="municipio" name="municipio" required>
-            </div>
-          </form>
+    <h3>Datos del Responsable</h3>
+    <input name="responsable_primer_nombre" placeholder="Primer Nombre" required>
+    <input name="responsable_segundo_nombre" placeholder="Segundo Nombre">
+    <input name="responsable_primer_apellido" placeholder="Primer Apellido" required>
+    <input name="responsable_segundo_apellido" placeholder="Segundo Apellido">
+    <input name="responsable_direccion" placeholder="Dirección" required>
+    <input name="responsable_cedula" placeholder="Cédula" required>
+    <input name="responsable_telefono" placeholder="Teléfono" required>
+
+    <h3>Datos de Matrícula</h3>
+    <input type="number" name="grado_id" placeholder="ID del Grado" required>
+    <input name="año_escolar" placeholder="Año Escolar (ej. 2025)" required>
+    <select name="turno" required>
+        <option value="MAÑANA">Mañana</option>
+        <option value="TARDE">Tarde</option>
+    </select>
+
+    <button type="submit">Matricular Estudiante</button>
+</form>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -228,6 +216,33 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Eliminar Estudiante -->
+<div class="modal fade" id="deleteEstudentModal" tabindex="-1" aria-labelledby="deleteEstudentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="deleteEstudentModalLabel">Eliminar Estudiante</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>¿Estás seguro que deseas eliminar permanentemente este estudiante?</p>
+        <p class="text-muted" id="eliminar-nombre"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <form id="form-eliminar-estudiante" style="display: inline-block;">
+          <input type="hidden" id="eliminar-id">
+          <button type="submit" class="btn btn-danger">Confirmar Eliminación</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
     <!-- Script para mostrar vista previa de la imagen del estudiante -->
       <script>
@@ -252,8 +267,18 @@
 
 
             <!-- Scripts -->
+    <script src="../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+      <!-- popper js -->
+    <script src="../assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+        <!-- tippy js -->
+    <script src="../assets/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+    <script src="../assets/js/vendors/tooltip.js"></script>
+	  <?php include "../partials/scripts.php" ?>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 
-	<?php include "../partials/scripts.php" ?>
+
+
+
 
 </body>
 
