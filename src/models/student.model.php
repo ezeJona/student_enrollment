@@ -18,36 +18,7 @@ class EstudentModel {
         return $stmt->get_result(); // Devuelve todos los datos
     }
     
-    public function agregarEstudiante($datos)
-{
-    $query = "INSERT INTO estudiante (
-        primer_nombre, segundo_nombre, primer_apellido, segundo_apellido,
-        codigo_estudiantil, fecha_nacimiento, direccion, telefono, correo,
-        municipio, departamento, sexo
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    $stmt = $this->conexion->prepare($query);
-
-    if (!$stmt) return false;
-
-    $stmt->bind_param(
-        "ssssssssssss",
-        $datos['primerNombre'],
-        $datos['segundoNombre'],
-        $datos['primerApellido'],
-        $datos['segundoApellido'],
-        $datos['codigoEstudiante'],
-        $datos['fechaNacimiento'],
-        $datos['direccion'],
-        $datos['telefono'],
-        $datos['email'],
-        $datos['municipio'],
-        $datos['departamento'],
-        $datos['sexo']
-    );
-
-    return $stmt->execute();
-}
+    
 
     
 

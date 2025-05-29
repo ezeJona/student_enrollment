@@ -32,12 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'turno' => $_POST['turno']
     ];
 
+
     $modelo = new EstudianteModel();
     $matricula_id = $modelo->matricularEstudiante($data);
 
     if ($matricula_id) {
-        echo "Matrícula registrada con éxito. ID: " . $matricula_id;
+        echo "ok";
     } else {
         echo "Error al registrar la matrícula.";
     }
+} else {
+    echo 'Acceso no permitido';
 }

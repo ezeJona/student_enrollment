@@ -23,5 +23,12 @@
 <!-- Theme CSS -->
 <link rel="stylesheet" href="../assets/css/theme.css">
 
+
 <!-- CSS de DataTables -->
 <link href="../assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+	<!-- Sweetalert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+

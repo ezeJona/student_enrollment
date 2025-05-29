@@ -33,7 +33,7 @@
 										<h3 class="mb-0 text-white">Matriculas</h3>
 									</div>
 									<div>
-										<a href="#!" class="btn btn-white">+ Nueva Matricu</a>
+										<a href="#!" class="btn btn-white" data-bs-toggle="modal" data-bs-target="#addEstudentModal">+ Nueva Matricu</a>
 									</div>
 								</div>
 							</div>
@@ -140,27 +140,8 @@
                   <div class="card mb-4">
                     <div class="card-header">
                       <div class="row g-2">
-                        <!-- <div class="col-lg-6 col-md-5 d-grid d-lg-block">
-                          <a
-                            href="invoice-generator.html"
-                            class="btn btn-primary"
 
-                            >+ Create New Invoice</a
-                          >
-                        </div> -->
-                        <div class="col-md-7 col-lg-4">
-                          <input
-                            type="search"
-                            class="form-control w-100"
-                            placeholder="busca por Id, codigo estduantil o nombre"
-                         >
-                        </div>
                         <div class="col-lg-2 d-flex">
-                          <select class="form-select">
-                            <option selected>Turno</option>
-                            <option value="1">Matutino</option>
-                            <option value="2">Vespertino</option>
-                          </select>
                           <a
                           href="#!"
                           class="btn btn-danger-soft  btn-icon ms-2 texttooltip"
@@ -299,6 +280,188 @@
       </div>
     </div>
 
+        <!-- Modal Nuevo Registro -->
+    <div class="modal fade" id="addEstudentModal" tabindex="-1" aria-labelledby="addEstudentModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addCustomerModalLabel">Nuevo registro de estudiante</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="registroForm" method="POST">
+              
+              <h5 class="mb-3 mt-2">Datos del Estudiante</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Primer Nombre</label>
+                  <input name="primer_nombre" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Segundo Nombre</label>
+                  <input name="segundo_nombre" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Primer Apellido</label>
+                  <input name="primer_apellido" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Segundo Apellido</label>
+                  <input name="segundo_apellido" class="form-control">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Código Estudiantil</label>
+                  <input name="codigo_estudiantil" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Fecha de Nacimiento</label>
+                  <input type="date" name="fecha_nacimiento" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Sexo</label>
+                  <select name="sexo" class="form-select" required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Dirección</label>
+                  <input name="direccion" class="form-control" required>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Teléfono</label>
+                  <input name="telefono" class="form-control" required>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Correo</label>
+                  <input name="correo" type="email" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Municipio</label>
+                  <input name="municipio" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Departamento</label>
+                  <input name="departamento" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Usuario</label>
+                  <input name="username" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Contraseña</label>
+                  <input name="password" type="password" class="form-control" required>
+                </div>
+              </div>
+
+              <h5 class="mb-3 mt-4">Datos del Responsable</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Primer Nombre</label>
+                  <input name="responsable_primer_nombre" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Segundo Nombre</label>
+                  <input name="responsable_segundo_nombre" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Primer Apellido</label>
+                  <input name="responsable_primer_apellido" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Segundo Apellido</label>
+                  <input name="responsable_segundo_apellido" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Dirección</label>
+                  <input name="responsable_direccion" class="form-control" required>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Cédula</label>
+                  <input name="responsable_cedula" class="form-control" required>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Teléfono</label>
+                  <input name="responsable_telefono" class="form-control" required>
+                </div>
+              </div>
+
+              <h5 class="mb-3 mt-4">Datos de Matrícula</h5>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label class="form-label">ID del Grado</label>
+                  <input type="number" name="grado_id" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Año Escolar</label>
+                  <input name="año_escolar" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Turno</label>
+                  <select name="turno" class="form-select" required>
+                    <option value="MAÑANA">Mañana</option>
+                    <option value="TARDE">Tarde</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" form="registroForm" class="btn btn-primary">Guardar Estudiante</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Script para mostrar vista previa de la imagen del estudiante -->
+     		<script>
+			document.getElementById('registroForm').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const form = e.target;
+			const formData = new FormData(form);
+
+			fetch('../controllers/matricula.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+          // Mostra mensaje correcto con SweetAlert2
+					Swal.fire({
+						icon: 'success',
+						title: 'Estudiante Registrado',
+            text: 'Estudiante Registrado Sastifactoriamente',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: 'Algunos parametros no son validos',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
 
     <!-- Scripts -->
 

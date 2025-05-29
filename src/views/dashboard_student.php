@@ -92,7 +92,8 @@
                                             <td><?= $estudiante['grado_seccion'] ?></td>
                                             <td><span class="badge badge-success-soft text-success"><?= $estudiante['estado_matricula'] ?></span></td>
                                               <td>
-                                                <a
+                                                    <!-- Ver
+                                                    <a
                                                     href="#!"
                                                     class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
                                                     data-template="editOne"
@@ -104,7 +105,7 @@
                                                     <div id="editOne" class="d-none">
                                                         <span>Ver</span>
                                                     </div>
-                                                    </a>
+                                                    </a> -->
                                                     <a
                                                     href="#!"
                                                     class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
@@ -156,66 +157,140 @@
     </div>
   </main>
 
-
-
-
-  <!-- Modal Nuevo Registro -->
+<!-- Modal Nuevo Registro -->
 <div class="modal fade" id="addEstudentModal" tabindex="-1" aria-labelledby="addEstudentModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-scrollable">
     <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="addCustomerModalLabel">Nuevo registro de estudiante</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+      <div class="modal-header">
+        <h4 class="modal-title" id="addCustomerModalLabel">Nuevo registro de estudiante</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
       <div class="modal-body">
-        <form action="../controllers/matricula.controller.php" method="POST">
-    <h3>Datos del Estudiante</h3>
-    <input name="primer_nombre" placeholder="Primer Nombre" required>
-    <input name="segundo_nombre" placeholder="Segundo Nombre">
-    <input name="primer_apellido" placeholder="Primer Apellido" required>
-    <input name="segundo_apellido" placeholder="Segundo Apellido">
-    <input name="codigo_estudiantil" placeholder="Código Estudiantil" required>
-    <input type="date" name="fecha_nacimiento" required>
-    <input name="direccion" placeholder="Dirección" required>
-    <input name="telefono" placeholder="Teléfono" required>
-    <input name="correo" type="email" placeholder="Correo" required>
-    <input name="municipio" placeholder="Municipio" required>
-    <input name="departamento" placeholder="Departamento" required>
-    <select name="sexo" required>
-        <option value="Masculino">Masculino</option>
-        <option value="Femenino">Femenino</option>
-    </select>
-    <input name="username" placeholder="Usuario" required>
-    <input name="password" type="password" placeholder="Contraseña" required>
+        <form id="registroForm" method="POST">
+          
+          <h5 class="mb-3 mt-2">Datos del Estudiante</h5>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Primer Nombre</label>
+              <input name="primer_nombre" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Segundo Nombre</label>
+              <input name="segundo_nombre" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Primer Apellido</label>
+              <input name="primer_apellido" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Segundo Apellido</label>
+              <input name="segundo_apellido" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Código Estudiantil</label>
+              <input name="codigo_estudiantil" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Fecha de Nacimiento</label>
+              <input type="date" name="fecha_nacimiento" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Sexo</label>
+              <select name="sexo" class="form-select" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Dirección</label>
+              <input name="direccion" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Teléfono</label>
+              <input name="telefono" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Correo</label>
+              <input name="correo" type="email" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Municipio</label>
+              <input name="municipio" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Departamento</label>
+              <input name="departamento" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Usuario</label>
+              <input name="username" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Contraseña</label>
+              <input name="password" type="password" class="form-control" required>
+            </div>
+          </div>
 
-    <h3>Datos del Responsable</h3>
-    <input name="responsable_primer_nombre" placeholder="Primer Nombre" required>
-    <input name="responsable_segundo_nombre" placeholder="Segundo Nombre">
-    <input name="responsable_primer_apellido" placeholder="Primer Apellido" required>
-    <input name="responsable_segundo_apellido" placeholder="Segundo Apellido">
-    <input name="responsable_direccion" placeholder="Dirección" required>
-    <input name="responsable_cedula" placeholder="Cédula" required>
-    <input name="responsable_telefono" placeholder="Teléfono" required>
+          <h5 class="mb-3 mt-4">Datos del Responsable</h5>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Primer Nombre</label>
+              <input name="responsable_primer_nombre" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Segundo Nombre</label>
+              <input name="responsable_segundo_nombre" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Primer Apellido</label>
+              <input name="responsable_primer_apellido" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Segundo Apellido</label>
+              <input name="responsable_segundo_apellido" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Dirección</label>
+              <input name="responsable_direccion" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Cédula</label>
+              <input name="responsable_cedula" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Teléfono</label>
+              <input name="responsable_telefono" class="form-control" required>
+            </div>
+          </div>
 
-    <h3>Datos de Matrícula</h3>
-    <input type="number" name="grado_id" placeholder="ID del Grado" required>
-    <input name="año_escolar" placeholder="Año Escolar (ej. 2025)" required>
-    <select name="turno" required>
-        <option value="MAÑANA">Mañana</option>
-        <option value="TARDE">Tarde</option>
-    </select>
-
-    <button type="submit">Matricular Estudiante</button>
-</form>
-
+          <h5 class="mb-3 mt-4">Datos de Matrícula</h5>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">ID del Grado</label>
+              <input type="number" name="grado_id" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Año Escolar</label>
+              <input name="año_escolar" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Turno</label>
+              <select name="turno" class="form-select" required>
+                <option value="MAÑANA">Mañana</option>
+                <option value="TARDE">Tarde</option>
+              </select>
+            </div>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="submit" form="formAgregarEstudiante" class="btn btn-primary">Guardar Estudiante</button>
+        <button type="submit" form="registroForm" class="btn btn-primary">Guardar Estudiante</button>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- Modal Eliminar Estudiante -->
 <div class="modal fade" id="deleteEstudentModal" tabindex="-1" aria-labelledby="deleteEstudentModalLabel" aria-hidden="true">
@@ -245,38 +320,66 @@
 
 
     <!-- Script para mostrar vista previa de la imagen del estudiante -->
-      <script>
+     		<script>
+			document.getElementById('registroForm').addEventListener('submit', function (e) {
+			e.preventDefault();
 
-    function mostrarVistaPrevia(event) {
-      const input = event.target;
-      const vistaPrevia = document.getElementById('vistaPreviaFoto');
+			const form = e.target;
+			const formData = new FormData(form);
 
-      if (input.files && input.files[0]) {
-        const lector = new FileReader();
-        lector.onload = function(e) {
-          vistaPrevia.src = e.target.result;
-          vistaPrevia.style.display = 'block';
-        };
-        lector.readAsDataURL(input.files[0]);
-      } else {
-        vistaPrevia.src = '#';
-        vistaPrevia.style.display = 'none';
-      }
-    }
-  </script>
+			fetch('../controllers/matricula.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+          // Mostra mensaje correcto con SweetAlert2
+					Swal.fire({
+						icon: 'success',
+						title: 'Estudiante Registrado',
+            text: 'Estudiante Registrado Sastifactoriamente',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: 'Algunos parametros no son validos',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
 
 
             <!-- Scripts -->
     <script src="../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
       <!-- popper js -->
     <script src="../assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+
         <!-- tippy js -->
     <script src="../assets/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
     <script src="../assets/js/vendors/tooltip.js"></script>
+
 	  <?php include "../partials/scripts.php" ?>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-
-
 
 
 

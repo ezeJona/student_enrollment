@@ -28,6 +28,8 @@
 	<link href="./assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
 	<link href="./assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
 	<link href="./assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+
+	<!-- Sweetalert -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<!-- Theme CSS -->
