@@ -19,30 +19,7 @@
         }
 
         //Metodo para agregar nuevos docentes
-        public function agregarDocente($data) {
-        try {
-            $stmt = $this->conexion->prepare("CALL sp_agregar_docente(?, ?, ?, ?, ?, ?, ?)");
-
-            $stmt->bind_param(
-                "sssssss",
-                $data['primer_nombre'],
-                $data['segundo_nombre'],
-                $data['primer_apellido'],
-                $data['segundo_apellido'],
-                $data['cedula'],
-                $data['telefono'],
-                $data['turno']
-            );
-
-            $stmt->execute();
-            return true;
-
-        } catch (mysqli_sql_exception $e) {
-            return $e->getMessage();
-        }
-    }
-
-    /*public function eliminarDocente($docente_id) {
+    public function eliminarDocente($docente_id) {
         try {
             $stmt = $this->conexion->prepare("CALL sp_eliminar_docente(?)");
             $stmt->bind_param("i", $docente_id);
@@ -51,5 +28,5 @@
         } catch (mysqli_sql_exception $e) {
             return $e->getMessage();
         }
-    }*/
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-require_once '../models/docente.model.php';
+require_once '../models/delete.docente.model.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregar_docente'])) {
     $data = [
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregar_docente'])) {
     }
 }
 
-/*if (isset($_POST['docente_id'])) {
+if (isset($_POST['docente_id'])) {
     $docenteId = $_POST['docente_id'];
 
     $objetoDocente = new DocenteModel();
@@ -36,4 +36,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregar_docente'])) {
     }
 } else {
     echo "ID no recibido.";
-}*/
+}

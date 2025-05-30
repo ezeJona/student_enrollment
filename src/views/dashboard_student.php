@@ -291,35 +291,26 @@
   </div>
 </div>
 
+ <!-- Modal Eliminar Estudiante -->
+      <div class="modal fade" id="deleteEstudentModal" tabindex="-1" aria-labelledby="deleteEstudentModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">¿Eliminar estudiante?</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                    ¿Estás seguro de que deseas eliminar al estudiante <strong>Juan Pérez</strong>? Esta acción no se puede deshacer.
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
-<!-- Modal Eliminar Estudiante -->
-<div class="modal fade" id="deleteEstudentModal" tabindex="-1" aria-labelledby="deleteEstudentModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="deleteEstudentModalLabel">Eliminar Estudiante</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        <p>¿Estás seguro que deseas eliminar permanentemente este estudiante?</p>
-        <p class="text-muted" id="eliminar-nombre"></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <form id="form-eliminar-estudiante" style="display: inline-block;">
-          <input type="hidden" id="eliminar-id">
-          <button type="submit" class="btn btn-danger">Confirmar Eliminación</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-    <!-- Script para mostrar vista previa de la imagen del estudiante -->
      		<script>
 			document.getElementById('registroForm').addEventListener('submit', function (e) {
 			e.preventDefault();

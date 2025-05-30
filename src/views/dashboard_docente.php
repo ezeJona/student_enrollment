@@ -49,7 +49,7 @@
                                         <!-- Agregar Nuevo Docente -->
                                         <div class="col-md-6 mb-3 ">
 
-                                            <a href="#!" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addEstudentModal">+ Nuevo Estudiante</a>
+                                            <a href="#!" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addDocenteModal">+ Nuevo Estudiante</a>
 
                                         </div>
                                         <!-- Botones de Exportar-->
@@ -57,19 +57,6 @@
                                             <!-- <a href="#!" class="btn btn-light me-1" ><i  data-feather="trash-2" class="icon-xs"></i></a> -->
                                             <a href="#!" class="btn btn-light me-1" >Exportar Excel</a>
                                         <a href="#!" class="btn btn-light " >Exportar PDF</a>
-                                        </div>
-                                        <div class=" col-lg-4 col-md-6">
-                                            <input type="search" class="form-control " placeholder="Buscar Estudiante">
-
-                                        </div>
-
-                                        <!-- Filtro Turno -->
-                                        <div class="col-lg-2 col-md-6  mt-3 mt-md-0">
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Turno</option>
-                                            <option value="1">Matutino</option>
-                                            <option value="2">Vespertino</option>
-                                        </select>
                                         </div>
                                 </div>
                                 </div>
@@ -109,44 +96,11 @@
                                                 <td><?= $docente['turno'] ?></td>
                                                 <td><span class="badge badge-success-soft text-success"><?= $docente['estado'] ?></span></td>
                                                 <td>
-                                                <a
-                                                    href="#!"
-                                                    class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                    data-template="editOne"
-                                                    >
-                                                    <i
-                                                        data-feather="eye"
-                                                        class="icon-xs"
-                                                    ></i>
-                                                    <div id="editOne" class="d-none">
-                                                        <span>Ver</span>
-                                                    </div>
+                                                    <a href="javascript:void(0);" onclick='abrirModalEditar(<?= json_encode($docente) ?>)' class="btn btn-ghost btn-icon btn-sm rounded-circle">
+                                                    <i data-feather="edit" class="icon-xs"></i>
                                                     </a>
-                                                    <a
-                                                    href="#!"
-                                                    class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                    data-template="editOne"
-                                                    >
-                                                    <i
-                                                        data-feather="edit"
-                                                        class="icon-xs"
-                                                    ></i>
-                                                    <div id="editOne" class="d-none">
-                                                        <span>Editar</span>
-                                                    </div>
-                                                    </a>
-                                                    <a
-                                                    href="#!"
-                                                    class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                    data-template="trashOne"
-                                                    >
-                                                    <i
-                                                        data-feather="trash-2"
-                                                        class="icon-xs"
-                                                    ></i>
-                                                    <div id="trashOne" class="d-none">
-                                                        <span>Eliminar</span>
-                                                    </div>
+                                                    <a href="javascript:void(0);" onclick='abrirModalEliminar(<?= json_encode($docente) ?>)' class="btn btn-ghost btn-icon btn-sm rounded-circle text-danger">
+                                                    <i data-feather="trash-2" class="icon-xs"></i>
                                                     </a>
 
                                                 </td>
@@ -154,8 +108,6 @@
                                                     }                    
                                                 ?>
                                             </tr>
-                                                
-                                            
                             </tbody>
                                     </table>
                                 </div>
@@ -171,131 +123,257 @@
         </div>
     </main>
 
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="addEstudentModal" tabindex="-1" aria-labelledby="addEstudentModalLabel" aria-hidden="true">
+        <!-- Modal -->
+    <div class="modal fade" id="addDocenteModal" tabindex="-1" aria-labelledby="addDocenteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
         <div class="modal-content">
-            <div class="modal-header">
+        <div class="modal-header">
             <h4 class="modal-title" id="addCustomerModalLabel">Nuevo registro de estudiante</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+        </div>
         <div class="modal-body">
-            <form id="formAgregarEstudiante" enctype="multipart/form-data">
-            <!-- Datos personales del estudiante -->
-            <h5 class="mb-3">Datos Personales</h5>
-            <div class="row g-3">
-                <div class="col-md-4">
-                <label for="codigoEstudiante" class="form-label">Código Estudiantil</label>
-                <input type="text" class="form-control" id="codigoEstudiante" name="codigoEstudiante" required>
-                </div>
-                <div class="col-md-4">
-                <label for="primerNombre" class="form-label">Primer Nombre</label>
-                <input type="text" class="form-control" id="primerNombre" name="primerNombre" required>
-                </div>
-                <div class="col-md-4">
-                <label for="segundoNombre" class="form-label">Segundo Nombre</label>
-                <input type="text" class="form-control" id="segundoNombre" name="segundoNombre">
-                </div>
-                <div class="col-md-4">
-                <label for="primerApellido" class="form-label">Primer Apellido</label>
-                <input type="text" class="form-control" id="primerApellido" name="primerApellido" required>
-                </div>
-                <div class="col-md-4">
-                <label for="segundoApellido" class="form-label">Segundo Apellido</label>
-                <input type="text" class="form-control" id="segundoApellido" name="segundoApellido">
-                </div>
-                <div class="col-md-4">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono">
+            <form id="registroForm" method="POST">
+            <input type="hidden" name="agregar_docente" value="1">
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                <label class="form-label">Primer Nombre:</label>
+                <input type="text" name="primer_nombre" class="form-control" required>
                 </div>
                 <div class="col-md-6">
-                <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" name="email">
+                <label class="form-label">Segundo Nombre:</label>
+                <input type="text" name="segundo_nombre" class="form-control">
                 </div>
-                <div class="col-md-3">
-                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                <label class="form-label">Primer Apellido:</label>
+                <input type="text" name="primer_apellido" class="form-control" required>
                 </div>
-                <div class="col-md-3">
-                <label for="sexo" class="form-label">Sexo</label>
-                <select class="form-select" id="sexo" name="sexo" required>
-                    <option value="" selected disabled>Seleccione</option>
-                    <option value="M">Masculino</option>
-                    <option value="F">Femenino</option>
+                <div class="col-md-6">
+                <label class="form-label">Segundo Apellido:</label>
+                <input type="text" name="segundo_apellido" class="form-control">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                <label class="form-label">Cédula:</label>
+                <input type="text" name="cedula" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                <label class="form-label">Teléfono:</label>
+                <input type="text" name="telefono" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Turno:</label>
+                <select name="turno" class="form-select" required>
+                <option value="MAÑANA">MAÑANA</option>
+                <option value="TARDE">TARDE</option>
                 </select>
-                </div>
-                <div class="col-md-6">
-                <label for="departamento" class="form-label">Departamento</label>
-                <input type="text" class="form-control" id="departamento" name="departamento" required>
-                </div>
-                <div class="col-md-6">
-                <label for="municipio" class="form-label">Municipio</label>
-                <input type="text" class="form-control" id="municipio" name="municipio" required>
-                </div>
-                <div class="col-md-6">
-                <label for="documentoNacimiento" class="form-label">Partida de Nacimiento o Cédula del Estudiante</label>
-                <input type="file" class="form-control" id="documentoNacimiento" name="documentoNacimiento" accept=".pdf,.jpg,.png" required>
-                </div>
-                <div class="col-md-6">
-                <label for="boletinEstudiantil" class="form-label">Boletín Anterior</label>
-                <input type="file" class="form-control" id="boletinEstudiantil" name="boletinEstudiantil" accept=".pdf,.jpg,.png" required>
-                </div>
             </div>
-                <div class="col-md-6">
-                <label for="fotoPerfil" class="form-label">Foto de Perfil</label>
-                <input type="file" class="form-control" id="fotoPerfil" name="fotoPerfil" accept=".jpg,.jpeg,.png" onchange="mostrarVistaPrevia(event)" required>
-                <div class="mt-3">
-                    <img id="vistaPreviaFoto" src="#" alt="Vista previa" class="img-thumbnail" style="display: none; max-height: 150px;">
-                </div>
-                </div>
 
-            <hr class="my-4">
-
-            <!-- Datos del padre, madre o tutor -->
-            <h5 class="mb-3">Datos del Padre/Madre/Tutor</h5>
-            <div class="row g-3">
-                <div class="col-md-4">
-                <label for="tutorPrimerNombre" class="form-label">Primer Nombre</label>
-                <input type="text" class="form-control" id="tutorPrimerNombre" name="tutorPrimerNombre" required>
-                </div>
-                <div class="col-md-4">
-                <label for="tutorSegundoNombre" class="form-label">Segundo Nombre</label>
-                <input type="text" class="form-control" id="tutorSegundoNombre" name="tutorSegundoNombre">
-                </div>
-                <div class="col-md-4">
-                <label for="tutorApellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="tutorApellido" name="tutorApellido" required>
-                </div>
-                <div class="col-md-6">
-                <label for="tutorDireccion" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="tutorDireccion" name="tutorDireccion" required>
-                </div>
-                <div class="col-md-3">
-                <label for="tutorTelefono" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control" id="tutorTelefono" name="tutorTelefono" required>
-                </div>
-                <div class="col-md-3">
-                <label for="tutorCedula" class="form-label">Número de Cédula</label>
-                <input type="text" class="form-control" id="tutorCedula" name="tutorCedula" required>
-                </div>
-                <div class="col-md-6">
-                <label for="cedulaTutor" class="form-label">Copia de Cédula de identidad (PDF, JPG, PNG)</label>
-                <input type="file" class="form-control" id="cedulaTutor" name="cedulaTutor" accept=".pdf,.jpg,.png" required>
-                </div>
-            </div>
             </form>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" form="formAgregarEstudiante" class="btn btn-primary">Guardar Estudiante</button>
+            <button type="submit" form="registroForm" class="btn btn-primary">Agregar Docente</button>
         </div>
         </div>
     </div>
     </div>
 
+        <!-- Modal Editar Docente -->
+    <div class="modal fade" id="modalEditarDocente" tabindex="-1" aria-labelledby="modalEditarDocenteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form id="formEditarDocente" method="POST" action="editar_docente.php">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="modalEditarDocenteLabel">Editar Docente</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+            <input type="hidden" name="docente_id" id="editarDocenteId">
+            <div class="mb-3">
+                <label for="editarNombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" name="nombre_completo" id="editarNombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="editarCedula" class="form-label">Cédula</label>
+                <input type="text" class="form-control" name="cedula" id="editarCedula" required>
+            </div>
+            <div class="mb-3">
+                <label for="editarTelefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" name="telefono" id="editarTelefono" required>
+            </div>
+            <div class="mb-3">
+                <label for="editarTurno" class="form-label">Turno</label>
+                <select class="form-select" name="turno" id="editarTurno" required>
+                <option value="Mañana">Mañana</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Noche">Noche</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="editarEstado" class="form-label">Estado</label>
+                <select class="form-select" name="estado" id="editarEstado" required>
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+
+
+    <!-- Modal Eliminar Docente -->
+    <div class="modal fade" id="modalEliminarDocente" tabindex="-1" aria-labelledby="modalEliminarDocenteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form id="formEliminarDocente" method="POST">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="modalEliminarDocenteLabel">Eliminar Docente</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+            <input type="hidden" name="docente_id" id="eliminarDocenteId">
+            <p>¿Estás seguro que deseas eliminar a este docente?</p>
+            <p class="fw-bold text-danger" id="eliminarDocenteNombre"></p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+
+<script>
+    // Editar
+  function abrirModalEditar(docente) {
+    document.getElementById('editarDocenteId').value = docente.docente_id;
+    document.getElementById('editarNombre').value = docente.nombre_completo;
+    document.getElementById('editarCedula').value = docente.cedula;
+    document.getElementById('editarTelefono').value = docente.telefono;
+    document.getElementById('editarTurno').value = docente.turno;
+    document.getElementById('editarEstado').value = docente.estado;
+    new bootstrap.Modal(document.getElementById('modalEditarDocente')).show();
+  }
+
+  // Eliminar
+  function abrirModalEliminar(docente) {
+    document.getElementById('eliminarDocenteId').value = docente.docente_id;
+    document.getElementById('eliminarDocenteNombre').textContent = docente.nombre_completo;
+    new bootstrap.Modal(document.getElementById('modalEliminarDocente')).show();
+  }
+</script>
+
+
+     		<script>
+			document.getElementById('registroForm').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const form = e.target;
+			const formData = new FormData(form);
+
+			fetch('../controllers/docente.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+          // Mostra mensaje correcto con SweetAlert2
+					Swal.fire({
+						icon: 'success',
+						title: 'Docente Registrado',
+                        text: 'Docente Registrado Sastifactoriamente',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: 'Algunos parametros no son validos',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
+
+        <script>
+			document.getElementById('formEliminarDocente').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const form = e.target;
+			const formData = new FormData(form);
+
+			fetch('../controllers/delete.docente.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+          // Mostra mensaje correcto con SweetAlert2
+					Swal.fire({
+						icon: 'success',
+						title: 'Docente Eliminado',
+                        text: 'El docente fue eliminado correctamente.',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: data,
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
 
 
         <!-- Scripts -->
@@ -304,24 +382,6 @@
 
 	<?php include "../partials/scripts.php" ?>
 
-        <script>
-        function mostrarVistaPrevia(event) {
-        const input = event.target;
-        const vistaPrevia = document.getElementById('vistaPreviaFoto');
-
-        if (input.files && input.files[0]) {
-            const lector = new FileReader();
-            lector.onload = function(e) {
-            vistaPrevia.src = e.target.result;
-            vistaPrevia.style.display = 'block';
-            };
-            lector.readAsDataURL(input.files[0]);
-        } else {
-            vistaPrevia.src = '#';
-            vistaPrevia.style.display = 'none';
-        }
-        }
-    </script>
 
 
     <!-- popper js -->
