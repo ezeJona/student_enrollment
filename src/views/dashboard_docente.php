@@ -79,6 +79,12 @@
                                         <tbody>
                                         <?php
                                             while($docente = mysqli_fetch_assoc($allDocentes)){
+                                            $nombre_completo = $docente['primer_nombre'] . ' ' . 
+                                                $docente['segundo_nombre'] . ' ' . 
+                                                $docente['primer_apellido'] . ' ' . 
+                                                $docente['segundo_apellido'];
+
+                                            $seccion_guiada = $docente['grado'] . ' ' . $docente['seccion'];
                                         ?>
                                             <tr>
                                                 <td> <a href="#!"><?=$docente['docente_id']?></a></td>
@@ -86,13 +92,13 @@
                                                 <div class="d-flex align-items-center">
                                                     <!-- <a href="#!"><img src="../assets/images/avatar/avatar-11.jpg" alt="Image" class="avatar avatar-sm rounded-circle"></a> -->
                                                     <div class="ms-2">
-                                                    <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?= $docente['nombre_completo']?></h5>
+                                                    <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?php echo $nombre_completo?></h5>
                                                     </div>
                                                 </div>
                                                 </td>
                                                 <td><?= $docente['cedula'] ?></td>
                                                 <td> <?= $docente['telefono'] ?> </td>
-                                                <td> </td>
+                                                <td><?php echo $seccion_guiada ?></td>
                                                 <td><?= $docente['turno'] ?></td>
                                                 <td><span class="badge badge-success-soft text-success"><?= $docente['estado'] ?></span></td>
                                                 <td>
@@ -187,52 +193,79 @@
     </div>
 
         <!-- Modal Editar Docente -->
-    <div class="modal fade" id="modalEditarDocente" tabindex="-1" aria-labelledby="modalEditarDocenteLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <form id="formEditarDocente" method="POST" action="editar_docente.php">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="modalEditarDocenteLabel">Editar Docente</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-            <input type="hidden" name="docente_id" id="editarDocenteId">
-            <div class="mb-3">
-                <label for="editarNombre" class="form-label">Nombre completo</label>
-                <input type="text" class="form-control" name="nombre_completo" id="editarNombre" required>
-            </div>
-            <div class="mb-3">
-                <label for="editarCedula" class="form-label">Cédula</label>
-                <input type="text" class="form-control" name="cedula" id="editarCedula" required>
-            </div>
-            <div class="mb-3">
-                <label for="editarTelefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" name="telefono" id="editarTelefono" required>
-            </div>
-            <div class="mb-3">
-                <label for="editarTurno" class="form-label">Turno</label>
-                <select class="form-select" name="turno" id="editarTurno" required>
-                <option value="Mañana">Mañana</option>
-                <option value="Tarde">Tarde</option>
-                <option value="Noche">Noche</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="editarEstado" class="form-label">Estado</label>
-                <select class="form-select" name="estado" id="editarEstado" required>
-                <option value="Activo">Activo</option>
-                <option value="Inactivo">Inactivo</option>
-                </select>
-            </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-            </div>
+    <!-- Modal Editar Docente -->
+<div class="modal fade" id="modalEditarDocente" tabindex="-1" aria-labelledby="modalEditarDocenteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form id="formEditarDocente" method="POST">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarDocenteLabel">Editar Docente</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
-        </form>
-    </div>
-    </div>
+        <div class="modal-body">
+          <input type="hidden" name="docente_id" id="editarDocenteId">
+          
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="editarPrimerNombre" class="form-label">Primer Nombre</label>
+              <input type="text" class="form-control" name="primer_nombre" id="editarPrimerNombre" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="editarSegundoNombre" class="form-label">Segundo Nombre</label>
+              <input type="text" class="form-control" name="segundo_nombre" id="editarSegundoNombre">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="editarPrimerApellido" class="form-label">Primer Apellido</label>
+              <input type="text" class="form-control" name="primer_apellido" id="editarPrimerApellido" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="editarSegundoApellido" class="form-label">Segundo Apellido</label>
+              <input type="text" class="form-control" name="segundo_apellido" id="editarSegundoApellido">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarCedula" class="form-label">Cédula</label>
+            <input type="text" class="form-control" name="cedula" id="editarCedula" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarTelefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" name="telefono" id="editarTelefono" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarTurno" class="form-label">Turno</label>
+            <select class="form-select" name="turno" id="editarTurno" required>
+              <option value="">Seleccione un turno</option>
+              <option value="Mañana">Mañana</option>
+              <option value="Tarde">Tarde</option>
+              <option value="Noche">Noche</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarEstado" class="form-label">Estado</label>
+            <select class="form-select" name="estado" id="editarEstado" required>
+              <option value="">Seleccione estado</option>
+              <option value="Activo">Activo</option>
+              <option value="Inactivo">Inactivo</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
 
 
     <!-- Modal Eliminar Docente -->
@@ -260,15 +293,20 @@
 
 <script>
     // Editar
-  function abrirModalEditar(docente) {
-    document.getElementById('editarDocenteId').value = docente.docente_id;
-    document.getElementById('editarNombre').value = docente.nombre_completo;
-    document.getElementById('editarCedula').value = docente.cedula;
-    document.getElementById('editarTelefono').value = docente.telefono;
-    document.getElementById('editarTurno').value = docente.turno;
-    document.getElementById('editarEstado').value = docente.estado;
-    new bootstrap.Modal(document.getElementById('modalEditarDocente')).show();
-  }
+function abrirModalEditar(docente) {
+  document.getElementById('editarDocenteId').value = docente.docente_id;
+  document.getElementById('editarPrimerNombre').value = docente.primer_nombre;
+  document.getElementById('editarSegundoNombre').value = docente.segundo_nombre;
+  document.getElementById('editarPrimerApellido').value = docente.primer_apellido;
+  document.getElementById('editarSegundoApellido').value = docente.segundo_apellido;
+  document.getElementById('editarCedula').value = docente.cedula;
+  document.getElementById('editarTelefono').value = docente.telefono;
+  document.getElementById('editarTurno').value = docente.turno;
+  document.getElementById('editarEstado').value = docente.estado;
+  
+  new bootstrap.Modal(document.getElementById('modalEditarDocente')).show();
+}
+
 
   // Eliminar
   function abrirModalEliminar(docente) {
@@ -334,7 +372,7 @@
 			const form = e.target;
 			const formData = new FormData(form);
 
-			fetch('../controllers/delete.docente.controller.php', {
+			fetch('../controllers/edit.docente.controller.php', {
 				method: 'POST',
 				body: formData
 			})
@@ -375,7 +413,53 @@
 		});
 		</script>
 
+        <script>
+			document.getElementById('formEditarDocente').addEventListener('submit', function (e) {
+			e.preventDefault();
 
+			const form = e.target;
+			const formData = new FormData(form);
+
+			fetch('../controllers/edit.docente.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+          // Mostra mensaje correcto con SweetAlert2
+					Swal.fire({
+						icon: 'success',
+						title: 'El docente fue modificado',
+                        text: 'El docente fue modificado correctamente.',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: data,
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
         <!-- Scripts -->
         <!-- flatpickr -->
 <script src="../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
