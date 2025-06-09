@@ -129,7 +129,7 @@
         </div>
     </main>
 
-        <!-- Modal -->
+        <!-- Modal Agregar Docente -->
     <div class="modal fade" id="addDocenteModal" tabindex="-1" aria-labelledby="addDocenteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
         <div class="modal-content">
@@ -192,7 +192,6 @@
     </div>
     </div>
 
-        <!-- Modal Editar Docente -->
     <!-- Modal Editar Docente -->
 <div class="modal fade" id="modalEditarDocente" tabindex="-1" aria-labelledby="modalEditarDocenteLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -372,7 +371,7 @@ function abrirModalEditar(docente) {
 			const form = e.target;
 			const formData = new FormData(form);
 
-			fetch('../controllers/edit.docente.controller.php', {
+			fetch('../controllers/delete.docente.controller.php', {
 				method: 'POST',
 				body: formData
 			})
