@@ -2,8 +2,10 @@
 require_once '../models/edit.estudiante.model.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Crear instancia del modelo
     $estudianteModel = new EstudianteModel();
 
+    // Ejecutar el método del modelo
     $resultado = $estudianteModel->editarEstudiante(
         $_POST['estudiante_id'],
         $_POST['primer_nombre'],
@@ -11,27 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_POST['primer_apellido'],
         $_POST['segundo_apellido'],
         $_POST['codigo_estudiantil'],
-        $_POST['fecha_nacimiento'],
-        $_POST['sexo'],
-        $_POST['direccion'],
         $_POST['telefono'],
-        $_POST['correo'],
-        $_POST['municipio'],
-        $_POST['departamento'],
-        $_POST['username'],
-        $_POST['password'],
-        $_POST['resp_primer_nombre'],
-        $_POST['resp_segundo_nombre'],
-        $_POST['resp_primer_apellido'],
-        $_POST['resp_segundo_apellido'],
-        $_POST['resp_direccion'],
-        $_POST['resp_cedula'],
-        $_POST['resp_telefono'],
-        $_POST['grado_id'],
-        $_POST['anio_escolar'],
-        $_POST['turno']
+        $_POST['estado_matricula']
     );
 
+    // Enviar respuesta
     if ($resultado) {
         echo 'ok';
     } else {

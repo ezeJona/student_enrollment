@@ -75,6 +75,13 @@
                                     <tbody>
                                       <?php
                                         while($estudiante = mysqli_fetch_assoc($allEstudent)){
+                                          $nombre_completo = $estudiante['primer_nombre'] . ' ' . 
+                                                $estudiante['segundo_nombre'] . ' ' . 
+                                                $estudiante['primer_apellido'] . ' ' . 
+                                                $estudiante['segundo_apellido'];
+                                          $maestro_guia = $estudiante['docente_primer_nombre'] . ' ' . $estudiante['docente_primer_apellido'];
+
+                                                $seccion_guiada = $estudiante['grado'] . ' ' . $estudiante['seccion'];
                                       ?>
                                         <tr>
                                             <td> <a href="#!"><?=$estudiante['estudiante_id']?></a></td>
@@ -82,14 +89,14 @@
                                               <div class="d-flex align-items-center">
                                                 <!-- <a href="#!"><img src="../assets/images/avatar/avatar-11.jpg" alt="Image" class="avatar avatar-sm rounded-circle"></a> -->
                                                 <div class="ms-2">
-                                                <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?= $estudiante['nombre_completo']?></h5>
+                                                <h5 class="mb-0"><a href="#!" class="text-inherit"></a><?php echo $nombre_completo?></h5>
                                                 </div>
                                             </div>
                                             </td>
-                                            <td><?= $estudiante['maestro_guia'] ?></td>
+                                            <td><?php echo $maestro_guia ?></td>
                                             <td> <?= $estudiante['codigo_estudiantil'] ?> </td>
                                             <td><?= $estudiante['telefono'] ?></td>
-                                            <td><?= $estudiante['grado_seccion'] ?></td>
+                                            <td><?php echo $seccion_guiada?></td>
                                             <td><span class="badge badge-success-soft text-success"><?= $estudiante['estado_matricula'] ?></span></td>
                                               <td>
                                                     <!-- Ver
@@ -106,19 +113,9 @@
                                                         <span>Ver</span>
                                                     </div>
                                                     </a> -->
-                                                    <a
-                                                    href="#!"
-                                                    class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                    data-template="editOne"
-                                                    >
-                                                    <i
-                                                        data-feather="edit"
-                                                        class="icon-xs"
-                                                    ></i>
-                                                    <div id="editOne" class="d-none">
-                                                        <span>Editar</span>
-                                                    </div>
+                                                    <a href="javascript:void(0);" onclick='abrirModalEditarEstudiante(<?= json_encode($estudiante) ?>)' class="btn btn-ghost btn-icon btn-sm rounded-circle"><i data-feather="edit" class="icon-xs"></i>
                                                     </a>
+
                                                     <a
                                                     href="#!"
                                                     class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
@@ -291,6 +288,75 @@
   </div>
 </div>
 
+<!-- Editar Estudiante -->
+<div class="modal fade" id="modalEditarEstudiante" tabindex="-1" aria-labelledby="modalEditarEstudianteLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <form id="formEditarEstudiante" method="POST">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarEstudianteLabel">Editar Estudiante</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="estudiante_id" id="editarEstudianteId">
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="editarPrimerNombreE" class="form-label">Primer Nombre</label>
+              <input type="text" class="form-control" name="primer_nombre" id="editarPrimerNombreE" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="editarSegundoNombreE" class="form-label">Segundo Nombre</label>
+              <input type="text" class="form-control" name="segundo_nombre" id="editarSegundoNombreE">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="editarPrimerApellidoE" class="form-label">Primer Apellido</label>
+              <input type="text" class="form-control" name="primer_apellido" id="editarPrimerApellidoE" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="editarSegundoApellidoE" class="form-label">Segundo Apellido</label>
+              <input type="text" class="form-control" name="segundo_apellido" id="editarSegundoApellidoE">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarCodigoEstudiantilE" class="form-label">Código Estudiantil</label>
+            <input type="text" class="form-control" name="codigo_estudiantil" id="editarCodigoEstudiantilE" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarTelefonoE" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" name="telefono" id="editarTelefonoE" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarEstadoMatriculaE" class="form-label">Estado Matrícula</label>
+            <select class="form-select" name="estado_matricula" id="editarEstadoMatriculaE" required>
+              <option value="">Seleccione estado</option>
+              <option value="Matriculado">Matriculado</option>
+              <option value="Preinscrito">Preinscrito</option>
+              <option value="Retirado">Retirado</option>
+              <option value="Egresado">Egresado</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
  <!-- Modal Eliminar Estudiante -->
       <div class="modal fade" id="deleteEstudentModal" tabindex="-1" aria-labelledby="deleteEstudentModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -309,7 +375,20 @@
                 </div>
             </div>
         </div>
-        
+        <script>
+        function abrirModalEditarEstudiante(estudiante) {
+        document.getElementById('editarEstudianteId').value = estudiante.estudiante_id;
+        document.getElementById('editarPrimerNombreE').value = estudiante.primer_nombre;
+        document.getElementById('editarSegundoNombreE').value = estudiante.segundo_nombre;
+        document.getElementById('editarPrimerApellidoE').value = estudiante.primer_apellido;
+        document.getElementById('editarSegundoApellidoE').value = estudiante.segundo_apellido;
+        document.getElementById('editarCodigoEstudiantilE').value = estudiante.codigo_estudiantil;
+        document.getElementById('editarTelefonoE').value = estudiante.telefono;
+        document.getElementById('editarEstadoMatriculaE').value = estudiante.estado_matricula;
+
+        new bootstrap.Modal(document.getElementById('modalEditarEstudiante')).show();
+      }
+        </script>
 
      		<script>
 			document.getElementById('registroForm').addEventListener('submit', function (e) {
@@ -358,6 +437,57 @@
 			});
 		});
 		</script>
+
+
+<script>
+			document.getElementById('formEditarEstudiante').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const form = e.target;
+			const formData = new FormData(form);
+
+			fetch('../controllers/edit.estudiante.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+          // Mostra mensaje correcto con SweetAlert2
+					Swal.fire({
+						icon: 'success',
+						title: 'Estudiante actualizado',
+            text: 'Los datos del estudiante fueron actualizados correctamente.',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: 'Algunos parametros no son validos',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
+
+    
 
 
             <!-- Scripts -->

@@ -13,7 +13,7 @@ class EstudentModel {
     }
 
     public function read(){
-        $stmt = $this->conexion->prepare("SELECT * FROM vista_informacion_estudiantes");
+        $stmt = $this->conexion->prepare("SELECT * FROM vista_info_estudiante");
         $stmt->execute();
         return $stmt->get_result(); // Devuelve todos los datos
     }
