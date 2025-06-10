@@ -339,6 +339,7 @@ function abrirModalEditar(docente) {
 						timer: 2500,
 						timerProgressBar: true
 					});
+          window.location.href = 'dashboard_docente.php';
 				} else {
 					// Mostrar error con SweetAlert2
 					Swal.fire({
@@ -387,6 +388,7 @@ function abrirModalEditar(docente) {
 						timer: 2500,
 						timerProgressBar: true
 					});
+          window.location.href = 'dashboard_docente.php';
 				} else {
 					// Mostrar error con SweetAlert2
 					Swal.fire({
@@ -435,6 +437,7 @@ function abrirModalEditar(docente) {
 						timer: 2500,
 						timerProgressBar: true
 					});
+          window.location.href = 'dashboard_docente.php';
 				} else {
 					// Mostrar error con SweetAlert2
 					Swal.fire({

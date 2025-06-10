@@ -413,6 +413,7 @@
 						timer: 2500,
 						timerProgressBar: true
 					});
+          window.location.href = 'dashboard_student.php';
 				} else {
 					// Mostrar error con SweetAlert2
 					Swal.fire({
@@ -459,9 +460,10 @@
 						title: 'Estudiante actualizado',
             text: 'Los datos del estudiante fueron actualizados correctamente.',
 						showConfirmButton: false,
-						timer: 2500,
+						timer: 3000,
 						timerProgressBar: true
 					});
+          window.location.href = 'dashboard_student.php';
 				} else {
 					// Mostrar error con SweetAlert2
 					Swal.fire({
