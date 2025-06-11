@@ -116,20 +116,8 @@
                                                     <a href="javascript:void(0);" onclick='abrirModalEditarEstudiante(<?= json_encode($estudiante) ?>)' class="btn btn-ghost btn-icon btn-sm rounded-circle"><i data-feather="edit" class="icon-xs"></i>
                                                     </a>
 
-                                                    <a
-                                                    href="#!"
-                                                    class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
-                                                    data-template="trashOne"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#deleteEstudentModal"
-                                                    >
-                                                    <i
-                                                        data-feather="trash-2"
-                                                        class="icon-xs"
-                                                    ></i>
-                                                    <div id="trashOne" class="d-none">
-                                                        <span>Eliminar</span>
-                                                    </div>
+                                                    <a href="javascript:void(0);" onclick='abrirModalEliminar(<?= json_encode($estudiante) ?>)' class="btn btn-ghost btn-icon btn-sm rounded-circle text-danger">
+                                                    <i data-feather="trash-2" class="icon-xs"></i>
                                                     </a>
 
                                                 </td>
@@ -353,28 +341,29 @@
   </div>
 </div>
 
+  <!-- Modal Eliminar Estudiante -->
+      <div class="modal fade" id="modalEliminarEstudiante" tabindex="-1" aria-labelledby="modalEliminarEstudianteLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <form id="formEliminarEstudiante" method="POST">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title" id="modalEliminarEstudianteLabel">Eliminar Estudiante</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+              </div>
+              <div class="modal-body">
+              <input type="hidden" name="estudiante_id" id="eliminarEstudianteId">
+              <p>¿Estás seguro que deseas eliminar a este estudiante?</p>
+              <p class="fw-bold text-danger" id="eliminarEstudianteNombre"></p>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-danger">Eliminar</button>
+              </div>
+          </div>
+          </form>
+      </div>
+      </div>
 
-
-
-
- <!-- Modal Eliminar Estudiante -->
-      <div class="modal fade" id="deleteEstudentModal" tabindex="-1" aria-labelledby="deleteEstudentModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title">¿Eliminar estudiante?</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                    ¿Estás seguro de que deseas eliminar al estudiante <strong>Juan Pérez</strong>? Esta acción no se puede deshacer.
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <script>
         function abrirModalEditarEstudiante(estudiante) {
         document.getElementById('editarEstudianteId').value = estudiante.estudiante_id;
@@ -388,6 +377,13 @@
 
         new bootstrap.Modal(document.getElementById('modalEditarEstudiante')).show();
       }
+
+        // Eliminar
+        function abrirModalEliminar(estudiante) {
+          document.getElementById('eliminarEstudianteId').value = estudiante.estudiante_id;
+          document.getElementById('eliminarEstudianteNombre').textContent = estudiante.nombre_completo;
+          new bootstrap.Modal(document.getElementById('modalEliminarEstudiante')).show();
+        }
         </script>
 
      		<script>
@@ -470,6 +466,55 @@
 						icon: 'error',
 						title: 'Error',
 						text: 'Algunos parametros no son validos',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
+
+    <script>
+			document.getElementById('formEliminarEstudiante').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const form = e.target;
+			const formData = new FormData(form);
+
+			fetch('../controllers/delete.estudiante.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+          // Mostra mensaje correcto con SweetAlert2
+					Swal.fire({
+						icon: 'success',
+						title: 'Estudiante Eliminado',
+                        text: 'El estudiante fue eliminado correctamente.',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+          window.location.href = 'dashboard_student.php';
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: data,
 						showConfirmButton: false,
 						timer: 2500,
 						timerProgressBar: true
