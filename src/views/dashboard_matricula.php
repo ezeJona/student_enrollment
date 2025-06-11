@@ -87,7 +87,7 @@
                   </div>
                 </div>
 
-                <!-- Estudiantes Registrados -->
+                <!-- Matriculas Registrados -->
                 <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
                   <div class="card h-100 card-lift">
                     <div class="card-body">
@@ -261,8 +261,10 @@
                                           >Descargar
                                         </a>
 
-
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">
+                                        <a 
+                                        href="javascript:void(0);"
+                                        onclick='abrirModalEliminar(<?= json_encode($matricula) ?>)' 
+                                        class="dropdown-item d-flex align-items-center" ">
                                           <i
                                             class="me-2 icon-xs"
                                             data-feather="trash-2"
@@ -298,13 +300,13 @@
       <div class="modal-dialog modal-xl modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="addCustomerModalLabel">Nuevo registro de estudiante</h4>
+            <h4 class="modal-title" id="addCustomerModalLabel">Nuevo registro de matricula</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form id="registroForm" method="POST">
               
-              <h5 class="mb-3 mt-2">Datos del Estudiante</h5>
+              <h5 class="mb-3 mt-2">Datos del Matricula</h5>
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label">Primer Nombre</label>
@@ -421,7 +423,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" form="registroForm" class="btn btn-primary">Guardar Estudiante</button>
+            <button type="submit" form="registroForm" class="btn btn-primary">Guardar Matricula</button>
           </div>
         </div>
       </div>
@@ -497,6 +499,29 @@
       </div>
     </div>
 
+    <!-- Modal Eliminar matricula -->
+      <div class="modal fade" id="modalEliminarMatricula" tabindex="-1" aria-labelledby="modalEliminarMatriculaLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <form id="formEliminarMatricula" method="POST">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title" id="modalEliminarMatriculaLabel">Eliminar Matricula</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+              </div>
+              <div class="modal-body">
+              <input type="hidden" name="matricula_id" id="eliminarMatriculaId">
+              <p>¿Estás seguro que deseas eliminar a este matricula?</p>
+              <p class="fw-bold text-danger" id="eliminarMatriculaNombre"></p>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-danger">Eliminar</button>
+              </div>
+          </div>
+          </form>
+      </div>
+      </div>
+
     <script>
       function abrirModalEditarMatricula(datos) {
       document.getElementById("matricula_id").value = datos.ID_Matricula;
@@ -511,8 +536,15 @@
 
       new bootstrap.Modal(document.getElementById("modalEditarMatricula")).show();
     }
+
+    // Eliminar
+        function abrirModalEliminar(matricula) {
+          document.getElementById('eliminarMatriculaId').value = matricula.ID_Matricula;
+          document.getElementById('eliminarMatriculaNombre').textContent = matricula.nombre_completo;
+          new bootstrap.Modal(document.getElementById('modalEliminarMatricula')).show();
+        }
     </script>
-        <!-- Script para mostrar vista previa de la imagen del estudiante -->
+        <!-- Script para mostrar vista previa de la imagen del matricula -->
      		<script>
 			document.getElementById('registroForm').addEventListener('submit', function (e) {
 			e.preventDefault();
@@ -530,7 +562,7 @@
           // Mostra mensaje correcto con SweetAlert2
 					Swal.fire({
 						icon: 'success',
-						title: 'Estudiante Registrado',
+						title: 'Matricula Registrado',
             text: 'Matricula Registrado Sastifactoriamente',
 						showConfirmButton: false,
 						timer: 2500,
@@ -579,7 +611,7 @@
           // Mostra mensaje correcto con SweetAlert2
 					Swal.fire({
 						icon: 'success',
-						title: 'Estudiante Editado',
+						title: 'Matricula Editado',
             text: 'Matrícula editada con éxito.',
 						showConfirmButton: false,
 						timer: 2500,
@@ -610,6 +642,56 @@
 			});
 		});
 		</script>
+
+    <script>
+			document.getElementById('formEliminarMatricula').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const form = e.target;
+			const formData = new FormData(form);
+
+			fetch('../controllers/delete.matricula.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+          // Mostra mensaje correcto con SweetAlert2
+					Swal.fire({
+						icon: 'success',
+						title: 'Matricula Eliminado',
+                        text: 'El matricula fue eliminado correctamente.',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+          window.location.href = 'dashboard_matricula.php';
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: data,
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
+
 
     <!-- Scripts -->
 
