@@ -178,6 +178,10 @@
                           <tbody>
                           <?php
                               while($matricula = mysqli_fetch_assoc($allMatricula)){
+                              $nombre_completo = $matricula['Primer_Nombre'] . ' ' . 
+                                                $matricula['Segundo_Nombre'] . ' ' . 
+                                                $matricula['Primer_Apellido'] . ' ' . 
+                                                $matricula['Segundo_Apellido'];
                             ?>
                             <tr>
                               <td>
@@ -191,7 +195,7 @@
                               <td class="ps-1">
                                 <div class="d-flex align-items-center">
                                   <div class="ms-2">
-                                    <h5 class="mb-0"> <a href="#!" class="text-inherit"><?= $matricula['Nombre_Completo_Estudiante']?></a></h5>
+                                    <h5 class="mb-0"> <a href="#!" class="text-inherit"><?php echo $nombre_completo?></a></h5>
                                   </div>
                                 </div>
                               </td>
@@ -226,8 +230,6 @@
                                           >Ver
                                         </a>-->
 
-
-
                                         <a class="dropdown-item d-flex align-items-center" href="validation.php">
                                           <i
                                             class="me-2 icon-xs"
@@ -235,6 +237,17 @@
 
                                           ></i
                                           >Validación
+                                        </a>
+                                        <a 
+                                          href="javascript:void(0);"
+                                          onclick='abrirModalEditarMatricula(<?= json_encode($matricula) ?>)' 
+                                          class="dropdown-item d-flex align-items-center">
+                                          <i
+                                            class="me-2 icon-xs"
+                                            data-feather="edit"
+
+                                          ></i
+                                          >Editar
                                         </a>
 
 
@@ -414,6 +427,91 @@
       </div>
     </div>
 
+        <!-- Modal: Editar Matrícula -->
+    <div class="modal fade" id="modalEditarMatricula" tabindex="-1" aria-labelledby="editarMatriculaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <form id="formEditarMatricula">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editarMatriculaLabel">Editar Matrícula</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body row g-3">
+              <input type="hidden" name="matricula_id" id="matricula_id">
+
+              <div class="col-md-6">
+                <label>Primer Nombre</label>
+                <input type="text" class="form-control" name="primer_nombre" id="primer_nombre" required>
+              </div>
+              <div class="col-md-6">
+                <label>Segundo Nombre</label>
+                <input type="text" class="form-control" name="segundo_nombre" id="segundo_nombre">
+              </div>
+              <div class="col-md-6">
+                <label>Primer Apellido</label>
+                <input type="text" class="form-control" name="primer_apellido" id="primer_apellido" required>
+              </div>
+              <div class="col-md-6">
+                <label>Segundo Apellido</label>
+                <input type="text" class="form-control" name="segundo_apellido" id="segundo_apellido">
+              </div>
+              <div class="col-md-6">
+                <label>Correo Electrónico</label>
+                <input type="email" class="form-control" name="email" id="email">
+              </div>
+              <div class="col-md-6">
+                <label>Código Estudiantil</label>
+                <input type="text" class="form-control" name="codigo_estudiantil" id="codigo_estudiantil">
+              </div>
+              <div class="col-md-6">
+                <label>Grado</label>
+                <select class="form-select" name="grado_id" id="grado_id" required>
+                      <option value="1">Primer Grado</option>
+                      <option value="2">Segundo Grado</option>
+                      <option value="3">Tercer Grado</option>
+                      <option value="4">Cuarto Grado</option>
+                      <option value="5">Quinto Grado</option>
+                      <option value="6">Sexto Grado</option>
+                      <option value="7">Séptimo Grado</option>
+                      <option value="8">Octavo Grado</option>
+                      <option value="9">Noveno Grado</option>
+                      <option value="10">Décimo Grado</option>
+                      <option value="11">Undécimo Grado</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label>Estado de Matrícula</label>
+                <select class="form-select" name="estado_matricula" id="estado_matricula" required>
+                  <option value="Matriculado">Matriculado</option>
+                  <option value="Inactivo">Inactivo</option>
+                  <option value="Retirado">Retirado</option>
+                  <option value="Graduado">Graduado</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function abrirModalEditarMatricula(datos) {
+      document.getElementById("matricula_id").value = datos.ID_Matricula;
+      document.getElementById("primer_nombre").value = datos.Primer_Nombre;
+      document.getElementById("segundo_nombre").value = datos.Segundo_Nombre;
+      document.getElementById("primer_apellido").value = datos.Primer_Apellido;
+      document.getElementById("segundo_apellido").value = datos.Segundo_Apellido;
+      document.getElementById("email").value = datos.Email;
+      document.getElementById("codigo_estudiantil").value = datos.Codigo_Estudiantil;
+      document.getElementById("grado_id").value = datos.Grado;
+      document.getElementById("estado_matricula").value = datos.Estado_Matricula;
+
+      new bootstrap.Modal(document.getElementById("modalEditarMatricula")).show();
+    }
+    </script>
         <!-- Script para mostrar vista previa de la imagen del estudiante -->
      		<script>
 			document.getElementById('registroForm').addEventListener('submit', function (e) {
@@ -433,11 +531,61 @@
 					Swal.fire({
 						icon: 'success',
 						title: 'Estudiante Registrado',
-            text: 'Estudiante Registrado Sastifactoriamente',
+            text: 'Matricula Registrado Sastifactoriamente',
 						showConfirmButton: false,
 						timer: 2500,
 						timerProgressBar: true
 					});
+          window.location.href = 'dashboard_matricula.php';
+				} else {
+					// Mostrar error con SweetAlert2
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						text: 'Algunos parametros no son validos',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+				}
+			})
+			.catch(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error de red',
+					text: 'No se pudo conectar con el servidor.',
+					showConfirmButton: false,
+					timer: 2500,
+					timerProgressBar: true
+				});
+			});
+		});
+		</script>
+
+         		<script>
+			document.getElementById('formEditarMatricula').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const form = e.target;
+			const formData = new FormData(form);
+
+			fetch('../controllers/edit.matricula.controller.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.trim() === 'ok') {
+          // Mostra mensaje correcto con SweetAlert2
+					Swal.fire({
+						icon: 'success',
+						title: 'Estudiante Editado',
+            text: 'Matrícula editada con éxito.',
+						showConfirmButton: false,
+						timer: 2500,
+						timerProgressBar: true
+					});
+          window.location.href = 'dashboard_matricula.php';
 				} else {
 					// Mostrar error con SweetAlert2
 					Swal.fire({

@@ -11,12 +11,6 @@ class EstudianteModel {
         $this->conexion = $this->db->getConexion();
     }
 
-    public function read(){
-        $stmt = $this->conexion->prepare("SELECT * FROM vista_informacion_estudiantes");
-        $stmt->execute();
-        return $stmt->get_result(); // Devuelve todos los datos
-    }
-
     public function matricularEstudiante($data)
     {
         $stmt = $this->conexion->prepare("CALL sp_matricular_nuevo_estudiante(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");

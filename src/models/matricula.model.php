@@ -16,5 +16,4 @@
             $stmt->execute();
             return $stmt->get_result(); // Devuelve todos los datos
         }
-
     }

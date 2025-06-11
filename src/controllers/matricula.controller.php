@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'sexo' => $_POST['sexo'],
         'username' => $_POST['username'],
         'password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
-
         'responsable_primer_nombre' => $_POST['responsable_primer_nombre'],
         'responsable_segundo_nombre' => $_POST['responsable_segundo_nombre'],
         'responsable_primer_apellido' => $_POST['responsable_primer_apellido'],
@@ -31,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'año_escolar' => $_POST['año_escolar'],
         'turno' => $_POST['turno']
     ];
-
 
     $modelo = new EstudianteModel();
     $matricula_id = $modelo->matricularEstudiante($data);
