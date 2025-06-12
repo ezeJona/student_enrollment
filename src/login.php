@@ -19,7 +19,7 @@
 	</script>
 
 	<!-- Favicon icon-->
-	<link rel="shortcut icon" type="image/x-icon" href="./assets/images/svg/brand-logo-1.svg" />
+	<link rel="shortcut icon" type="image/x-icon" href="./assets/images/png/colegio_bello_horizonte.png" />
 
 	<!-- Color modes -->
 	<script src="./assets/js/vendors/color-modes.js"></script>
@@ -35,7 +35,7 @@
 	<!-- Theme CSS -->
 	<link rel="stylesheet" href="./assets/css/theme.css">
 
-	<title>nombre del colegio</title>
+	<title>Login - Colegio Bello Horizonte</title>
 	</head>
 	<body>
 		<!-- container -->
@@ -46,25 +46,25 @@
 						<div class="dropdown">
 							<button class="btn btn-ghost btn-icon rounded-circle" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
 								<i class="bi theme-icon-active"></i>
-								<span class="visually-hidden bs-theme-text">Toggle theme</span>
+								<span class="visually-hidden bs-theme-text">Tema</span>
 							</button>
 							<ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
 								<li>
 									<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
 										<i class="bi theme-icon bi-sun-fill"></i>
-										<span class="ms-2">Light</span>
+										<span class="ms-2">Luz</span>
 									</button>
 								</li>
 								<li>
 									<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
 										<i class="bi theme-icon bi-moon-stars-fill"></i>
-										<span class="ms-2">Dark</span>
+										<span class="ms-2">Oscuro</span>
 									</button>
 								</li>
 								<li>
 									<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
 										<i class="bi theme-icon bi-circle-half"></i>
-										<span class="ms-2">Auto</span>
+										<span class="ms-2">Automatico</span>
 									</button>
 								</li>
 							</ul>
@@ -75,40 +75,40 @@
 						<!-- Card body -->
 						<div class="card-body p-6">
 							<div class="mb-4">
-								<a href="../index.html"><img src="../assets/images/brand/logo/logo-2.svg" class="mb-2 text-inverse" alt="Image" /></a>
-								<p class="mb-6">Please enter your user information.</p>
+								<img src="./assets/images/png/banner_logo.png" alt="Logo Colegio" class="img-fluid" style="max-width: 350px;">
+								<p class="mb-1">Por Favor, ingrese su información</p>
 							</div>
 							<!-- Form -->
 							<form id="loginForm" method="post">
 								<!-- Username -->
 								<div class="mb-3">
-									<label for="username" class="form-label">Username or email</label>
-									<input type="text" id="username" class="form-control" name="username" placeholder="Email address here" required="" />
+									<label for="username" class="form-label">Usuario</label>
+									<input type="text" id="username" class="form-control" name="username" placeholder="Ingresa tu contraseña Aca!" required="" />
 								</div>
 								<!-- Password -->
 								<div class="mb-3">
-									<label for="password" class="form-label">Password</label>
+									<label for="password" class="form-label">Contraseña</label>
 									<input type="text" id="password" class="form-control" name="contrasena" placeholder="**************" required="" />
 								</div>
 								<!-- Checkbox -->
 								<div class="d-lg-flex justify-content-between align-items-center mb-4">
 									<div class="form-check custom-checkbox">
 										<input type="checkbox" class="form-check-input" id="rememberme" />
-										<label class="form-check-label" for="rememberme">Remember me</label>
+										<label class="form-check-label" for="rememberme">Recordar</label>
 									</div>
 								</div>
 								<div>
 									<!-- Button -->
 									<div class="d-grid">
-										<button type="submit" class="btn btn-primary">Sign in</button>
+										<button type="submit" class="btn btn-primary">Iniciar Sección</button>
 									</div>
 
 									<div class="d-md-flex justify-content-between mt-4">
 										<div class="mb-2 mb-md-0">
-											<a href="sign-up.html" class="fs-5">Create An Account</a>
+											<a href="./views/nuevo_ingreso_matricula.php" class="fs-5">Matriculate Ya!!</a>
 										</div>
 										<div>
-											<a href="forget-password.html" class="text-inherit fs-5">Forgot your password?</a>
+											<a href="forget-password.html" class="text-inherit fs-5">¿olvidaste tu contraseña?</a>
 										</div>
 									</div>
 								</div>
