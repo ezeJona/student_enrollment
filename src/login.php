@@ -133,23 +133,32 @@
 		<script src="assets/js/vendors/chart.js"></script>
 
 		<script>
-			document.getElementById('loginForm').addEventListener('submit', function (e) {
-			e.preventDefault();
+		document.getElementById('loginForm').addEventListener('submit', function (e) {
+	e.preventDefault();
 
-			const form = e.target;
-			const formData = new FormData(form);
+	const form = e.target;
+	const formData = new FormData(form);
 
-			fetch('controllers/auth.controller.php', {
-				method: 'POST',
-				body: formData
-			})
-			.then(res => res.text())
-			.then(data => {
-				if (data.trim() === 'ok') {
-					// Login exitoso: redirigir directamente
-					window.location.href = 'index.php';
-				} else {
-					// Mostrar error con SweetAlert2
+	fetch('controllers/auth.controller.php', {
+		method: 'POST',
+		body: formData
+	})
+	.then(res => res.json())
+	.then(data => {
+		if (data.status === 'ok') {
+			let destino;
+
+			switch (data.rol) {
+				case 1:
+					destino = 'index.php';
+					break;
+				case 2:
+					destino = 'index.student.php';
+					break;
+				case 5:
+					destino = 'index.php';
+					break;
+				default:
 					Swal.fire({
 						icon: 'error',
 						title: 'Error',
@@ -158,19 +167,33 @@
 						timer: 2500,
 						timerProgressBar: true
 					});
-				}
-			})
-			.catch(() => {
-				Swal.fire({
-					icon: 'error',
-					title: 'Error de red',
-					text: 'No se pudo conectar con el servidor.',
-					showConfirmButton: false,
-					timer: 2500,
-					timerProgressBar: true
-				});
+					destino = 'login.php'; // rol desconocido
+			}
+
+			window.location.href = destino;
+		} else {
+			Swal.fire({
+				icon: 'error',
+				title: 'Error',
+				text: data,
+				showConfirmButton: false,
+				timer: 2500,
+				timerProgressBar: true
 			});
+		}
+	})
+	.catch(() => {
+		Swal.fire({
+			icon: 'error',
+			title: 'Error de red',
+			text: 'No se pudo conectar con el servidor.',
+			showConfirmButton: false,
+			timer: 2500,
+			timerProgressBar: true
 		});
+	});
+});
+
 		</script>
 	</body>
 </html>

@@ -17,7 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['usuario_nombre'] = $usuario['username'];
             $_SESSION['usuario_rol'] = $usuario['rol_id'];
 
-            echo 'ok';
+            echo json_encode([
+                'status' => 'ok',
+                'rol' => $usuario['rol_id']
+            ]);
         } else {
             echo 'Usuario o contraseña incorrectos';
         }

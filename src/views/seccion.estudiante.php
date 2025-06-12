@@ -2,116 +2,95 @@
 <html lang="en">
 
 <head>
-  <?php 
+    <?php 
     include "../partials/head.php";
+    include "../partials/zona.priv.php";
     
-  ?>
-  <title>Portal del Estudiante</title>
-</head>
+	?>
+	<title>Portal del Estudiante</title>
+	</head>
 
-<body>
-  <main id="main-wrapper" class="main-wrapper">
-    <?php include "../partials/header.php" ?>
-    <!-- navbar vertical -->
-		<?php include "../partials/navbar_estudiante.php"?>
+	<body>
+	<main id="main-wrapper" class="main-wrapper">
 
-    <!-- page content -->
+		<?php 
+			include "../partials/header.php";
+			include "../partials/navbar_estudiante.php";
+		
+		
+		?>
 
-
-
-      <div id="app-content">
-      <!-- Container fluid -->
-      <!-- Container fluid -->
-      <div class="app-content-area">
-        <div class="container-fluid">
+		<!-- page content -->
 
 
-          <div class="row align-items-center">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-              <!-- Bg -->
-              <div class="pt-20 rounded-top" style="background:
-                url(../assets/images/background/profile-cover.jpg) no-repeat;
-                background-size: cover;">
-              </div>
-              <div class="card rounded-bottom smooth-shadow-sm">
 
-                <div class="d-flex align-items-center justify-content-between
-                  pt-4 pb-6 px-4">
-                  <div class="d-flex align-items-center">
-                    <div class="avatar-xxl avatar-indicators avatar-online me-2
-                      position-relative d-flex justify-content-end
-                      align-items-end mt-n10">
-                      <img src="../assets/images/avatar/avatar-11.jpg"
-                        class="avatar-xxl
-                        rounded-circle border border-2 "
-                        alt="Image">
-                        <!-- 
-                      <a href="#!" class="position-absolute top-0 right-0 me-2"
-                      >
-                        <img src="../assets/images/svg/checked-mark.svg" alt="Image"
-                          class="icon-sm">
-                      </a>
-                        -->
-                    </div>
-                    <div class="lh-1">
-                      <h2 class="mb-0">Jitu Chauhan
-                        <a href="#!" class="text-decoration-none">
+		<div id="app-content">
+		<!-- Container fluid -->
+		<!-- Container fluid -->
+		<div class="app-content-area">
+			<div class="container-fluid">
 
-                        </a>
-                      </h2>
-                      <p class="mb-0 d-block">@imjituchauhan</p>
-                    </div>
-                  </div>
-                  <div>
-                    <a href="profile-edit.html" class="btn btn-outline-primary
-                      d-none d-md-block">Edit Profile</a>
-                  </div>
 
-                </div>
-                <ul class="nav nav-lt-tab px-4" id="pills-tab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link " href="../index.student.php">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link " href="../views/Estado_matricula.php">EStado de Matricula</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link " href="../views/seccion.estudiante.php">Expediente del estudiante</a>
-                  </li>
+				<div class="col-xl-12 col-lg-12 col-md-12 col-12">
+					<!-- Bg -->
+					<div
+					class="pt-20 rounded-top"
+					style="
+						background: url(../assets/images/svg/banner_colegio.svg)
+						no-repeat;
+						background-size: cover;
+					"
+					></div>
+					<div class="card rounded-bottom rounded-0 smooth-shadow-sm mb-5">
+					<div
+						class="d-flex align-items-center justify-content-between pt-4 pb-6 px-4"
+					>
+						<div class="d-flex align-items-center">
+						<!-- text -->
+						<div class="lh-1">
+							<h2 class="mb-0">
+							Bienvenido al Portal del Estudiante
+							<a
+								href="#!"
+								class="text-decoration-none"
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="../views/matricula_linea.php">Matricula en Linea</a>
-                  </li>
-                  
-                </ul>
+							>
+							</a>
+							</h2>
+						</div>
+						</div>
+						<div>
+						<a
+							href="#!"
+							class="btn btn-outline-primary d-none d-md-block"
+							>Editar Perfil</a
+						>
+						</div>
+					</div>
+					<!-- nav -->
+					<ul class="nav nav-lt-tab px-4" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link " href="../index.student.php">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link " href="../views/Estado_matricula.php">Estado de Matricula</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active " href="../views/seccion.estudiante.php">Expediente del estudiante</a>
+					</li>
 
-              </div>
+					<li class="nav-item">
+						<a class="nav-link " href="../views/matricula_linea.php">Matricula en Linea</a>
+					</li>
+					
+					</ul>
+					</div>
+				</div>
+				</div>
 
-            </div>
-          </div>
-
-          <div class="row gy-5 mt-1">
+        		<div class="row gy-5 mt-1">
 					<aside class="col-xxl-3 col-xl-4 col-12 ">
-						<!-- Información general del estudiante -->
-						<div class="card mb-6">
-						<div class="card-body d-flex flex-column gap-5">
-							<h4 class="mb-0">Estudiante</h4>
-							<div class="d-flex flex-row justify-content-between align-items-center">
-							<div class="d-flex flex-row gap-4 align-items-center">
-								<img src="../assets/images/avatar/avatar-1.jpg" alt="avatar" class="avatar avatar-md rounded-circle" />
-								<h5 class="mb-0">Luis Rodríguez</h5>
-							</div>
-							<div>
-								<select class="form-select border-0" aria-label="Seleccionar estudiante">
-								<option selected>Estudiante</option>
-								<option value="Juan Pérez">Juan Pérez</option>
-								<option value="Ana Gómez">Ana Gómez</option>
-								<option value="Carlos Ruiz">Carlos Ruiz</option>
-								</select>
-							</div>
-							</div>
-						</div>
-						</div>
+						
 
 						<!-- Información académica -->
 						<div class="card mb-6">
@@ -193,7 +172,6 @@
 							</div>
 							<div class="d-flex flex-column gap-4">
 							<div class="d-flex flex-row gap-4 align-items-center">
-								<img src="../assets/images/avatar/avatar-8.jpg" alt="avatar" class="avatar avatar-md rounded-circle" />
 								<div>
 								<h5 class="mb-0">María López</h5>
 								<small>

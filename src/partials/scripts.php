@@ -3,6 +3,9 @@
 <script src="../assets/libs/feather-icons/dist/feather.min.js"></script>
 <script src="../assets/libs/simplebar/dist/simplebar.min.js"></script>
 
+<link href="../assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+
 <!-- Theme JS -->
 <script src="../assets/js/main.js"></script>
 

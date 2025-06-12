@@ -35,8 +35,8 @@
 
 <title>Estudiante</title>
   	<?php 
-	include "partials/zona.priv.php";
-
+    include "partials/zona.priv.php";
+    $nombre = $_SESSION['usuario_nombre'];
     
   	?>
 </head>
@@ -44,13 +44,51 @@
   <body>
     <main id="main-wrapper" class="main-wrapper">
       <?php 
-		include "partials/header.php";
-
-		include "partials/navbar_estudiante.php";
-    
+		include "partials/header.php"; 
   	?>
+    	<!-- Sidebar -->
+	<div class="app-menu">
+	<div class="navbar-vertical navbar nav-dashboard">
+		<div class="h-100" data-simplebar>
 
+		<!-- Logo -->
+		<div class="text-center py-4">
+			<img src="./assets/images/png/banner_logo.png" alt="Logo Colegio" class="img-fluid" style="max-width: 250px;">
+		</div>
 
+		<!-- Navbar nav -->
+		<ul class="navbar-nav flex-column" id="sideNavbar">
+
+			<li class="nav-item">
+			<a class="nav-link has-arrow" href="./index.student.php">
+				<i class="bi bi-house-door me-2"></i>Inicio
+			</a>
+			</li>
+
+			<li class="nav-item">
+			<a class="nav-link has-arrow" href="./views/Estado_matricula.php">
+				<i class="bi bi-journal-check me-2"></i>Estado de Matrícula
+			</a>
+			</li>
+
+			<li class="nav-item">
+			<a class="nav-link has-arrow" href="./views/seccion.estudiante.php">
+				<i class="bi bi-folder2-open me-2"></i>Expediente del Estudiante
+			</a>
+			</li>
+
+			<li class="nav-item">
+			<a class="nav-link has-arrow" href="./views/matricula_linea.php">
+				<i class="bi bi-pencil-square me-2"></i>Matrícula en Línea
+			</a>
+			</li>
+
+		</ul>
+		</div>
+	</div>
+	</div>
+
+  
       <!-- page content -->
       <div id="app-content">
 
@@ -78,7 +116,7 @@
                       <!-- text -->
                       <div class="lh-1">
                         <h2 class="mb-0">
-                          Jitu Chauhan
+                          Bienvenido al Portal del Estudiante
                           <a
                             href="#!"
                             class="text-decoration-none"
@@ -86,14 +124,14 @@
                           >
                           </a>
                         </h2>
-                        <p class="mb-0 d-block">@imjituchauhan</p>
+                        <p class="mb-0 d-block">@<?php echo htmlspecialchars($nombre); ?></p>
                       </div>
                     </div>
                     <div>
                       <a
                         href="#!"
                         class="btn btn-outline-primary d-none d-md-block"
-                        >Edit Profile</a
+                        >Editar Perfil</a
                       >
                     </div>
                   </div>
@@ -191,6 +229,9 @@
       </div>
     </main>
     <!-- Scripts -->
+
+    <link href="./assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
 	 <!-- Libs JS -->
 	<script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/libs/feather-icons/dist/feather.min.js"></script>
