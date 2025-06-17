@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		@@include("../partials/head.html")
-		<title>404 error | Dash UI - Bootstrap 5 Admin Dashboard Template</title>
+		<?php 
+    include "../partials/head.php";
+    
+    ?>
+		<title>404 error</title>
 	</head>
 
 	<body>
@@ -56,6 +59,6 @@
 			</div>
 		</main>
 		<!-- Scripts -->
-		@@include("../partials/scripts.html")
+			<?php include "../partials/scripts.php" ?>
 	</body>
 </html>

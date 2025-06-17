@@ -20,7 +20,7 @@
 </script>
 
 <!-- Favicon icon-->
-<link rel="shortcut icon" type="image/x-icon" href="./assets/images/svg/brand-logo-1.svg" />
+<link rel="shortcut icon" type="image/x-icon" href="./assets/images/" />
 
 <!-- Color modes -->
 <script src="./assets/js/vendors/color-modes.js"></script>
@@ -50,10 +50,7 @@
     <div class="header">
 	<!-- navbar -->
 	<div class="navbar-custom navbar navbar-expand-lg">
-		<div class="container-fluid px-0">
-			<a class="navbar-brand d-block d-md-none" href="./index.php">
-				<img src="assets/images/svg/brand-logo-6.svg" alt="Image" />
-			</a>
+
 
 			<a id="nav-toggle" href="#!" class="ms-auto ms-md-0 me-0 me-lg-3">
 				<svg xmlns="http:/www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-text-indent-left text-muted" viewBox="0 0 16 16">
@@ -176,15 +173,11 @@
 				</li>
 				<!-- Lista -->
 				<li class="dropdown ms-2">
-					<a class="rounded-circle" href="#!" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<div class="avatar avatar-md avatar-indicators avatar-online">
-							<img alt="avatar" src="./assets/images/avatar/Jonathan.jpg" class="rounded-circle" />
-						</div>
-					</a>
+					
 					<div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
 						<div class="px-4 pb-0 pt-2">
 							<div class="lh-1">
-								<h5 class="mb-1">Caleb Barahona</h5>
+								<h5 class="mb-1">Bienvenido</h5>
 								<a href="#!" class="text-inherit fs-6">Ver mi perfil</a>
 							</div>
 							<div class="dropdown-divider mt-3 mb-2"></div>
@@ -229,9 +222,9 @@
     <!-- Sidebar -->
 <div class="navbar-vertical navbar nav-dashboard">
         <div class="h-100" data-simplebar>
-            <a class="navbar-brand" href="./views/dashboard-home.php">
-                <img src="./assets/images/svg/brand-logo-6.svg" alt="dash ui - bootstrap 5 admin dashboard template" />
-            </a>
+            <div class="text-center py-4">
+			<img src="./assets/images/png/banner_logo.png" alt="Logo Colegio" class="img-fluid" style="max-width: 250px;">
+		</div>
             <ul class="navbar-nav flex-column" id="sideNavbar">
                 <li class="nav-item">
                     <a class="nav-link has-arrow" href="#!" data-bs-toggle="collapse" data-bs-target="#navDashboard" aria-expanded="false" aria-controls="navDashboard">
@@ -316,9 +309,9 @@
           <div class="col-lg-12 col-md-12 col-12">
             <div class="p-6 d-lg-flex justify-content-between align-items-center">
               <div class="d-md-flex align-items-center">
-                <img src="./assets/images/avatar/Caleb.webp" alt="Administrador" class="rounded-circle avatar avatar-xl">
+                
                 <div class="ms-md-4 mt-3 mt-md-0 lh-1">
-                  <h3 class="text-white mb-0">Bienvenido Caleb</h3>
+                  <h3 class="text-white mb-0">Bienvenido al Panel de Administración</h3>
                   <small class="text-white">Aquí tienes un resumen de la matrícula escolar:</small>
                 </div>
               </div>

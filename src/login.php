@@ -83,12 +83,12 @@
 								<!-- Username -->
 								<div class="mb-3">
 									<label for="username" class="form-label">Usuario</label>
-									<input type="text" id="username" class="form-control" name="username" placeholder="Ingresa tu contraseña Aca!" required="" />
+									<input type="text" id="username" class="form-control" name="username" placeholder="Ingresa tu usuario" required="" />
 								</div>
 								<!-- Password -->
 								<div class="mb-3">
 									<label for="password" class="form-label">Contraseña</label>
-									<input type="text" id="password" class="form-control" name="contrasena" placeholder="**************" required="" />
+									<input type="text" id="password" class="form-control" name="contrasena" placeholder="Ingresa tu contraseña" required="" />
 								</div>
 								<!-- Checkbox -->
 								<div class="d-lg-flex justify-content-between align-items-center mb-4">
