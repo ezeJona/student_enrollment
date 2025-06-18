@@ -61,8 +61,8 @@ Follow these steps to set up and run the project locally:
 
 Make sure you have the following installed:
 
-A web server environment like Laragon
-The system is developed with the MySql Workbench database manager. Import the system database into your MySQL Workbench application or application of your choice.
+* A web server environment such as Laragon (which includes Apache, MySQL, and PHP).
+* A database management system such as MySQL Workbench or similar.
 
 ### Installation
 
@@ -70,9 +70,10 @@ The system is developed with the MySql Workbench database manager. Import the sy
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
+Note: Make sure to clone the repository into the Laragon `www` directory, or whatever root directory you are using for your projects.
+
 2. Import the database schema (and test data)
-3. Finally in Laragon click on “Start Toto” and wait a few seconds and click on “Web”
-4. Enter your username and password. Click "Login."
+3. Finally Start Laragon and access the application and log in
 
 
 <!-- CONTACT -->
