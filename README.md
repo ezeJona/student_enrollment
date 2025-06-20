@@ -68,7 +68,7 @@ Make sure you have the following installed:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/ezeJona/student_enrollment.git
    ```
 Note: Make sure to clone the repository into the Laragon `www` directory, or whatever root directory you are using for your projects.
 
